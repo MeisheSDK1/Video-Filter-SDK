@@ -1,0 +1,43 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdkVersion rootProject.android.extCompileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.android.extMinSdkVersion
+        targetSdkVersion rootProject.android.extTargetSdkVersion
+        versionCode rootProject.config.extVersionCode
+        versionName rootProject.config.extVersionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    implementation rootProject.ext.dependencies.extAndroidXDesign
+    implementation rootProject.ext.dependencies.extAppcompat
+    implementation rootProject.ext.dependencies.extAppcompatRecycler
+    implementation rootProject.ext.dependencies.extConstraintLayout
+
+    implementation project(':libBase')
+}

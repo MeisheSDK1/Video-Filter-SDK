@@ -1,0 +1,27 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.android.extCompileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.android.extMinSdkVersion
+        targetSdkVersion rootProject.android.extTargetSdkVersion
+        versionCode rootProject.config.extVersionCode
+        versionName rootProject.config.extVersionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation rootProject.ext.dependencies.extAnnotation
+    testImplementation rootProject.ext.testDependencies.testTestng
+    implementation project(path: ':libBase')
+    implementation project(path: ':libNet')
+}

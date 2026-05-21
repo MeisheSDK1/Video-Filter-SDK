@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>美摄SDK For Android: 开发指南</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">美摄SDK For Android
+   &#160;<span id="projectnumber">3.16.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">开发指南 </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>一、开发前的准备工作 为了方便开发者进行开发，请先在美摄SDK官网下载美摄SDK和适用于Android Studio的样例代码。强烈建议使用Android Studio(<a href="http://developer.android.com/sdk/index.html">http://developer.android.com/sdk/index.html</a>)进行开发。</p>
+<p>1、创建一个Android Studio工程。注意：美摄SDK使用的minSdkVersion(minimum API level)是16。为了兼容性，请在创建工程时将minSdkVersion设置为16。</p>
+<p>打开Android Studio，新建工程如下，填写Application name和Company Domain。点击Next。 </p><div class="image">
+<img src="CreateProject_android.png" alt=""/>
+<div class="caption">
+创建工程</div></div>
+   <p>将minimum SDK更改为API 16:Android 4.1(Jelly Bean)。点击Next，直到Finish。 </p><div class="image">
+<img src="MinimumSDK_android.png" alt=""/>
+<div class="caption">
+更改minimum SDK</div></div>
+   <p>2、导入SDK文件。打开美摄SDK下的lib目录，将android_jar目录下的.jar文件复制到目录MyApplication-&gt;app-&gt;libs里。</p>
+<div class="image">
+<img src="JarFilePath.png" alt=""/>
+<div class="caption">
+jar文件目录图</div></div>
+   <p>在java、res和AndroidManifest.xml的同级目录创建文件夹jniLibs，进入jniLibs，将美摄SDK的lib目录下的android_armv7目录及其里面的.so文件复制到这个目录。最后注意将android_armv7目录名重命名为armeabi-v7a。导入SDK工作完成。</p>
+<div class="image">
+<img src="SOFilePath_android.png" alt=""/>
+<div class="caption">
+so文件目录图</div></div>
+    </div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

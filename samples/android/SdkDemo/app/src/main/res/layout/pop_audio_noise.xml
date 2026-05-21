@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <RadioGroup
+        android:id="@+id/rg_audio_noise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_px_150"
+        android:layout_marginBottom="@dimen/dp_px_210"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/rb_audio_noise_no"
+            style="@style/pop_audio_noise_style"
+            android:background="@drawable/pop_audio_noise_no_selector" />
+
+        <RadioButton
+            android:id="@+id/rb_audio_noise_one"
+            style="@style/pop_audio_noise_style"
+            android:text="1"
+            tools:ignore="HardcodedText" />
+
+        <RadioButton
+            android:id="@+id/rb_audio_noise_two"
+            style="@style/pop_audio_noise_style"
+            android:text="2"
+            tools:ignore="HardcodedText" />
+
+        <RadioButton
+            android:id="@+id/rb_audio_noise_three"
+            style="@style/pop_audio_noise_style"
+            android:text="3"
+            tools:ignore="HardcodedText" />
+
+        <RadioButton
+            android:id="@+id/rb_audio_noise_four"
+            style="@style/pop_audio_noise_style"
+            android:text="4"
+            tools:ignore="HardcodedText" />
+    </RadioGroup>
+</androidx.constraintlayout.widget.ConstraintLayout>

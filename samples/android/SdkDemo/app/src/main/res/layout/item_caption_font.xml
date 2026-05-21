@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="72dp"
+    android:layout_height="@dimen/dp70"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="72dp"
+        android:layout_height="70dp" />
+
+    <ImageView
+        android:id="@+id/iv_bg"
+        android:layout_width="62dp"
+        android:layout_height="30dp"
+        android:scaleType="fitXY"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:id="@+id/nameAsset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp9" />
+
+    <ImageView
+        android:id="@+id/iv_select_bg"
+        android:layout_width="62dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_sticker_selected"
+        android:visibility="gone" />
+</RelativeLayout>

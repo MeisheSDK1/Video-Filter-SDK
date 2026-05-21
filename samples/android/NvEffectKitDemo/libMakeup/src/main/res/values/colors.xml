@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="ff000000">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="colorTranslucent">#00000000</color>
+    <color name="beautyTabSelected">#ff5c84ff</color>
+    <color name="beautyTabUnSelected">#ffffffff</color>
+    <color name="musicTabUnSelected">#ff333333</color>
+    <color name="caption_edit_edit_text_hint_color">#4dffffff</color>
+    <color name="msc4c4c4">#c4c4c4</color>
+    <color name="nv_colorTranslucent">#00000000</color>
+    <color name="ms_disable_color">#4D4F51</color>
+    <color name="blue_63ab">#ff63abff</color>
+    <color name="gray_90">#ff909293</color>
+    <color name="blue_63">#63ABFF</color>
+</resources>

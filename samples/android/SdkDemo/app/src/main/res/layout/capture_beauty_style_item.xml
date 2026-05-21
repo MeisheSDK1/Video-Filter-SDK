@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <import type="android.graphics.Color"/>
+        <variable
+            name="beautyStyleInfo"
+            type="com.meishe.sdkdemo.capture.BeautyShapeDataItem" />
+    </data>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="@dimen/dp53"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_height="@dimen/dp53">
+
+        <com.meishe.base.view.RoundImageView
+            android:id="@+id/riv"
+            app:x_radius="2dp"
+            app:y_radius="2dp"
+            android:layout_width="@dimen/dp50"
+            android:layout_height="@dimen/dp50"
+            android:layout_centerInParent="true"
+            app:res="@{beautyStyleInfo.resId}"
+            />
+
+        <com.meishe.base.view.RoundImageView
+            app:x_radius="2dp"
+            app:y_radius="2dp"
+            android:layout_width="@dimen/dp53"
+            android:layout_height="@dimen/dp53"
+            android:background="@drawable/capture_filter_select_bg"
+            android:visibility="@{beautyStyleInfo.visible?View.VISIBLE:View.GONE}"
+            />
+
+        <TextView
+            android:layout_below="@+id/riv"
+            android:text="@{beautyStyleInfo.name}"
+            android:layout_marginTop="6dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/sp10"
+            android:textColor="@{beautyStyleInfo.visible?Color.parseColor(beautyStyleInfo.textSelectColor): Color.parseColor(beautyStyleInfo.textDefaultColor)}"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</layout>

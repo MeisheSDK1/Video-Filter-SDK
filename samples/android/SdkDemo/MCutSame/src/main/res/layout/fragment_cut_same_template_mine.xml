@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/tv_no_date"
+        android:drawableTop="@mipmap/fragment_mine_no_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/dp_px_51"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/activity_cut_export_no_template_data"
+        android:textColor="@color/white_d1d"
+        android:visibility="gone"
+        android:textSize="@dimen/sp_px_33" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal" />
+</FrameLayout>

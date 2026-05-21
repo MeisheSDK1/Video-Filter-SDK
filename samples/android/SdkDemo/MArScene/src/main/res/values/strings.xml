@@ -1,0 +1,77 @@
+<resources>
+    <string name="beauty">Beauty</string>
+    <string name="beauty_template">Beauty template</string>
+    <string name="skin_beauty">Skin</string>
+    <string name="facetype">Facetype</string>
+    <string name="small_change">Small change</string>
+    <string name="adjust">Adjust</string>
+    <string name="contour">Contour</string>
+    <string name="beauty_whitening_mode">whitening mode</string>
+    <string name="beauty_a">A</string>
+    <string name="beauty_b">B</string>
+    <string name="beauty_strength">strength</string>
+    <string-array name="beauty_type">
+        <item>@string/skin_beauty</item>
+        <item>@string/facetype</item>
+        <item>@string/small_change</item>
+        <item>@string/adjust</item>
+        <item>@string/contour</item>
+    </string-array>
+
+    <string name="cheek_thinning">slim cheeks</string>
+    <string name="eye_enlarging">big eyes</string>
+    <string name="intensity_forehead">Forhead</string>
+    <string name="intensity_chin">Chin</string>
+    <string name="intensity_nose">slim nose</string>
+    <string name="intensity_mouth">mouth</string>
+    <string name="face_small">FacLen</string>
+    <string name="face_thin">FacWid</string>
+    <string name="nose_long">high nose</string>
+    <string name="eye_corner">EyeCor</string>
+    <string name="mouse_corner">corners of the mouth</string>
+    <string name="head_size">small head</string>
+    <string name="malar_size">cheekbones</string>
+    <string name="jaw_size">jaw</string>
+    <string name="temple_width">TempleWidth</string>
+    <string name="beauty_facetype_first">Type1</string>
+    <string name="beauty_facetype_second">Type2</string>
+    <string name="sharpness">Sharpen</string>
+    <string name="definition">Definition</string>
+    <string name="strength_1">Strength 1</string>
+    <string name="advanced_strength_1">Advanced Strength 2</string>
+    <string name="advanced_strength_2">Advanced Strength 3</string>
+    <string name="advanced_strength_3">Advanced Strength 4</string>
+    <string name="advanced_strength_4">AI Concealer</string>
+    <string name="skin">Skin</string>
+    <string name="skin_cold_white">Cold White</string>
+    <string name="skin_pink_white">Pink White</string>
+    <string name="skin_warm_white">Warm White</string>
+    <string name="skin_tanning">Tanning</string>
+    <string name="blackPoint">black point</string>
+    <string name="strength">Strength</string>
+    <string name="whitening">whitening</string>
+    <string name="whitening_A">White A</string>
+    <string name="whitening_B">White B</string>
+    <string name="ruddy">Rosy</string>
+    <string name="quyouguang">quyouguang</string>
+    <string name="correctionColor">Correct</string>
+    <string name="beauty_nasolabial">Nasolabial</string>
+    <string name="beauty_dark_circles">dark circles</string>
+    <string name="beauty_brighten_eye">BrightenEye</string>
+    <string name="beauty_tooth">tooth</string>
+    <string name="eye_angel">eye angel</string>
+    <string name="eye_distance">eye distance</string>
+    <string name="eye_height">eye height</string>
+    <string name="eye_width">eye width</string>
+    <string name="eye_arc">eye arc</string>
+    <string name="eye_y_offset">eye UP</string>
+    <string name="philtrum_length">philtrum</string>
+    <string name="nose_bridge">wide nose bridge</string>
+    <string name="nose_head">nose head</string>
+    <string name="eyebrow_thickness">eyebrow thickness</string>
+    <string name="eyebrow_angle">eyebrow angle</string>
+    <string name="eyebrow_y_offset">eyebrow UD</string>
+    <string name="eyebrow_x_offset">eyebrow LR</string>
+    <string name="reset_all_beauty_tips">Are you sure to restore all beauty parameters to default?</string>
+    <string name="radius">radius</string>
+</resources>

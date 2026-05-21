@@ -1,0 +1,488 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">libMsBeauty</string>
+    <string name="app_name_1">美摄-ST(高级)</string>
+    <string name="app_name_2">美摄-ST</string>
+    <string name="app_name_3">美摄(高级)</string>
+    <string name="app_name_4">美摄</string>
+    //////////////////////MainPage///////////////////////////////////
+    <string name="privacy_statement">隐私声明</string>
+    <string name="statement_content">请您务必审慎阅读并充分理解“服务协议”和“隐私政策”的各项条款及说明，美摄仅提供视频后期编辑及拍摄等服务，不会收集您的个人信息。您可阅读《服务协议》和《隐私政策》 了解详细信息。如果您同意，请点击“同意”开始接受我们的服务。</string>
+    <string name="service_agreement">服务协议</string>
+    <string name="privacy_policy">隐私政策</string>
+    <string name="not_used">暂不使用</string>
+    <string name="agree">同意</string>
+    <string name="ssl_error_prompt">SSL认证失败，是否继续访问？</string>
+
+    <string name="douYinEffects">抖视频</string>
+    <string name="particleEffects">粒子特效</string>
+    <string name="captureScene">抠像背景</string>
+    <string name="cutSame">通用模板</string>
+    <string name="picInPic">画中画</string>
+    <string name="flipSubtitles">翻转字幕</string>
+    <string name="musicLyrics">音乐唱词</string>
+    <string name="pushMirrorFilm">推镜拍摄</string>
+    <string name="boomRang">闪回</string>
+    <string name="makingCover">封面制作</string>
+    <string name="photosAlbum">照片影集</string>
+    <string name="flashEffect">闪光特效</string>
+    <string name="memo">Memo</string>
+    <string name="theme_shoot">主题拍摄</string>
+    <string name="audio_equalizer">音频均衡器</string>
+    <string name="quick_splicing">快速拼接</string>
+    <string name="sequence_nesting">包装模板</string>
+    <string name="add_head">添加片头</string>
+    <string name="add_tail">添加片尾</string>
+
+    <string name="packaging_template">包装模板</string>
+    <string name="initArsence">人脸初始化正在进行，请稍后</string>
+    <string name="no_back_activity_cancel">取消</string>
+    <string name="no_back_activity_setting">设置</string>
+    <string name="no_back_activity_message">“不保留活动”选项开启，导致功能无法正常使用。请点击“设置”，在“开发者选项”中关闭“不保留活动”。</string>
+    <string-array name="main_fragment_item">
+        <item>@string/douYinEffects</item>
+        <item>@string/captureScene</item>
+        <item>@string/particleEffects</item>
+        <item>@string/cutSame</item>
+        <item>@string/pushMirrorFilm</item>
+        <item>@string/flipSubtitles</item>
+        <item>@string/picInPic</item>
+        <item>@string/musicLyrics</item>
+        <item>@string/boomRang</item>
+        <item>@string/flashEffect</item>
+        <item>@string/photosAlbum</item>
+        <item>@string/makingCover</item>
+        <item>@string/memo</item>
+        <item>@string/theme_shoot</item>
+        <item>@string/audio_equalizer</item>
+        <item>@string/sequence_nesting</item>
+        <item>@string/quick_splicing</item>
+    </string-array>
+
+    <string-array name="main_fragment_background">
+        <item>"main_fragment1_item1_background"</item>
+        <item>"main_fragment1_item2_background"</item>
+        <item>"main_fragment1_item3_background"</item>
+        <item>"main_fragment_cut_same"</item>
+        <item>"main_fragment1_item4_background"</item>
+        <item>"main_fragment2_item1_background"</item>
+        <item>"main_fragment2_item2_background"</item>
+        <item>"main_fragment2_item3_background"</item>
+        <item>"main_fragment2_item4_background"</item>
+        <item>"main_fragment3_item1_background"</item>
+        <item>"main_fragment1_item2_background"</item>
+        <item>"main_fragment3_item1_background"</item>
+        <item>"main_fragment4_item1_background"</item>
+        <item>"main_fragment1_item4_background"</item>
+        <item>"main_fragment4_item2_background"</item>
+        <item>"main_fragment4_item3_background"</item>
+        <item>"main_fragment_quick_splicing_background"</item>
+    </string-array>
+
+    <string-array name="main_fragment_image">
+        <item>"main_fragment1_item1_image"</item>
+        <item>"main_fragment1_item2_image"</item>
+        <item>"main_fragment1_item3_image"</item>
+        <item>"main_fragment_cut_same_image"</item>
+        <item>"main_fragment1_item4_image"</item>
+        <item>"main_fragment2_item1_image"</item>
+        <item>"main_fragment2_item2_image"</item>
+        <item>"main_fragment2_item3_image"</item>
+        <item>"main_fragment2_item4_image"</item>
+        <item>"main_fragment3_item1_image"</item>
+        <item>"main_fragment3_item2_image"</item>
+        <item>"main_fragment3_item3_image"</item>
+        <item>"main_fragment4_item1_image"</item>
+        <item>"main_fragment4_item2_image"</item>
+        <item>"main_fragment_audio_equalizer"</item>
+        <item>"main_fragment_sequence_nesting"</item>
+        <item>"main_fragment_quick_splicing_image"</item>
+    </string-array>
+
+    <string name="versionNumber">V%1$s</string>
+    <string name="videoCapture">视频拍摄</string>
+    <string name="videoEditName">视频编辑</string>
+
+    //////////////////////Setting//////////////////////////////////
+    <string name="setting">设置</string>
+    <string name="captureSetting">拍摄设置</string>
+    <string name="captureResolution">拍摄分辨率</string>
+    <string name="int1080">1080</string>
+    <string name="int720">720</string>
+    <string name="int540">540</string>
+    <string name="outputSetting">输出设置</string>
+    <string name="hdrSetting">HDR设置</string>
+    <string name="liveWindowModel">预览模式</string>
+    <string name="device">设备</string>
+    <string name="resolutionConfig">位深度配置</string>
+    <string name="resolution_sdr_color_gain">SDR to HDR颜色增益</string>
+    <string name="exportConfig">导出配置</string>
+    <string name="exportHEVCEnable">切换导出格式为HEVC</string>
+    <string name="outputResolution">输出分辨率</string>
+    <string name="setting_cache">缓存</string>
+    <string name="setting_cache_single">单Buffer</string>
+    <string name="setting_cache_double">双Buffer</string>
+    <string name="k4k">4K</string>
+    <string name="bitrate">码率</string>
+    <string-array name="settingSuggest">
+        <item>建议45Mbps，最大180Mbps</item>
+        <item>建议15Mbps，最大60Mbps</item>
+        <item>建议7Mbps，最大30Mbps</item>
+        <item>建议3Mbps，最大15Mbps</item>
+    </string-array>
+    <string name="mbps">Mbps</string>
+    <string name="disable_hardware_encoder">禁用硬件编码器</string>
+    <string name="start_native_camera">开启原生相机</string>
+    <string name="quick_pack">快速打包</string>
+    <string name="others">其他</string>
+    <string name="background_blur_fill">背景模糊填充</string>
+    <string name="setting_auto_arScene">默认美颜和滤镜效果</string>
+    <string name="input_error">输入的数据有误，请重新输入</string>
+
+    //////////////////////FeedBack////////////////////////////////
+    <string name="feedback">反馈</string>
+    <string name="feedback_hint_text">请描述您想反馈的问题内容</string>
+    <string name="feedback_hint_number">留下能帮助我们更好的解决问题哦～</string>
+    <string name="feedback_tip1">反馈内容不能为空</string>
+    <string name="feedback_tip2">联系方式不能为空</string>
+    <string name="feedback_tip3">提交成功</string>
+    <string name="feedback_tip4">提交失败</string>
+    <string name="feedbackContent">反馈内容</string>
+    <string name="zero_over_oneThousand">0/1000</string>
+    <string name="contactWay">联系方式（手机，微信号，QQ号）</string>
+    <string name="submitFeedback">提交</string>
+    <string name="businessCooperation">商务合作 \nTel:010-82851890 \nMail:meishe_sdk@cdv.com</string>
+
+    //////////////////////VideoCapture//////////////////////////////////
+    <string name="photo">拍照</string>
+    <string name="video">视频</string>
+    <string name="zoom">变焦</string>
+    <string name="switch_camera">切换</string>
+    <string name="picture_zoom">画面变焦</string>
+    <string name="exposure_compensation">曝光补偿</string>
+    <string name="exposure">曝光</string>
+    <string name="sharpen_open">· 锐度开启</string>
+    <string name="sharpen_close">· 锐度关闭</string>
+    <string name="default_definition_close">· 清晰度关闭</string>
+    <string name="default_definition_open">· 清晰度开启</string>
+    <string name="face_only">仅作用于人脸</string>
+    <string name="beauty_close">美肤关闭</string>
+    <string name="beauty_open">美肤开启</string>
+    <string name="beauty_shape_close">美型关闭</string>
+    <string name="beauty_shape_open">美型开启</string>
+    <string name="small_shape_close">微整形关闭</string>
+    <string name="small_shape_open">微整形开启</string>
+    <string name="beauty">美颜</string>
+    <string name="skin_beauty_style">风格</string>
+    <string name="skin_beauty">美肤</string>
+    <string name="facetype">美型</string>
+    <string name="small_change">微整形</string>
+    <string name="makeup">美妆</string>
+    <string name="strength">磨皮</string>
+    <string name="blackPoint">黑点</string>
+    <string name="strength_1">磨皮1</string>
+    <string name="advanced_strength_1">磨皮2</string>
+    <string name="advanced_strength_2">磨皮3</string>
+    <string name="advanced_strength_3">磨皮4</string>
+    <string name="advanced_strength_4">AI磨皮</string>
+    <string name="beauty_nasolabial">法令纹</string>
+    <string name="beauty_dark_circles">黑眼圈</string>
+    <string name="beauty_brighten_eye">亮眼</string>
+    <string name="beauty_tooth">美牙</string>
+    <string name="eye_angel">眼角度</string>
+    <string name="eye_distance">眼距</string>
+    <string name="philtrum_length">人中</string>
+    <string name="nose_bridge">宽鼻梁</string>
+    <string name="eye_height">眼高度</string>
+    <string name="eye_width">眼宽度</string>
+    <string name="eye_arc">眼弧度</string>
+    <string name="eye_y_offset">眼上下</string>
+    <string name="nose_head">鼻头</string>
+    <string name="eyebrow_thickness">眉粗细</string>
+    <string name="eyebrow_angle">眉角度</string>
+    <string name="eyebrow_y_offset">眉上下</string>
+    <string name="eyebrow_x_offset">眉间距</string>
+
+
+    <string name="strength_A">磨皮A</string>
+    <string name="strength_B">磨皮B</string>
+    <string name="whitening">美白</string>
+    <string name="whitening_A">美白A</string>
+    <string name="whitening_B">美白B</string>
+    <string name="ruddy">红润</string>
+    <string name="zeroZZZ">00:00</string>
+    <string name="whiteningA">· 美白A</string>
+    <string name="whiteningB">· 美白B</string>
+    <string name="more">更多</string>
+    <string name="cartoon_filter">漫画滤镜</string>
+    <string name="beauty_whitening_mode">美白模式</string>
+    <string name="beauty_a">A</string>
+    <string name="beauty_b">B</string>
+
+    <string name="cheek_thinning">瘦脸</string>
+    <string name="eye_enlarging">大眼</string>
+    <string name="intensity_forehead">额头</string>
+    <string name="intensity_chin">下巴</string>
+    <string name="intensity_nose">瘦鼻</string>
+    <string name="intensity_mouth">嘴型</string>
+    <string name="face_small">小脸</string>
+    <string name="face_thin">窄脸</string>
+    <string name="nose_long">长鼻</string>
+    <string name="eye_corner">眼角</string>
+    <string name="mouse_corner">嘴角</string>
+    <string name="head_size">缩头</string>
+    <string name="malar_size">颧骨</string>
+    <string name="jaw_size">下颌</string>
+    <string name="temple_width">太阳穴</string>
+
+    <string name="makeup_null">无</string>
+
+    <string name="makeup_stick_fruit">棒果</string>
+
+    <string name="filter_natural_complexion">自然肤色</string>
+
+    //////////////////////Selectvideo//////////////////////////////////
+    <string-array name="select_media">
+        <item>所有内容</item>
+        <item>视频</item>
+        <item>图片</item>
+    </string-array>
+
+    <string-array name="mimo_select_media">
+        <!--<item>全部内容</item>-->
+        <item>视频</item>
+        <!--<item>图片</item>-->
+    </string-array>
+    <string name="selectMedia">选中内容</string>
+    <string name="setSelectMedia">已选%1$d项</string>
+    <string name="select_two_video">选择2个素材进行制作</string>
+    <string name="select_the_second_video">选择第2个素材</string>
+    <string name="prompt">提示</string>
+    <array name="select_video_tips">
+        <item>@string/prompt</item>
+        <item>请选择2个素材</item>
+    </array>
+    <string name="startMaking">开始制作</string>
+    <string name="checkAll">全选</string>
+    <string name="cancelCheckAll">取消全选</string>
+    <string name="date">日期</string>
+    <string name="yearMonthDate">yyyy-MM-dd</string>
+    <string name="today">今天</string>
+    <string name="single_select_picture">选择图片</string>
+    <string name="select_video">选择视频</string>
+    <string name="select_assets">素材选择</string>
+
+    <string name="select_production_proportion">选择制作比例</string>
+    <string name="twentyOneTNine">21:9</string>
+    <string name="nineTTwentyOne">9:21</string>
+    <string name="sixteenTNine">16:9</string>
+    <string name="nineTSixteen">9:16</string>
+    <string name="eighteenTNine">18:9</string>
+    <string name="nineTEighteen">9:18</string>
+    <string name="fourTThree">4:3</string>
+    <string name="threeTFour">3:4</string>
+    <string name="sevenTSix">7:6</string>
+    <string name="sixTSeven">6:7</string>
+    <string name="oneTone">1:1</string>
+
+    //////////////////////VideoEdit//////////////////////////////////
+    <string name="videoEdit">视频编辑</string>
+    <string name="compile">生成</string>
+    <string name="theme">主题</string>
+    <string name="edit">编辑</string>
+    <string name="filter">滤镜</string>
+    <string name="animatedSticker">贴纸</string>
+    <string name="animatedStickerStyle">贴纸样式</string>
+    <string name="animation">动画</string>
+    <string name="caption">字幕</string>
+    <string name="mask">蒙版</string>
+    <string name="comcaption">组合字幕</string>
+    <string name="background_seg">抠像背景</string>
+    <string name="background">背景</string>
+    <string name="watermark">水印</string>
+    <string name="transition">转场</string>
+    <string name="music">音乐</string>
+    <string name="dub">配音</string>
+    <string name="createPic">生成图片</string>
+    <string-array name="videoEdit">
+        <item>@string/theme</item>
+        <item>@string/edit</item>
+        <item>@string/filter</item>
+        <item>@string/animatedSticker</item>
+        <item>@string/animation</item>
+        <item>@string/mask</item>
+        <item>@string/caption</item>
+        <item>@string/comcaption</item>
+        <item>@string/background</item>
+        <item>@string/watermark</item>
+        <item>@string/transition</item>
+        <item>@string/music</item>
+        <item>@string/dub</item>
+        <item>@string/createPic</item>
+        <item>@string/makeup</item>
+    </string-array>
+
+    <string name="stayTuned">敬请期待！</string>
+    <string name="contactBusiness">可移步官网联系商务人员</string>
+    <string-array name="edit_function_tips">
+        <item>@string/prompt</item>
+        <item>@string/stayTuned</item>
+        <item>@string/contactBusiness</item>
+    </string-array>
+    <string name="originalSound">原声</string>
+    <string-array name="transition_tips">
+        <item>@string/prompt</item>
+        <item>两个以上素材可添加转场</item>
+    </string-array>
+    <string-array name="compile_video_failed_tips">
+        <item>生成失败</item>
+        <item>请检查手机存储空间</item>
+    </string-array>
+    <string-array name="compile_video_success_tips">
+        <item>保存路径: </item>
+    </string-array>
+    <string name="int50">50</string>
+    <string name="int0">0</string>
+    <string name="traditional_caption">普通字幕</string>
+    <string name="pieced_together_caption">拼装字幕</string>
+    <string name="march_out_animation">出场动画</string>
+    <string name="march_in_animation">入场动画</string>
+    <string name="combination_animation">组合动画</string>
+    //////////////////////Theme//////////////////////////////////
+    <string name="theme_tip">片头处暂停可以修改文字</string>
+    <string name="theme_title">美摄-记录美好生活</string>
+    //////////////////////videoClipEdit////////////////////////////////
+    <string name="trim">裁剪</string>
+    <string name="split">分割</string>
+    <string name="correctionColor">校色</string>
+    <string name="adjust">调整</string>
+    <string name="speed">速度</string>
+    <string name="volume">音量</string>
+    <string name="copy">复制</string>
+    <string name="delete">删除</string>
+    <string-array name="effectNamesVideo">
+        <item>@string/trim</item>
+        <item>@string/split</item>
+        <item>@string/correctionColor</item>
+        <item>@string/filter</item>
+        <item>@string/animatedSticker</item>
+        <item>@string/caption</item>
+        <item>@string/adjust</item>
+        <item>@string/speed</item>
+        <item>@string/volume</item>
+        <item>@string/copy</item>
+        <item>@string/delete</item>
+    </string-array>
+
+    <array name="video_delete_tips">
+        <item>@string/prompt</item>
+        <item>至少保留一个素材</item>
+    </array>
+    <string name="clip_add_key_frame_text">增加关键帧</string>
+    <string name="clip_edit_key_frame_text">编辑关键帧</string>
+    <string name="duration">时长</string>
+    <string name="movement">运动</string>
+    <string-array name="effectNamesImage">
+        <item>@string/duration</item>
+        <item>@string/movement</item>
+        <item>@string/correctionColor</item>
+        <item>@string/filter</item>
+        <item>@string/animatedSticker</item>
+        <item>@string/caption</item>
+        <item>@string/copy</item>
+        <item>@string/delete</item>
+    </string-array>
+
+    <string name="trim_duration">裁剪后总时长为</string>
+    <array name="spilt_video_tips">
+        <item>@string/prompt</item>
+        <item>不可分割小于1秒的素材</item>
+    </array>
+
+    <string name="brightness">亮度</string>
+    <string name="contrast">对比度</string>
+    <string name="saturation">饱和度</string>
+    <string name="degree">暗角</string>
+    <string name="sharpness">锐度</string>
+    <string name="highlights">高光</string>
+    <string name="color_shadow">阴影</string>
+    <string name="color_temperature">色温</string>
+    <string name="tone">色调</string>
+    <string name="color_fade">褪色</string>
+    <string name="hot_pixel">噪点</string>
+
+    <string name="horizontal">水平</string>
+    <string name="vertical">垂直</string>
+    <string name="rotate">旋转</string>
+    <string name="clip_reset">复位</string>
+    <string name="angle">角度</string>
+    <string name="string_format_one_point">"%.1f"</string>
+
+    <string name="change_speed">按住滑块调整速度</string>
+    <string name="change_duration">拖动滑块调整时长</string>
+    <string name="picture_move">画面运动</string>
+    <string name="area_display">区域显示</string>
+    <string name="total_display">全图显示</string>
+    <string name="start_rect">开始画面</string>
+    <string name="end_rect">结束画面</string>
+    <string name="play_end">结束</string>
+
+    <string name="one_eighthX">1/8x</string>
+    <string name="quarterX">1/4x</string>
+    <string name="halfX">1/2x</string>
+    <string name="oneX">1x</string>
+    <string name="twoX">2x</string>
+    <string name="fourX">4x</string>
+    <string name="tenS">10s</string>
+
+    //////////////////////Filter////////////////////////////////
+    <string name="intensity">强度</string>
+
+    //////////////////////AnimatedSticker/////////////////////////
+    <string-array name="animatedSticker_type">
+        <item>全部</item>
+        <item>自定义</item>
+    </string-array>
+
+    <string-array name="capture_scene_type">
+        <item>视频</item>
+        <item>图片</item>
+    </string-array>
+    <string name="add">添加</string>
+    <string name="free">自由</string>
+    <string name="circle">圆形</string>
+    <string name="square">正方</string>
+    <string name="select_content">选择内容</string>
+    <string name="customStickerselecteffect">选择动效</string>
+
+    //////////////////////Caption//////////////////////////////////
+    <string name="style">样式</string>
+    <string name="size">0</string>
+
+    //////////////////////CompoundCaption/////////////////////////////
+    <string name="compoundcaption">组合字幕</string>
+
+    <string name="reset">重置</string>
+
+    //////////////////////FlipCaption//////////////////////////////////
+    <string name="color">颜色</string>
+    <string name="font">字体</string>
+
+    <string name="make_up_custom">自定义</string>
+    <string name="make_up_transparency">透明度：%1$d</string>
+    <string name="make_up_tone">色值：%1$s</string>
+
+    <string name="no">无</string>
+    <string name="back">返回</string>
+
+    <string name="segment_whole_body_model" tools:ignore="ExtraTranslation">使用了全身模型</string>
+
+    <string name="segment_half_body_model" tools:ignore="ExtraTranslation">使用了半身模型</string>
+    <string name="beauty_blur_strength">模糊强度</string>
+
+    <string name="beauty_facetype_first">美型1</string>
+    <string name="beauty_facetype_second">美型2</string>
+    <string name="quyouguang">去油光</string>
+    <string name="definition">清晰度</string>
+
+    <string name="toast_matte_support_tip">不支持去油光！</string>
+</resources>

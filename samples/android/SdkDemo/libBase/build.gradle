@@ -1,0 +1,123 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply from: '../../../../ftp-download.gradle'
+apply from: '../ftp-util.gradle'
+
+def extraLibPath = getSdkExtraPath(rootDir.getAbsolutePath() + "/../../../meishesdk_libpath.conf")
+
+android {
+    compileSdkVersion rootProject.android.extCompileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.android.extMinSdkVersion
+        targetSdkVersion rootProject.android.extTargetSdkVersion
+        versionCode rootProject.config.extVersionCode
+        versionName rootProject.config.extVersionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+
+        ndk {
+            if (armConfig == 1) {
+                abiFilters "armeabi-v7a", "arm64-v8a"
+            } else if (armConfig == 2) {
+                abiFilters "arm64-v8a"
+            } else if (armConfig == 3) {
+                abiFilters "armeabi-v7a"
+            }
+
+        }
+        multiDexEnabled true
+    }
+
+
+    task libCopy(type: Copy) {
+        copy {
+            from extraLibPath + 'lib/android_armv7'
+            into 'src/main/jniLibs/armeabi-v7a'
+            include '*.so'
+        }
+    }
+
+    task libCopy2(type: Copy) {
+        copy {
+            from extraLibPath + 'lib/android_arm64'
+            into 'src/main/jniLibs/arm64-v8a'
+            include '*.so'
+        }
+    }
+
+    task downloadFilesWindows() {
+        String oldAssetsVersion = readFileInfo(rootProject.ext.destAssetsFile + File.separator + "version.txt")
+        checkVersionAndDownloadFile(rootProject.ext.originFtpAssets, rootProject.ext.destAssetsFile, oldAssetsVersion, rootProject.ext.assetsTempFile)
+
+        String oldLibsVersion = readFileInfo(rootProject.ext.destLibsFile + File.separator + "version.txt")
+        checkVersionAndDownloadFile(rootProject.ext.originFtpLibs, rootProject.ext.destLibsFile, oldLibsVersion, rootProject.ext.libTempFile)
+
+        copyJniLibs(rootProject.ext.fromJniFile, rootProject.ext.toJniFile)
+
+    }
+    task downloadFiles() {
+        doFirst {
+            println 'web-ftp:sync start'
+            downloadFtpFiles(rootProject.ext.destAssetsFile, rootProject.ext.originFtpAssets,
+                    rootProject.ext.destLibsFile, rootProject.ext.originFtpLibs)
+            copyJniLibs(rootProject.ext.fromJniFile, rootProject.ext.toJniFile)
+            println 'web-ftp:sync end'
+        }
+    }
+
+
+    packagingOptions {
+        exclude 'lib/arm64-v8a/libst_mobile.so'
+        exclude 'lib/armeabi-v7a/libst_mobile.so'
+    }
+
+    repositories {
+        flatDir {
+            dirs './libs', '../../../../extrasdk', extraLibPath + 'extrasdk/sdk/android'
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+//    api fileTree(include: ['*.aar'], dir: extraLibPath + 'extrasdk/sdk/android')
+    api fileTree(include: ['*.jar', '*.aar'], dir: extraLibPath + 'extrasdk/sdk/android')
+    api fileTree(include: ['*.jar'], dir: extraLibPath + 'lib/android_jar')
+
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    implementation rootProject.ext.dependencies.extAndroidXDesign
+    implementation rootProject.ext.dependencies.extAppcompat
+    implementation rootProject.ext.dependencies.extAppcompatRecycler
+    implementation rootProject.ext.dependencies.extConstraintLayout
+    implementation rootProject.ext.dependencies.extMutilDex
+    api rootProject.ext.dependencies.extGoogleGson
+
+
+    implementation rootProject.ext.dependencies.extBumptechGlide
+    //为了处理glide跟Androidx兼容 glide is compatible with Androidx for handling
+    annotationProcessor rootProject.ext.dependencies.extAnnotation
+    kapt rootProject.ext.dependencies.extGlideAnnotation
+    implementation rootProject.ext.dependencies.extOkhttpIntegration
+    // webpdecoder
+    api rootProject.ext.dependencies.extWebpdecoder
+
+    api rootProject.ext.dependencies.extSmartRefresh
+    api rootProject.ext.dependencies.extSmartRefreshHorizontal
+    api rootProject.ext.dependencies.extSmartRefreshClassics
+
+}

@@ -1,0 +1,24 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.android.extCompileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.android.extMinSdkVersion
+        targetSdkVersion rootProject.android.extTargetSdkVersion
+        versionCode rootProject.config.extVersionCode
+        versionName rootProject.config.extVersionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: ':libBase')
+    testImplementation rootProject.ext.testDependencies.extTestJunit
+
+    implementation rootProject.ext.dependencies.extGoogleGson
+    implementation rootProject.ext.dependencies.extOkhttp
+}

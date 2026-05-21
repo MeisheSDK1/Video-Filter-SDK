@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="3dp">
+
+    <ImageView
+        android:id="@+id/item_bg_mask_selected"
+        android:layout_width="@dimen/dp50"
+        android:layout_height="@dimen/dp50"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bg_item_mask_select_frame" />
+
+    <com.meishe.base.view.RoundImageView
+        android:id="@+id/item_bg_mask"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="1dp"
+        android:background="@color/red_fc2b"
+        android:scaleType="fitXY"
+        app:x_radius="4.5dp"
+        app:y_radius="4.5dp" />
+
+    <TextView
+        android:id="@+id/item_tv_mask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_bg_mask"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:textColor="@color/white"
+        android:textSize="10sp" />
+</RelativeLayout>

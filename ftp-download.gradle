@@ -1,0 +1,132 @@
+void checkVersionAndDownloadFile(String originFtp, String destFile, String oldVersion, String tempFile) {
+    String systemOS = System.properties['os.name']
+    if (!systemOS.toLowerCase().contains('windows')){
+        System.out.println("not windows system ，can not exe cmd")
+        return
+    }
+    System.out.println("system os is "+ systemOS)
+    File file = new File(destFile)
+    if (!file.exists()) {
+        boolean success = file.mkdirs()
+        if (!success){
+            System.out.println(destFile+" file create failed!")
+            return
+        }
+    }
+    exec {
+        workingDir('./../../../../')//执行目录
+        //第一个参数 ftpFolder ftp路径
+        //第二个参数 LocalFolder 本地路径
+        //第三个参数 下载类型
+        commandLine 'cmd', '/c', 'ftpDownload.bat', originFtp, destFile, '**.txt'
+    }
+
+    String[] fileList = file.list()
+    System.out.println(fileList.toString())
+    for (String fileName : fileList) {
+        if (fileName.endsWith("version.txt")) {
+            System.out.println("fileName:" + fileName)
+            String newVersion = readFileInfo(destFile + File.separator + fileName)
+            System.out.println("newVersion:" + newVersion)
+            if ((oldVersion == newVersion) && (!oldVersion.isEmpty()) && (!newVersion.isEmpty())) {
+                System.out.println("assets not neeed update")
+            } else {
+                System.out.println("assets need update")
+                File tempAssetsFile = new File(tempFile)
+                if (!tempAssetsFile.exists()) {
+                    tempAssetsFile.mkdirs()
+                }
+                System.out.println("tempFile:" + tempFile)
+                exec {
+                    workingDir('./../../../../')//执行目录
+                    commandLine 'cmd', '/c', 'ftpDownload.bat', originFtp, tempFile, '*.zip'
+                }
+                String[] tempAssetsFileList = tempAssetsFile.list()
+                System.out.println("tempAssetsFileList:" + tempAssetsFileList.toString())
+                for (String tempAssetsFileName : tempAssetsFileList) {
+                    if (tempAssetsFileName.endsWith(".zip")) {
+                        System.out.println("unZip: " + tempFile + File.separator + tempAssetsFileName)
+                        ant.unzip(src: tempFile + File.separator + tempAssetsFileName, dest: destFile)
+                        System.out.println("unZip success")
+                        System.out.println("parent dir:" + tempAssetsFile)
+                        break
+                    }
+                }
+                boolean suc = tempAssetsFile.deleteDir()
+                System.out.println("delte temp file:" + suc)
+            }
+
+            break
+        }
+    }
+}
+
+void copyJniLibs(String fromDir, String toDir) {
+    File fromFile = new File(fromDir)
+    if (fromFile.exists()) {
+        println("jniLibs file exsit,copy it")
+        copy {
+            from fromFile
+            into toDir
+        }
+        delete(fromFile)
+    } else {
+        println("jniLibs file not exsit!")
+    }
+}
+
+def readFileInfo(String rootDir) {
+    println("readFileInfo:" + rootDir)
+    try {
+        File confFile = new File(rootDir)
+        if (!confFile.exists()) {
+            return ""
+        }
+        BufferedReader br = new BufferedReader(new FileReader(confFile))
+        String readline = ""
+        StringBuffer sb = new StringBuffer()
+        while ((readline = br.readLine()) != null) {
+            sb.append(readline)
+        }
+        br.close()
+        return sb.toString()
+    } catch (Exception e) {
+        e.printStackTrace()
+    }
+}
+
+def getSdkExtraPath(String rootDir) {
+    String defaultPath = "../../../../"
+    try {
+        String pathTmp = readFileInfo(rootDir)
+        if (pathTmp.isEmpty()) {
+            File confFile = new File(rootDir)
+            if (confFile.createNewFile()) {
+                FileOutputStream outputStream = new FileOutputStream(confFile)
+                outputStream.write(defaultPath.getBytes())
+                outputStream.close()
+                return defaultPath
+            }
+        } else {
+            pathTmp = pathTmp.replace("\\", "/")
+            if (!pathTmp.endsWith("/")) {
+                pathTmp += "/"
+            }
+            if (pathTmp == null || pathTmp.isEmpty()) {
+                pathTmp = defaultPath
+            }
+            println("sdk path:" + pathTmp)
+            return pathTmp
+        }
+    } catch (Exception e) {
+        e.printStackTrace()
+    }
+    return defaultPath
+}
+//导出函数
+ext {
+    getSdkExtraPath = this.&getSdkExtraPath
+    readFileInfo = this.&readFileInfo
+    checkVersionAndDownloadFile = this.&checkVersionAndDownloadFile
+    copyJniLibs = this.&copyJniLibs
+}

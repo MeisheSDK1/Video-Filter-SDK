@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".quicksplicing.QuickSplicingActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.meishe.sdkdemo.edit.view.CustomTitleBar
+            android:id="@+id/mTitleBar"
+            android:layout_width="match_parent"
+            android:layout_height="64dp" />
+
+        <RelativeLayout
+            android:id="@+id/video_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"></RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/mBottomLayout"
+            android:layout_width="match_parent"
+            android:layout_height="213dp"
+            android:background="#ff242728">
+
+            <Button
+                android:id="@+id/btn_area_selection"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dp10"
+                android:text="区间选取" />
+
+            <LinearLayout
+                android:id="@+id/llBottomDeleteView"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_alignParentBottom="true"
+                android:background="#63ABFF"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:text="拖动到此处删除"
+                    android:textColor="#ffffffff"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mRecycleView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="13dp" />
+
+            <View
+                android:id="@+id/mView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp80"
+                android:layout_alignParentTop="true" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <ProgressBar
+        android:id="@+id/mProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

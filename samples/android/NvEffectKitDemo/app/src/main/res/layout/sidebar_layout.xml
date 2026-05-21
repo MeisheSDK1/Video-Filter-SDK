@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:background="@color/color_63ABFF"
+    tools:ignore="MissingDefaultResource">
+
+    <ScrollView
+        android:id="@+id/function_buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/bar_switch"
+                style="@style/bar_view_style"
+                android:text="@string/camera"
+                app:drawableTopCompat="@mipmap/icon_switch" />
+
+            <TextView
+                android:id="@+id/bar_flash"
+                style="@style/bar_view_style"
+                android:text="@string/flash"
+                app:drawableTopCompat="@mipmap/icon_flash_off" />
+
+            <TextView
+                android:id="@+id/bar_zoom"
+                style="@style/bar_view_style"
+                android:text="@string/zoom"
+                app:drawableTopCompat="@mipmap/icon_focus" />
+
+
+            <TextView
+                android:id="@+id/bar_expose"
+                style="@style/bar_view_style"
+                android:text="@string/exposure"
+                app:drawableTopCompat="@mipmap/icon_exposure" />
+
+            <TextView
+                android:id="@+id/bar_beauty"
+                style="@style/bar_view_style"
+                android:text="@string/beauty"
+                app:drawableTopCompat="@mipmap/icon_beauty" />
+
+            <TextView
+                android:id="@+id/bar_prop"
+                style="@style/bar_view_style"
+                android:text="@string/beauty_prop"
+                app:drawableTopCompat="@mipmap/icon_prop" />
+
+            <TextView
+                android:id="@+id/bar_filter"
+                style="@style/bar_view_style"
+                android:text="@string/beauty_filter"
+                app:drawableTopCompat="@mipmap/icon_filter" />
+
+
+            <TextView
+                android:id="@+id/bar_makeup"
+                style="@style/bar_view_style"
+                android:text="@string/beauty_markup"
+                app:drawableTopCompat="@mipmap/icon_makeup" />
+
+            <TextView
+                android:id="@+id/bar_seg"
+                style="@style/bar_view_style"
+                android:text="@string/beauty_background"
+                android:visibility="gone"
+                app:drawableTopCompat="@mipmap/capture_fx_background_seg" />
+
+            <TextView
+                android:id="@+id/bar_adjust"
+                style="@style/bar_view_style"
+                android:text="@string/adjust"
+                android:visibility="gone"
+                app:drawableTopCompat="@mipmap/ic_adjust" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

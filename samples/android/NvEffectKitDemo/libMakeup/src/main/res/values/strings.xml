@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MeicamLive</string>
+    <string name="make_up_tone">Tone：%1$s</string>
+    <string name="make_up_transparency">Transparency：%1$d</string>
+    <string name="make_up_custom">Custom</string>
+    <string name="makeup">Makeup</string>
+    <string name="makeup_back">Back</string>
+    <string name="makeup_null">none</string>
+    <string name="makeup_">Makeup(New)</string>
+    <string name="no">No</string>
+</resources>

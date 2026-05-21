@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/captionFontRecycleView"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="13dp"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+    <Button
+        android:id="@+id/italicButton"
+        android:layout_width="52dp"
+        android:layout_height="20dp"
+        android:background="@drawable/shape_caption_font_corner_button"
+        android:text="@string/italic"
+        android:textColor="@color/ccffffff"
+        android:textSize="12sp"
+        android:layout_below="@+id/captionFontRecycleView"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="@dimen/dp10"
+        android:textAllCaps="false"/>
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<resources>
+    <string name="makeup_">Makeup(New)</string>
+    <string name="no">No</string>
+    <string name="lip">Lip</string>
+    <string name="eyeshadow">Eyeshadow</string>
+    <string name="eyebrow">Eyebrow</string>
+    <string name="eyelash">Eyelash</string>
+    <string name="eyeliner">Eyeliner</string>
+    <string name="blusher">Blusher</string>
+    <string name="brighten">Brighten</string>
+    <string name="shadow">Shadow</string>
+    <string name="eyeball">Eyeball</string>
+    <string-array name="makeup_type">
+        <item>@string/lip</item>
+        <item>@string/eyeshadow</item>
+        <item>@string/eyebrow</item>
+        <item>@string/eyelash</item>
+        <item>@string/eyeliner</item>
+        <item>@string/blusher</item>
+        <item>@string/brighten</item>
+        <item>@string/shadow</item>
+        <item>@string/eyeball</item>
+    </string-array>
+</resources>

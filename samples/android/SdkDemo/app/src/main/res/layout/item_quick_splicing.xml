@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="@dimen/dp50"
+    android:layout_width="@dimen/dp80"
+    android:layout_height="@dimen/dp80"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.meishe.base.view.RoundImageView
+        android:id="@+id/riv_clip"
+        android:layout_width="@dimen/dp70"
+        android:layout_height="@dimen/dp70"
+        app:x_radius="@dimen/dp2"
+        app:y_radius="@dimen/dp2"
+        android:layout_centerInParent="true"
+        android:scaleType="fitXY" />
+
+    <ImageView
+        android:id="@+id/iv_clip_mask"
+        android:layout_width="@dimen/dp70"
+        android:layout_height="@dimen/dp70"
+        android:layout_centerInParent="true"
+        android:background="@mipmap/ic_makeup_select"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_add_clip_left"
+        android:layout_width="@dimen/dp20"
+        android:layout_height="@dimen/dp20"
+        android:layout_centerInParent="true"
+        android:background="@mipmap/ic_quick_splicing_add"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_add_clip_right"
+        android:layout_width="@dimen/dp20"
+        android:layout_height="@dimen/dp20"
+        android:layout_centerInParent="true"
+        android:background="@mipmap/ic_quick_splicing_add"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_time_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffffff"
+        android:textSize="9sp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="10dp" />
+
+    <TextView
+        android:id="@+id/tv_video_index"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffffff"
+        android:textSize="9sp"
+        android:background="@drawable/quick_splicing_item_bg"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:layout_marginStart="10dp" />
+
+
+</RelativeLayout>

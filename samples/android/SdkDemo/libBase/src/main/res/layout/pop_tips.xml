@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dp_px_45"
+    android:layout_marginRight="@dimen/dp_px_45"
+    android:background="@drawable/pop_tips_bg">
+
+    <TextView
+        android:id="@+id/pop_tips_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_px_30"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_px_45"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/app_name" />
+
+    <TextView
+        android:id="@+id/pop_tips_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:paddingLeft="@dimen/dp_px_75"
+        android:paddingTop="@dimen/dp_px_75"
+        android:paddingRight="@dimen/dp_px_75"
+        android:paddingBottom="@dimen/dp_px_90"
+        android:text="@string/app_name"
+        android:textColor="@color/color_888888"
+        android:textSize="@dimen/sp_px_39"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pop_tips_title" />
+
+    <View
+        android:id="@+id/pop_tips_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_3"
+        android:background="@color/color_1A888888"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pop_tips_content" />
+
+    <Button
+        android:id="@+id/pop_tips_cancel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:text="@string/cancel"
+        android:textColor="@color/color_888888"
+        android:textSize="@dimen/sp_px_42"
+        app:layout_constraintBottom_toBottomOf="@id/pop_tips_line1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/pop_tips_line1"
+        app:layout_constraintTop_toTopOf="@id/pop_tips_line1"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <View
+        android:id="@+id/pop_tips_line1"
+        android:layout_width="@dimen/dp_px_3"
+        android:layout_height="@dimen/dp_px_126"
+        android:background="@color/color_1A888888"
+        app:layout_constraintLeft_toRightOf="@+id/pop_tips_cancel"
+        app:layout_constraintRight_toLeftOf="@id/pop_tips_confirm"
+        app:layout_constraintTop_toBottomOf="@id/pop_tips_line"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/pop_tips_confirm"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:text="@string/confirm"
+        android:textColor="@color/color_63ABFF"
+        android:textSize="@dimen/sp_px_42"
+        app:layout_constraintBottom_toBottomOf="@id/pop_tips_line1"
+        app:layout_constraintLeft_toRightOf="@id/pop_tips_line1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/pop_tips_line1"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

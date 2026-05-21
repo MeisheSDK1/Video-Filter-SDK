@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:background="#ff242728"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:paddingLeft="28dp"
+        android:paddingRight="28dp">
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="@dimen/dp_px_9"
+            android:layout_marginRight="10dp"
+            android:text="动画时长"
+            android:textColor="@color/white"
+            android:textSize="11sp" />
+
+        <com.meishe.base.view.MagicSeekBar
+            android:id="@+id/animation_seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:progressDrawable="@drawable/seekbar"
+            android:thumb="@drawable/nv_animation_seekbar"
+            app:shadowLayer="false"
+            app:textSizeMagic="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_animation_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/download_more_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp">
+
+            <ImageView
+                android:id="@+id/dowanloadImage"
+                android:layout_width="35dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="9dp"
+                android:background="@drawable/download_more" />
+
+            <TextView
+                android:id="@+id/dowanloadMoreText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dowanloadImage"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="23dp"
+                android:text="@string/more"
+                android:textColor="@color/ccffffff"
+                android:textSize="@dimen/sp12" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/animation_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:fadingEdgeLength="30dp"
+            android:requiresFadingEdge="horizontal" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="#1AFFFFFF" />
+
+    <ImageView
+        android:id="@+id/animationAssetFinish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="@dimen/dp_px_45"
+        android:src="@mipmap/icon_confirm" />
+</LinearLayout>

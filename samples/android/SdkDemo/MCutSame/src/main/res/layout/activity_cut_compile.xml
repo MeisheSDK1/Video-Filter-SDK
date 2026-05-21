@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CutCompileActivity">
+
+    <ImageView
+        android:id="@+id/cut_compile_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_px_52"
+        android:layout_marginLeft="@dimen/dp_px_52"
+        android:layout_marginBottom="@dimen/dp_px_100"
+        android:background="@drawable/cut_edit_close"
+        android:contentDescription="@null" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/cut_compile_source"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:contentDescription="@null" />
+
+        <com.meishe.base.view.CompileProgress
+            android:id="@+id/cut_compile_progress"
+            android:layout_width="@dimen/dp_px_300"
+            android:layout_height="@dimen/dp_px_300"
+            android:layout_centerInParent="true"
+            app:progressBackgroundColor="#4A4A4A"
+            app:progressColor="@color/red_fc2b" />
+
+        <TextView
+            android:id="@+id/cut_compile_progress_text"
+            android:layout_width="@dimen/dp_px_300"
+            android:layout_height="@dimen/dp_px_300"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_px_39" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/cut_compile_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_px_172"
+        android:layout_marginBottom="@dimen/dp_px_255"
+        android:text="@string/activity_cut_compile_tip1"
+        android:textColor="@color/white_8"
+        android:textSize="@dimen/sp_px_36" />
+
+
+    <Button
+        android:id="@+id/cut_compile_cancel"
+        android:layout_width="@dimen/dp_px_225"
+        android:layout_height="@dimen/dp_px_105"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/dp_px_564"
+        android:text="@string/activity_cut_export_template_cancel"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dp_px_36"
+        android:background="@drawable/bg_rectangle_round_gray_3a3c49_d15" />
+
+    <Button
+        android:id="@+id/cut_compile_ok"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_123"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/dp_px_186"
+        android:layout_marginRight="@dimen/dp_px_186"
+        android:layout_marginBottom="@dimen/dp_px_150"
+        android:background="@drawable/red_rect"
+        android:text="@string/cut_compile_complete"
+        android:textColor="@color/white"
+        android:visibility="gone" />
+
+</LinearLayout>

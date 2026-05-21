@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MeicamLive</string>
+    <string name="make_up_tone">色值：%1$s</string>
+    <string name="make_up_transparency">透明度：%1$d</string>
+    <string name="make_up_custom">自定义</string>
+    <string name="makeup">美妆</string>
+    <string name="makeup_back">返回</string>
+    <string name="makeup_null">无</string>
+    <string name="makeup_">妆容(新)</string>
+    <string name="no">无</string>
+</resources>

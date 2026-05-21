@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.meishe.sdkdemo.edit.clipEdit.trim.TrimActivity">
+
+    <com.meishe.sdkdemo.edit.view.CustomTitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height" />
+
+    <RelativeLayout
+        android:id="@+id/spaceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <RelativeLayout
+        android:id="@+id/trim_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_height"
+        android:background="#ff242728">
+
+        <TextView
+            android:id="@+id/trimDurationVal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_px_60"
+            android:textColor="#ffffffff"
+            android:textSize="10sp" />
+
+        <com.meishe.sdkdemo.edit.timelineEditor.NvsTimelineEditor
+            android:id="@+id/timelineEditor"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_px_270"
+            android:layout_below="@+id/trimDurationVal"
+            android:layout_marginTop="@dimen/dp_px_36" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/trimFinish"
+            android:background="#1AFFFFFF" />
+
+        <ImageView
+            android:id="@+id/trimFinish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/dp15"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginTop="@dimen/dp15"
+            android:layout_marginEnd="@dimen/dp15"
+            android:layout_marginRight="@dimen/dp15"
+            android:layout_marginBottom="@dimen/dp15"
+            android:background="@mipmap/icon_confirm" />
+    </RelativeLayout>
+</LinearLayout>

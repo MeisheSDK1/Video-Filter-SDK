@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.meishe.sdkdemo.edit.clipEdit.volume.VolumeActivity">
+
+    <com.meishe.sdkdemo.edit.view.CustomTitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.meishe.sdkdemo.edit.view.CustomTitleBar>
+
+    <RelativeLayout
+        android:id="@+id/spaceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <RelativeLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_height"
+        android:background="#ff242728">
+
+        <LinearLayout
+            android:id="@+id/ll_zoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_zoom_in"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:padding="6dp"
+                android:src="@mipmap/zoom_out" />
+
+            <TextView
+                android:id="@+id/play_cur_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:text="@string/zeroZZZ"
+                android:textColor="#ffffff"
+                android:textSize="10sp" />
+
+            <ImageView
+                android:id="@+id/iv_zoom_out"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:padding="6dp"
+                android:src="@mipmap/zoom_in" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/timeline_edit_layout"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:layout_below="@+id/ll_zoom"
+            android:layout_marginTop="20dp">
+
+            <com.meishe.sdkdemo.edit.timelineEditor.NvsTimelineEditor
+                android:id="@+id/volume_timeline_editor"
+                android:layout_width="wrap_content"
+                android:layout_height="49dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="48dp" />
+
+
+            <RelativeLayout
+                android:id="@+id/play_btn_layout"
+                android:layout_width="48dp"
+                android:layout_height="26dp"
+                android:layout_centerVertical="true">
+
+                <Button
+                    android:id="@+id/play_btn"
+                    android:layout_width="18dp"
+                    android:layout_height="21dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@mipmap/icon_edit_play" />
+
+            </RelativeLayout>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/ic_span" />
+
+        </RelativeLayout>
+
+        <RadioGroup
+            android:id="@+id/rg_noise"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_below="@id/timeline_edit_layout"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/none"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="@dimen/dp10"
+                android:background="@drawable/activity_edit_noise_item_no_selector"
+                android:button="@null"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/noise_level_one"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="@dimen/dp10"
+                android:background="@drawable/activity_edit_noise_item_selector"
+                android:button="@null"
+                android:checked="false"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/white"
+
+                />
+
+            <RadioButton
+                android:id="@+id/noise_level_two"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="@dimen/dp10"
+                android:background="@drawable/activity_edit_noise_item_selector"
+                android:button="@null"
+                android:checked="false"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="@color/white"
+
+                />
+
+            <RadioButton
+                android:id="@+id/noise_level_three"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="@dimen/dp10"
+                android:background="@drawable/activity_edit_noise_item_selector"
+                android:button="@null"
+                android:checked="false"
+                android:gravity="center"
+                android:text="3"
+                android:textColor="@color/white"
+
+                />
+
+            <RadioButton
+                android:id="@+id/noise_level_four"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="@dimen/dp10"
+                android:background="@drawable/activity_edit_noise_item_selector"
+                android:button="@null"
+                android:checked="false"
+                android:gravity="center"
+                android:text="4"
+                android:textColor="@color/white"
+
+                />
+        </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@id/volumeFinish"
+            android:background="#1AFFFFFF" />
+
+        <ImageView
+            android:id="@+id/volumeFinish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/dp15"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginTop="@dimen/dp15"
+            android:layout_marginEnd="@dimen/dp15"
+            android:layout_marginRight="@dimen/dp15"
+            android:layout_marginBottom="@dimen/dp15"
+            android:background="@mipmap/icon_confirm" />
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".capturescene.BackgroundCaptureSceneFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp50"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp13"
+        android:layout_below="@+id/recyclerView"
+        android:layout_marginTop="40dp"
+        android:text="@string/tips_cs"
+        android:textColor="#B4B4B4"
+        android:textSize="@dimen/sp12" />
+
+    <TextView
+        android:id="@+id/tv_text_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recyclerView"
+        android:layout_marginTop="@dimen/dp40"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="13dp"
+        android:drawableLeft="@mipmap/reset_cs"
+        android:drawablePadding="7dp"
+        android:gravity="center"
+        android:text="@string/reset"
+        android:textColor="#B4B4B4"
+        android:textSize="11sp" />
+
+
+</RelativeLayout>

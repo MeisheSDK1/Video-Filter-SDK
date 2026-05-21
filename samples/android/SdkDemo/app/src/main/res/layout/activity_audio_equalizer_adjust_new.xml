@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#ff242728">
+  <!--  <com.meishe.sdkdemo.edit.audio.view.AudioEqualizerAdjustItemView
+        android:id="@+id/audio_adjust_item_1"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        />-->
+    <LinearLayout
+        android:id="@+id/ll_enum"
+        android:layout_width="21dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="音量"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="20"
+            android:textColor="@color/white_8"
+            android:textSize="8sp"
+            android:layout_marginTop="@dimen/dp25"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="bottom|center"
+            android:text="-20"
+            android:textColor="@color/white_8"
+            android:textSize="8sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom|center"
+            android:text="频段"
+            android:textColor="@color/ff9A9A9A"
+            android:textSize="10sp"
+            android:layout_marginTop="@dimen/dp20"
+            />
+    </LinearLayout>
+    <com.meishe.sdkdemo.edit.audio.view.ConflictRecyclerView
+        android:id="@+id/recycler_audio_equalizer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+</LinearLayout>

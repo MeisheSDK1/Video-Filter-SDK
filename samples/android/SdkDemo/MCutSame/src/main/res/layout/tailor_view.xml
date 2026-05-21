@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_px_231">
+
+    <com.meishe.cutsame.view.MultiThumbnailSequenceView2
+        android:id="@+id/tailor_view_sequence"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_195"
+        android:layout_centerVertical="true"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
+
+    <View
+        android:id="@+id/tailor_view_cover"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_195"
+        android:layout_centerVertical="true" />
+
+    <View
+        android:id="@+id/tailor_view_scroller"
+        android:layout_width="@dimen/dp_px_6"
+        android:layout_height="match_parent"
+        android:layout_alignStart="@+id/tailor_view_cover"
+        android:layout_alignLeft="@+id/tailor_view_cover"
+        android:background="@color/white" />
+</RelativeLayout>

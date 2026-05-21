@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/beauty_makeup_item_list"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="13dp" />
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/makeup_tab"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/white"
+        android:visibility="visible"
+        android:layout_marginTop="15dp"
+        app:tabIndicatorColor="@color/blue_63"
+        app:tabIndicatorFullWidth="false"
+        app:tabMinWidth="20dp"
+        app:tabMode="scrollable"
+        app:tabRippleColor="@android:color/transparent" />
+
+</LinearLayout>

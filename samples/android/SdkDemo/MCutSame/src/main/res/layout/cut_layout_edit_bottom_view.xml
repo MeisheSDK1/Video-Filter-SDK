@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_root_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/tv_caption"
+        android:layout_width="match_parent"
+        android:padding="@dimen/dp_px_10"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="@color/color_fcffffff"
+        android:textSize="@dimen/sp_px_90" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_px_30"
+        android:layout_marginLeft="@dimen/dp_px_30"
+        android:layout_marginEnd="@dimen/dp_px_30"
+        android:layout_marginRight="@dimen/dp_px_30"
+        android:layout_marginBottom="@dimen/dp_px_20"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_caption"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_px_90"
+            android:layout_marginEnd="@dimen/dp_px_30"
+            android:layout_marginRight="@dimen/dp_px_30"
+            android:layout_weight="1"
+            android:background="@color/cut_dialog_edit_background"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textColor="@color/gray_a4a"
+            android:textSize="@dimen/sp_px_52"
+            tools:ignore="LabelFor" />
+
+        <Button
+            android:id="@+id/bt_confirm"
+            android:layout_width="@dimen/dp_px_150"
+            android:layout_height="@dimen/dp_px_90"
+            android:background="@drawable/red_rect"
+            android:padding="0dp"
+            android:text="@string/cut_compile_complete"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</LinearLayout>

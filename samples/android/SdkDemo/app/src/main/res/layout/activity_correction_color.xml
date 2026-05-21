@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.meishe.sdkdemo.edit.clipEdit.correctionColor.CorrectionColorActivity">
+
+    <com.meishe.sdkdemo.edit.view.CustomTitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/spaceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <RelativeLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_height"
+        android:background="#ff242728">
+
+        <!--其他调节-->
+        <RelativeLayout
+            android:id="@+id/ll_seek"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_above="@id/colorTypeRv"
+            android:layout_marginBottom="@dimen/dp30"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/colorResetImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp20"
+                android:text="@string/reset"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+
+            <com.meishe.base.view.MagicProgress
+                android:id="@+id/colorSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginRight="@dimen/dp20"
+                android:layout_toRightOf="@+id/colorResetImageView"
+                android:focusable="true"
+                android:progressDrawable="@drawable/seekbar"
+                android:thumb="@drawable/beauty_seek_thumb"
+                app:textSizeMagic="@dimen/sp_px_33" />
+
+        </RelativeLayout>
+
+        <com.meishe.sdkdemo.edit.view.DenoiseAdjustView
+            android:id="@+id/denoise_adjust"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_above="@id/colorTypeRv"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/colorTypeRv"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_above="@id/view_divide"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp20" />
+
+        <View
+            android:id="@+id/view_divide"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/correctionColorFinish"
+            android:background="#1AFFFFFF" />
+
+        <ImageView
+            android:id="@+id/correctionColorFinish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/dp15"
+            android:background="@mipmap/icon_confirm" />
+    </RelativeLayout>
+</LinearLayout>

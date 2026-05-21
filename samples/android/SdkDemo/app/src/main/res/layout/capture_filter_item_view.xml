@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.graphics.Color" />
+
+        <variable
+            name="filterInfo"
+            type="com.meishe.sdkdemo.capture.bean.EffectInfo" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rl_cover"
+            android:layout_width="@dimen/dp_px_150"
+            android:layout_height="@dimen/dp_px_150"
+            android:layout_marginLeft="@dimen/dp_px_15">
+
+            <com.meishe.base.view.RoundImageView
+                android:id="@+id/riv_cover"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                app:url="@{filterInfo.coverUrl}"
+                app:x_radius="@dimen/dp_px_24"
+                app:y_radius="@dimen/dp_px_24" />
+
+            <ImageView
+                visible="@{filterInfo.isAdjusted==1}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/riv_cover"
+                android:layout_alignTop="@id/riv_cover"
+                android:src="@mipmap/icon_fx_djusted" />
+
+            <com.meishe.base.view.RoundImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignLeft="@id/riv_cover"
+                android:layout_alignTop="@id/riv_cover"
+                android:layout_alignRight="@id/riv_cover"
+                android:layout_alignBottom="@+id/riv_cover"
+                android:layout_centerHorizontal="true"
+                android:background="@color/color_D9A5CFFF"
+                android:padding="13dp"
+                android:src="@mipmap/icon_adjust"
+                android:visibility="@{filterInfo.select?View.VISIBLE:View.GONE}"
+                app:x_radius="@dimen/dp_px_24"
+                app:y_radius="@dimen/dp_px_24" />
+
+            <com.meishe.sdkdemo.capturescene.view.CircleBarView
+                android:id="@+id/item_cs_download"
+                android:layout_width="@dimen/dp13"
+                android:layout_height="@dimen/dp13"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="@dimen/dp_px_9"
+                android:layout_marginBottom="@dimen/dp_px_9"
+                android:background="@mipmap/icon_download"
+                android:visibility="@{filterInfo.download?View.GONE:View.VISIBLE}"
+                app:CBNoneProgressColor="@color/menu_selected"
+                app:CBProgress="@{filterInfo.progress}"
+                app:CBProgressColor="@color/dy_text_after_music_seleeted" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_cover"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp10"
+            android:text="@{filterInfo.name}"
+            android:textColor="@{filterInfo.select?Color.parseColor(filterInfo.textSelectColor): Color.parseColor(filterInfo.textDefaultColor)}"
+            android:textSize="@dimen/dp8" />
+
+    </RelativeLayout>
+</layout>

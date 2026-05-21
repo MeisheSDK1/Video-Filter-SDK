@@ -1,0 +1,18 @@
+<resources >
+    <string name="app_name">engine</string>
+    <string name="general">general</string>
+    <string name="assets_type_name_theme">主题</string>
+    <string name="assets_type_name_filter">滤镜</string>
+    <string name="assets_type_name_caption">字幕</string>
+    <string name="assets_type_name_sticker">贴纸</string>
+    <string name="assets_type_name_transition">转场</string>
+    <string name="assets_type_name_comp_caption">组合字幕</string>
+    <string name="assets_type_name_anim_in">入场动画</string>
+    <string name="assets_type_name_anim_out">出场动画</string>
+    <string name="assets_type_name_anim_com">组合动画</string>
+    <string name="assets_type_name_effect">特效</string>
+    <string name="assets_type_name_flower">花字</string>
+    <string name="assets_type_name_bubble">气泡</string>
+    <string name="assets_type_name_caption_animation">字幕动画</string>
+    <string name="user_hint_assets_net_error">网络错误,请检查网络</string>
+</resources>

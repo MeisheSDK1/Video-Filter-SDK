@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="@dimen/dp_px_30"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_track_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_px_30" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_px_159"
+        android:layout_marginRight="@dimen/dp_px_69"
+        android:background="@mipmap/ic_cut_same_export_template_line"
+        android:layout_centerVertical="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_px_30"
+        android:layout_marginStart="@dimen/dp_px_159"
+        android:layout_marginEnd="@dimen/dp_px_69"
+        android:contentDescription="@null" />
+
+
+</RelativeLayout>

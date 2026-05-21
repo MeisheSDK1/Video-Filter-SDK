@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="60dp"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/filter_item_layout"
+        android:layout_width="49dp"
+        android:layout_height="49dp">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/imageAsset"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/fx_item_radius_shape_unselect" />
+
+        <ImageView
+            android:id="@+id/assetAdjust"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_fx_djusted"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/assetShadow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.5" />
+
+        <ImageView
+            android:id="@+id/prop_3d_image"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_alignBottom="@+id/imageAsset"
+            android:background="@drawable/prop_3d" />
+
+        <ImageView
+            android:id="@+id/imageAsset_selected"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/nameAsset"
+        android:layout_width="@dimen/dp50"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:textColor="@color/ccffffff"
+        android:textSize="@dimen/sp12" />
+
+</LinearLayout>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:background="@color/colorTranslucent"
+    tools:background="@color/color_FF242728">
+
+    <!--进度条 progress-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/beauty_edit_progress_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_px_45"
+        android:layout_marginLeft="@dimen/dp_px_45"
+        android:layout_marginEnd="@dimen/dp_px_150"
+        android:layout_marginRight="@dimen/dp_px_150"
+        android:paddingBottom="@dimen/dp_px_15"
+        app:layout_constraintBottom_toTopOf="@+id/beauty_edit_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+
+        <com.meishe.arscene.view.SeekBarView
+            android:id="@+id/beauty_edit_sub_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/beauty_edit_main_seekbar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <com.meishe.arscene.view.SeekBarView
+            android:id="@+id/beauty_edit_main_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/beauty_edit_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_600"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:background="@color/color_FF242728">
+
+        <com.meishe.third.tablayout.SlidingTabLayout
+            android:id="@+id/beauty_edit_tab"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_px_100"
+            android:layout_marginStart="@dimen/dp_px_24"
+            android:layout_marginLeft="@dimen/dp_px_24"
+            android:layout_marginTop="@dimen/dp_px_39"
+            app:layout_constraintBottom_toTopOf="@id/beauty_edit_pager"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tl_indicator_color="@color/black"
+            app:tl_indicator_corner_radius="@dimen/dp_px_6"
+            app:tl_indicator_height="@dimen/dp_px_5"
+            app:tl_indicator_width="@dimen/dp_px_45"
+            app:tl_tab_padding="@dimen/dp_px_30"
+            app:tl_textSelectColor="@color/black"
+            app:tl_textSize="@dimen/sp_px_39"
+            app:tl_textUnselectedColor="@color/color_888888" />
+
+        <ImageView
+            android:id="@+id/beauty_edit_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_px_45"
+            android:contentDescription="@null"
+            android:src="@mipmap/icon_beauty_back"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/beauty_edit_pager"
+            app:layout_constraintTop_toBottomOf="@+id/beauty_edit_tab" />
+
+        <com.meishe.base.view.CustomViewPager
+            android:id="@+id/beauty_edit_pager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_px_30"
+            app:layout_constraintBottom_toTopOf="@id/beauty_edit_reset"
+            app:layout_constraintLeft_toRightOf="@id/beauty_edit_back"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/beauty_edit_tab" />
+
+        <TextView
+            android:id="@+id/beauty_edit_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_px_45"
+            android:layout_marginBottom="@dimen/dp_px_90"
+            android:drawableStart="@mipmap/icon_reset"
+            android:drawableLeft="@mipmap/icon_reset"
+            android:drawablePadding="@dimen/dp_px_12"
+            android:gravity="center_vertical"
+            android:text="@string/reset"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_px_30"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/beauty_edit_pager" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

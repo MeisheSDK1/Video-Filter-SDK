@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.meishe.sdkdemo"
+    android:installLocation="auto">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 推荐的权限 -->
+    <!-- 添加如下权限，以便使用更多的第三方SDK和更精准的统计数据 -->
+    <!-- Add the following permissions for more access to third party SDKS and more accurate statistics -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 为了修复 在读取包含位置信息的视频产生ANR的问题 -->
+    <!-- To fix an issue that generated ANR when reading videos containing location information -->
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <!--    <uses-permission-->
+    <!--        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"-->
+    <!--        android:maxSdkVersion="32" />-->
+
+    <!--    33适配-->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+
+    <!--    34适配-->
+    <!--    <uses-permission android:name="android.permission.READ_MEDIA_VISUAL_USER_SELECTED" />-->
+
+    <application
+        android:name=".MSApplication"
+        android:allowBackup="false"
+        android:icon="${app_icon}"
+        android:label="${app_name}"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:label,android:allowBackup">
+        <activity
+            android:name=".activity.BeautyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".quicksplicing.FileQuickSplicingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".quicksplicing.QuickSplicingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.makeup.BeautyMakeupActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.createPic.CreatePicActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".activity.CutSameActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.background.BackgroundActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".themeshoot.ThemeEditCaptionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/LuncherActivityTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".capture.CaptureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".selectmedia.SelectMediaActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.VideoEditActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".activity.SettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".makecover.MakeCoverActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".musicLyrics.MusicLyricsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".sequenceNesting.SequenceNestingActivity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme">
+            <intent-filter>
+                <action android:name="${applicationId}.SequenceNestingActivity" />
+
+                <category android:name="com.meishe.sdkdemo.sequenceNesting.sequenceNesting.SequenceNestingActivity.category" />
+                <!-- 必须加上,否则报错 Must be added, otherwise an error will be reported-->
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".edit.clipEdit.EditActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".utils.permission.PermissionsActivity"
+            android:theme="@style/TranslucentFullScreenTheme" />
+        <activity
+            android:name=".edit.filter.FilterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.filter.ClipFilterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.theme.ThemeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".edit.clipEdit.spilt.SpiltActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.clipEdit.trim.TrimActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.animatesticker.AnimatedStickerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.Caption.CaptionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.transition.TransitionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".edit.clipEdit.speed.SpeedActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.Caption.CaptionStyleActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.PROCESS_TEXT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity> <!-- android:windowSoftInputMode="adjustPan" -->
+        <activity
+            android:name=".edit.music.MusicActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.music.SelectMusicActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.clipEdit.correctionColor.CorrectionColorActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.clipEdit.volume.VolumeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.clipEdit.adjust.AdjustActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.clipEdit.photo.DurationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.clipEdit.photo.PhotoMovementActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.record.RecordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.animatesticker.customsticker.CustomAnimateStickerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.animatesticker.customsticker.CustomAnimateStickerEffectActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.watermark.WaterMarkActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".douvideo.DouVideoCaptureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".douvideo.DouVideoTrimActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".douvideo.DouVideoEditActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.watermark.SingleClickActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".musicLyrics.MultiVideoSelectActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".particle.ParticleCaptureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".particle.ParticlePreviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".particle.ParticleEditActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".particle.SelectVideoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".picinpic.PictureInPictureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".capturescene.CaptureSceneActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".picinpic.PicturInPicturePreviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".download.AssetDownloadActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".capturescene.PreviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".feedback.FeedBackActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".boomrang.BoomRangActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".boomrang.BoomRangPreviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".flipcaption.FlipCaptionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".flipcaption.FlipCaptionEditActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".superzoom.SuperZoomActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".superzoom.SuperZoomPreviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.compoundcaption.CompoundCaptionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.compoundcaption.CompoundCaptionStyleActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".main.MainWebViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".glitter.GlitterEffectActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".photoalbum.PhotoAlbumActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".edit.livephoto.LivePhotoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".photoalbum.PhotoAlbumPreviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <!-- mimoDemo -->
+        <activity
+            android:name=".mimodemo.CompoundCaptionEditorActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".mimodemo.TrimEditActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".mimodemo.MimoEditActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".mimodemo.MimoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".themeshoot.ThemeSelectActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".themeshoot.ThemeCaptureActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".themeshoot.ThemePreviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".mimodemo.mediapaker.SelectMediaActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme" />
+        <activity
+            android:name=".mimodemo.common.permission.PermissionsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TranslucentFullScreenTheme" />
+        <activity
+            android:name=".edit.anim.AnimationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".edit.mask.MaskActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".edit.animatesticker.AnimatedStickerAnimationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".edit.audio.AudioEqualizerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".edit.clipEdit.animatedSticker.ClipAnimatedStickerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".edit.clipEdit.animatedSticker.ClipAnimatedStickerAnimationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".edit.clipEdit.caption.ClipCaptionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".edit.clipEdit.caption.ClipCaptionStyleActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".edit.clipEdit.noise.NoiseSuppressionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".urledit.UrlMaterialActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAnimationTheme"
+            android:windowSoftInputMode="adjustResize|adjustPan" />
+    </application>
+
+</manifest>

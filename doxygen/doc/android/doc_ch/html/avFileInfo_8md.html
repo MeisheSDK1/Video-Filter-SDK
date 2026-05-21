@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>美摄SDK For Android: 音视频文件信息</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">美摄SDK For Android
+   &#160;<span id="projectnumber">3.16.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">音视频文件信息 </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="el" href="classcom_1_1meicam_1_1sdk_1_1NvsAVFileInfo.html">NvsAVFileInfo</a> 类即音视频文件信息类，包括音视频的时长，文件类型，数据速率，视频流数目，音频流数目，以及对应的接口来获取其他属性信息。对用户来说，在添加完所有片段之后， 要获取某个片段的音视频文件信息，则需要找到对应的音视频片段对象。获取音视频片段对象的操作如下： <br  />
+1.通过时间线对象，获取相应的视频轨道<a class="el" href="classcom_1_1meicam_1_1sdk_1_1NvsTimeline.html#ac4ef087dd4023536246ad9d8e73481c4">getVideoTrackByIndex()</a>或者音频轨道<a class="el" href="classcom_1_1meicam_1_1sdk_1_1NvsTimeline.html#ade317980551c4942e3596edcccec1b45">getAudioTrackByIndex()</a>。 <br  />
+2.通过轨道对象，获取相应的视频片段<a class="el" href="classcom_1_1meicam_1_1sdk_1_1NvsVideoTrack.html#add8391a7d722bff75f2864ffc3d39272">getClipWithIndex()</a>或者音频片段<a class="el" href="classcom_1_1meicam_1_1sdk_1_1NvsAudioTrack.html#afbe656901e8909ff59c512a56727b699">getClipWithIndex()</a>，即得到音视频片段对象。</p>
+<p>每个片段对象都可以获取此片段的文件路径<a class="el" href="classcom_1_1meicam_1_1sdk_1_1NvsClip.html#a184d719d2d382733b77ae3df19523291">getFilePath()</a>， 然后通过NvsStreamingContext类的接口 <a class="el" href="classcom_1_1meicam_1_1sdk_1_1NvsStreamingContext.html#aa2ee8fbf633d1d1f18beb74d523b24cd">getAVFileInfo()</a>接口， 即可获取相应的文件属性信息。注意：getAVFileInfo待输入的参数即所获取的片段对象的文件路径。 </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_181818">
+
+    <ImageView
+        android:id="@+id/url_close"
+        android:layout_width="@dimen/dp_px_150"
+        android:layout_height="@dimen/dp_px_150"
+        android:layout_marginTop="@dimen/dp_px_90"
+        android:contentDescription="@null"
+        android:padding="@dimen/dp_px_48"
+        android:src="@mipmap/icon_edit_back"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.meishe.third.tablayout.SlidingTabLayout
+        android:id="@+id/url_tab_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_px_100"
+        app:layout_constraintBottom_toBottomOf="@id/url_close"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/url_close"
+        app:tl_indicator_color="@color/red_ff365"
+        app:tl_indicator_height="@dimen/dp_px_6"
+        app:tl_indicator_width="@dimen/dp_px_60"
+        app:tl_textSelectColor="@color/white"
+        app:tl_textSize="@dimen/sp_px_39"
+        app:tl_textUnselectedColor="@color/white_5" />
+
+    <com.meishe.sdkdemo.edit.music.CustomViewPager
+        android:id="@+id/url_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/select_url_music_trim"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/url_close" />
+
+    <Button
+        android:id="@+id/url_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_px_120"
+        android:layout_marginBottom="@dimen/dp_px_45"
+        android:background="@color/ms_blue"
+        android:drawableStart="@mipmap/icon_film"
+        android:drawablePadding="@dimen/dp_px_10"
+        android:paddingStart="@dimen/dp_px_60"
+        android:paddingEnd="@dimen/dp_px_60"
+        android:text="@string/url_edit"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_px_36"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <com.meishe.sdkdemo.view.TrimMusicView
+        android:id="@+id/select_url_music_trim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/url_pager" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

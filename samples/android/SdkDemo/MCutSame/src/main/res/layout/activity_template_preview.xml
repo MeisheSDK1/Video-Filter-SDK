@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <VideoView
+        android:id="@+id/video_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@color/black" />
+
+    <ImageView
+        android:id="@+id/video_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:visibility="gone" />
+
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="@dimen/dp_px_70"
+        android:layout_height="@dimen/dp_px_70"
+        android:layout_marginStart="@dimen/dp_px_60"
+        android:layout_marginLeft="@dimen/dp_px_60"
+        android:layout_marginTop="@dimen/dp_px_120"
+        android:contentDescription="@null"
+        android:padding="@dimen/dp_px_10"
+        android:src="@mipmap/ic_back_white" />
+
+    <ImageView
+        android:id="@+id/iv_stop_hint"
+        android:layout_width="@dimen/dp_px_180"
+        android:layout_height="@dimen/dp_px_180"
+        android:layout_centerInParent="true"
+        android:contentDescription="@null"
+        android:src="@drawable/fragment_base_video"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_px_60"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/dp_px_54"
+        android:layout_marginLeft="@dimen/dp_px_54"
+        android:layout_marginBottom="@dimen/dp_px_540"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_px_45"
+        tools:ignore="RelativeOverlap" />
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="@dimen/dp_px_720"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/dp_px_57"
+        android:layout_marginLeft="@dimen/dp_px_57"
+        android:layout_marginBottom="@dimen/dp_px_450"
+        android:gravity="center_vertical"
+        android:maxLines="5"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_px_36" />
+
+    <TextView
+        android:id="@+id/tv_used_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/dp_px_50"
+        android:layout_marginLeft="@dimen/dp_px_50"
+        android:layout_marginBottom="@dimen/dp_px_210"
+        android:background="@drawable/bg_rectangle_round_black_282828"
+        android:maxWidth="@dimen/dp_px_720"
+        android:paddingStart="@dimen/dp_px_15"
+        android:paddingLeft="@dimen/dp_px_15"
+        android:paddingTop="@dimen/dp_px_5"
+        android:paddingEnd="@dimen/dp_px_15"
+        android:paddingRight="@dimen/dp_px_15"
+        android:paddingBottom="@dimen/dp_px_5"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_px_30"
+        tools:ignore="RelativeOverlap" />
+
+    <TextView
+        android:id="@+id/tv_clip"
+        android:layout_width="@dimen/dp_px_210"
+        android:layout_height="@dimen/dp_px_210"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="@dimen/dp_px_108"
+        android:layout_marginRight="@dimen/dp_px_108"
+        android:layout_marginBottom="@dimen/dp_px_150"
+        android:background="@drawable/bg_round_red365"
+        android:gravity="center"
+        android:text="@string/clip_same_template_start"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_px_45" />
+</RelativeLayout>

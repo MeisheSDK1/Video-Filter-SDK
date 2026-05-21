@@ -1,0 +1,5 @@
+rootProject.name = 'SdkDemo'
+include ':app', ':libBase', ':libEngine', ':libNet'
+include ':MArScene'
+include ':MCutSame'
+include ':MMakeup'

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Base</string>
+    <string name="third_quick_loading">loading&#160;&#160;&#160;</string>
+    <string name="third_quick_load_failed">fail to load,please click to retry</string>
+    <string name="third_quick_load_end">no more data</string>
+    <string name="videoEdit">video edit</string>
+    <string name="cut_dialog_resolution_tip3">(recommend)</string>
+    <string name="back">back</string>
+    <string name="radius">radius</string>
+    <string name="reset">reset</string>
+    <string name="exit_app">Press again to exit the program</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+</resources>

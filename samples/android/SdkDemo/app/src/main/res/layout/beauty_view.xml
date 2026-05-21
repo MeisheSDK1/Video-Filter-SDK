@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <!--美颜seekbar-->
+    <RelativeLayout
+        android:id="@+id/header_menus_rl_beauty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:id="@+id/ll_sub_seek_container"
+            android:layout_width="260dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_radius"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginTop="@dimen/dp5"
+                android:shadowColor="#33000000"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="3.0"
+                android:text="半径"
+                android:textColor="#ffffffff"
+                android:textSize="11sp" />
+
+
+            <com.meishe.base.view.MagicProgress
+                android:id="@+id/beauty_sub_sb"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:focusable="true"
+                android:progressDrawable="@drawable/seekbar"
+                android:thumb="@drawable/beauty_seek_thumb"
+                app:textSizeMagic="12sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_capture_contrast"
+            android:layout_width="@dimen/dp25"
+            android:layout_height="@dimen/dp25"
+            android:layout_below="@+id/ll_sub_seek_container"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginTop="15dp"
+            android:background="@mipmap/ic_capture_contrast"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/ll_beauty_seek"
+            android:layout_width="260dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/ll_sub_seek_container"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_beauty_sb"
+                android:layout_width="0.1dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="@string/beauty_blur_strength"
+                android:textColor="@color/ccffffff"
+                android:textSize="@dimen/sp10"
+                android:visibility="gone"
+                tools:ignore="Suspicious0dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginTop="@dimen/dp5"
+                android:shadowColor="#33000000"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="3.0"
+                android:text="强度"
+                android:textColor="#ffffffff"
+                android:textSize="11sp" />
+
+            <com.meishe.base.view.MagicProgress
+                android:id="@+id/beauty_sb"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:focusable="true"
+                android:progressDrawable="@drawable/seekbar"
+                android:thumb="@drawable/beauty_seek_thumb"
+                app:textSizeMagic="12sp" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_beauty_a"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tv_beauty_b"
+            android:background="@drawable/bg_left_corners_white"
+            android:gravity="center"
+            android:text="@string/beauty_a"
+            android:textColor="@color/blue_63"
+            android:textSize="12sp"
+            android:visibility="invisible"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_beauty_b"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bg_right_corners_blue63"
+            android:gravity="center"
+            android:text="@string/beauty_b"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="invisible"
+            tools:visibility="visible" />
+        <!--美型seekbar-->
+        <LinearLayout
+            android:id="@+id/seek_beauty_shape"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/shape_text"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="-100%"
+                android:textColor="@color/ccffffff"
+                android:textSize="@dimen/sp10"
+                android:visibility="invisible" />
+
+            <com.meishe.base.view.MagicProgress
+                android:id="@+id/shape_sb"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:progressDrawable="@drawable/seekbar"
+                android:thumb="@drawable/beauty_seek_thumb"
+                android:visibility="invisible"
+                app:textSizeMagic="12sp" />
+
+            <TextView
+                android:id="@+id/shape_text2"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/ccffffff"
+                android:textSize="@dimen/sp10"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <!--微整形seekbar-->
+        <LinearLayout
+            android:id="@+id/rl_small_seek_root_view"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/small_seek_text"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="-100%"
+                android:textColor="@color/ccffffff"
+                android:textSize="@dimen/sp10"
+                android:visibility="invisible" />
+
+            <com.meishe.base.view.MagicProgress
+                android:id="@+id/small_seek"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:progressDrawable="@drawable/seekbar"
+                android:thumb="@drawable/beauty_seek_thumb"
+                android:visibility="invisible"
+                app:textSizeMagic="12sp" />
+
+            <TextView
+                android:id="@+id/small_seek_text2"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/ccffffff"
+                android:textSize="@dimen/sp10"
+                android:visibility="invisible" />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- 底部-->
+    <RelativeLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="185dp"
+        android:layout_below="@+id/header_menus_rl_beauty"
+        android:background="#ffffff">
+
+        <LinearLayout
+            android:id="@+id/ll_tab"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal">
+
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_gravity="bottom"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:orientation="vertical">-->
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/beauty_style_tab_btn"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:background="@color/colorTranslucent"-->
+            <!--                    android:gravity="center"-->
+            <!--                    android:text="@string/skin_beauty_style"-->
+            <!--                    android:textColor="@color/menu_item_selector"-->
+            <!--                    android:textSize="15sp" />-->
+
+            <!--                <View-->
+            <!--                    android:id="@+id/v_skin_beauty_style_line"-->
+            <!--                    android:layout_width="20dp"-->
+            <!--                    android:layout_height="2dp"-->
+            <!--                    android:layout_gravity="center_horizontal"-->
+            <!--                    android:layout_marginTop="5dp" />-->
+            <!--            </LinearLayout>-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/beauty_tab_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorTranslucent"
+                    android:gravity="center"
+                    android:text="@string/skin_beauty"
+                    android:textColor="@color/menu_item_selector"
+                    android:textSize="15sp" />
+
+                <View
+                    android:id="@+id/v_skin_beauty_line"
+                    android:layout_width="20dp"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/shape_tab_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorTranslucent"
+                    android:gravity="center"
+                    android:text="@string/facetype"
+                    android:textAllCaps="false"
+                    android:textColor="@color/menu_item_selector"
+                    android:textSize="15sp" />
+
+                <View
+                    android:id="@+id/v_shape_beauty_line"
+                    android:layout_width="20dp"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/small_tab_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorTranslucent"
+                    android:gravity="center"
+                    android:text="@string/small_change"
+                    android:textAllCaps="false"
+                    android:textColor="@color/menu_item_selector"
+                    android:textSize="15sp" />
+
+                <View
+                    android:id="@+id/v_small_change_line"
+                    android:layout_width="20dp"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--        &lt;!&ndash;风格功能&ndash;&gt;-->
+        <!--        <RelativeLayout-->
+        <!--            android:id="@+id/beauty_style_rl"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="125dp"-->
+        <!--            android:layout_below="@+id/ll_tab"-->
+        <!--            android:layout_marginTop="@dimen/beauty_top_margin"-->
+        <!--            android:visibility="gone">-->
+
+        <!--            <androidx.recyclerview.widget.RecyclerView-->
+        <!--                android:id="@+id/beauty_style_rv"-->
+        <!--                android:layout_marginLeft="5dp"-->
+        <!--                android:layout_marginRight="5dp"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="80dp"-->
+        <!--                android:layout_centerHorizontal="true" />-->
+
+        <!--        </RelativeLayout>-->
+
+        <!--美颜功能-->
+        <RelativeLayout
+            android:id="@+id/beauty_select_rl"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:layout_below="@+id/ll_tab"
+            android:layout_marginTop="@dimen/beauty_top_margin">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/beauty_list_rv"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/dp20">
+
+                <LinearLayout
+                    android:id="@+id/beauty_reset_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="13dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/beauty_reset_icon"
+                        android:layout_width="25dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center"
+                        android:src="@mipmap/beauty_shape_reset" />
+
+                    <TextView
+                        android:id="@+id/beauty_reset_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/reset"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/adjust_color_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|right"
+                        android:gravity="right"
+                        android:text="@string/correctionColor"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+
+                    <Switch
+                        android:id="@+id/adjust_color_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:checked="true"
+                        android:maxHeight="@dimen/dp15"
+                        android:minHeight="@dimen/dp15"
+                        android:paddingLeft="@dimen/dp10"
+                        android:paddingRight="@dimen/dp10"
+                        android:switchMinWidth="28dp"
+                        android:textOff=""
+                        android:textOn=""
+                        android:thumb="@drawable/beauty_thumb"
+                        android:thumbTextPadding="8dp"
+                        android:track="@drawable/beauty_track" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/sharpen_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|right"
+                        android:gravity="right"
+                        android:text="@string/sharpness"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+
+                    <Switch
+                        android:id="@+id/sharpen_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:maxHeight="@dimen/dp15"
+                        android:minHeight="@dimen/dp15"
+                        android:paddingLeft="@dimen/dp10"
+                        android:paddingRight="@dimen/dp10"
+                        android:switchMinWidth="28dp"
+                        android:textOff=""
+                        android:textOn=""
+                        android:thumb="@drawable/beauty_thumb"
+                        android:thumbTextPadding="8dp"
+                        android:track="@drawable/beauty_track" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/beauty_switch_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_weight="2"
+                    android:gravity="right"
+                    android:text="@string/beauty_open"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+                <Switch
+                    android:id="@+id/beauty_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:maxHeight="@dimen/dp15"
+                    android:minHeight="@dimen/dp15"
+                    android:paddingLeft="@dimen/dp10"
+                    android:paddingRight="@dimen/dp10"
+                    android:switchMinWidth="28dp"
+                    android:textOff=""
+                    android:textOn=""
+                    android:thumb="@drawable/beauty_thumb"
+                    android:thumbTextPadding="8dp"
+                    android:track="@drawable/beauty_track" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!--美型功能-->
+        <RelativeLayout
+            android:id="@+id/shape_select_rl"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:layout_below="@+id/ll_tab"
+            android:layout_marginTop="@dimen/beauty_top_margin"
+            android:visibility="gone">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/beauty_shape_item_list"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal"
+                android:paddingBottom="18.5dp">
+
+                <LinearLayout
+                    android:id="@+id/beauty_shape_reset_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="13dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/beauty_shape_reset_icon"
+                        android:layout_width="25dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center"
+                        android:src="@mipmap/beauty_shape_reset" />
+
+                    <TextView
+                        android:id="@+id/beauty_shape_reset_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/reset"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/beauty_shape_switch_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/beauty_shape_open"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+                <Switch
+                    android:id="@+id/beauty_shape_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:maxHeight="24dp"
+                    android:minHeight="24dp"
+                    android:paddingLeft="@dimen/dp10"
+                    android:paddingRight="@dimen/dp10"
+                    android:switchMinWidth="45dp"
+                    android:textOff=""
+                    android:textOn=""
+                    android:thumb="@drawable/beauty_thumb"
+                    android:thumbTextPadding="8dp"
+                    android:track="@drawable/beauty_track" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!--微整形功能-->
+        <RelativeLayout
+            android:id="@+id/small_select_rl"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:layout_below="@+id/ll_tab"
+            android:layout_marginTop="@dimen/beauty_top_margin"
+            android:visibility="gone">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/small_shape_item_list"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal"
+                android:paddingBottom="18.5dp">
+
+                <LinearLayout
+                    android:id="@+id/small_shape_reset_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="13dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/small_shape_reset_icon"
+                        android:layout_width="25dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center"
+                        android:src="@mipmap/beauty_shape_reset" />
+
+                    <TextView
+                        android:id="@+id/small_shape_reset_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/reset"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/small_shape_switch_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/small_shape_open"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+                <Switch
+                    android:id="@+id/small_shape_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:maxHeight="24dp"
+                    android:minHeight="24dp"
+                    android:paddingLeft="@dimen/dp10"
+                    android:paddingRight="@dimen/dp10"
+                    android:switchMinWidth="45dp"
+                    android:textOff=""
+                    android:textOn=""
+                    android:thumb="@drawable/beauty_thumb"
+                    android:thumbTextPadding="8dp"
+                    android:track="@drawable/beauty_track" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

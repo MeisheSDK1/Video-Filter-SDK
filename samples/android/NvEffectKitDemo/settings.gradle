@@ -1,0 +1,12 @@
+include ':app'
+include ':libBase'
+include ':libBeauty'
+include ':libMakeup'
+
+File convertDir = new File(rootDir.getAbsolutePath() + "/../NvEffectKit/")
+if (convertDir.exists()) {
+    print("NvEffectKit exist")
+    include ':NvEffectKit'
+    project(':NvEffectKit').projectDir = convertDir
+    include ':NvEffectKit:nvEffectKit'
+}

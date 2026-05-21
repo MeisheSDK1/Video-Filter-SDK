@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_root_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:paddingStart="@dimen/dp_px_40"
+    android:paddingEnd="@dimen/dp_px_40"
+    android:paddingRight="@dimen/dp_px_40"
+    android:paddingLeft="@dimen/dp_px_40"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_replace"
+        android:layout_width="@dimen/dp_px_150"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:drawableTop="@mipmap/ct_edit_replace"
+        android:drawablePadding="@dimen/dp_px_10"
+        android:text="@string/replace"
+        android:textColor="@color/color_ff101010"
+        android:textSize="@dimen/sp_px_30" />
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:id="@+id/tv_cut"
+        android:layout_width="@dimen/dp_px_150"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:drawableTop="@mipmap/ct_edit_cut"
+        android:drawablePadding="@dimen/dp_px_10"
+        android:text="@string/cut"
+        android:textColor="@color/color_ff101010"
+        android:textSize="@dimen/sp_px_30" />
+</LinearLayout>

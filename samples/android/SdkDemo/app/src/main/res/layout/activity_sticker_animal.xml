@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.meishe.sdkdemo.edit.view.CustomTitleBar
+        android:id="@+id/sticker_style_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <FrameLayout
+            android:id="@+id/sticker_style_spaceLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.meishe.sdkdemo.edit.view.HorizontalSeekBar
+            android:id="@+id/sticker_style_seek_bar"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:visibility="invisible"
+            app:bigValue="100"
+            app:hasRule="false"
+            app:imageHeight="35dp"
+            app:imageLowPadding="5dp"
+            app:imageWidth="20dp"
+            app:inColor="@color/white"
+            app:leftOutColor="#50E3C2"
+            app:leftTextColor="#50E3C2"
+            app:leftTextSize="10sp"
+            app:lineHeight="2dp"
+            app:rightOutColor="#FC2B55"
+            app:rightTextColor="#FC2B55"
+            app:rightTextSize="10sp"
+            app:unit="s" />
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:id="@+id/sticker_style_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_height"
+        android:background="#ff242728"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/sticker_animal_frame"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#1AFFFFFF" />
+
+        <ImageView
+            android:id="@+id/sticker_style_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/dp_px_45"
+            android:src="@mipmap/icon_confirm" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,238 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
+
+    compileSdkVersion rootProject.android.extCompileSdkVersion
+    defaultConfig {
+        applicationId "com.meishe"
+        minSdkVersion rootProject.android.extMinSdkVersion
+        targetSdkVersion rootProject.android.extTargetSdkVersion
+        versionCode rootProject.config.extVersionCode
+        versionName rootProject.config.extVersionName
+        buildConfigField "String", "UMENG_KEY", "\"62f0dd5a88ccdf4b7ef9781f\""
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        flavorDimensions "versionCode"
+        vectorDrawables.useSupportLibrary = true
+
+        ndk {
+            if (armConfig == 1) {
+                abiFilters "armeabi-v7a", "arm64-v8a"
+            } else if (armConfig == 2) {
+                abiFilters "arm64-v8a"
+            } else if (armConfig == 3) {
+                abiFilters "armeabi-v7a"
+                // 指定要ndk需要兼容的架构(这样其他依赖包里mips,x86,armeabi,arm-v8之类的so会被过滤掉)
+                //Specify the architecture that the ndk needs to be compatible with (so that other dependency packages such as mips,x86,armeabi,arm-v8, etc. are filtered out)
+            }
+        }
+        multiDexEnabled true
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('/home/ms/tools/meishe.jks')
+            storePassword 'app001'
+            keyPassword 'app001'
+            keyAlias 'key0'
+        }
+        debug {
+
+        }
+    }
+
+
+    buildTypes {
+
+        debug {
+            matchingFallbacks = ['debug', 'qa', 'release']
+            applicationIdSuffix ".ms106sdkdemo"
+            buildConfigField "String", "HUMAN_AI_TYPE", "\"MS\""
+            buildConfigField("int", "FACE_MODEL", "106")
+            minifyEnabled false
+            buildConfigField "Boolean", "PRINT_LOG", "true"
+            signingConfig signingConfigs.debug
+            debuggable true
+            manifestPlaceholders = [app_name: "@string/app_name", app_icon: "@mipmap/ic_meishe"]
+        }
+
+        debug240 {
+            matchingFallbacks = ['debug', 'qa', 'release']
+            applicationIdSuffix ".ms240sdkdemo"
+            buildConfigField "String", "HUMAN_AI_TYPE", "\"MS\""
+            buildConfigField("int", "FACE_MODEL", "240")
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            shrinkResources false
+            debuggable true
+            signingConfig signingConfigs.debug
+            manifestPlaceholders = [app_name: "@string/app_name", app_icon: "@mipmap/ic_meishe"]
+        }
+
+        release240 {
+            matchingFallbacks = ['debug', 'qa', 'release']
+            applicationIdSuffix ".ms240sdkdemo"
+            buildConfigField "String", "HUMAN_AI_TYPE", "\"MS\""
+            buildConfigField("int", "FACE_MODEL", "240")
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            shrinkResources false
+            signingConfig signingConfigs.release
+            manifestPlaceholders = [app_name: "@string/app_name", app_icon: "@mipmap/ic_meishe"]
+        }
+
+
+        ///////////////////////////////////////////////下面部分专门用于发版本/////////////////////////////
+
+        //发版本-商店包的配置
+        release {
+            matchingFallbacks = ['debug', 'qa', 'release']
+            applicationIdSuffix ".videoshow"
+            buildConfigField "String", "HUMAN_AI_TYPE", "\"MS\""
+            buildConfigField("int", "FACE_MODEL", "240")
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            shrinkResources false
+            signingConfig signingConfigs.release
+            manifestPlaceholders = [app_name: "@string/app_name", app_icon: "@mipmap/ic_meishe"]
+        }
+
+        //发版本-Meicam senior
+        release_MS_240 {
+            matchingFallbacks = ['debug', 'qa', 'release']
+            applicationIdSuffix "ms240sdkdemo"
+            buildConfigField "String", "HUMAN_AI_TYPE", "\"MS\""
+            buildConfigField("int", "FACE_MODEL", "240")
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            shrinkResources false
+            signingConfig signingConfigs.release
+            manifestPlaceholders = [app_name: "@string/app_name_3", app_icon: "@mipmap/ic_meishe_3"]
+        }
+
+        //发版本-Meicam
+        release_MS_106 {
+            matchingFallbacks = ['debug', 'qa', 'release']
+            applicationIdSuffix "ms106sdkdemo"
+            buildConfigField "String", "HUMAN_AI_TYPE", "\"MS\""
+            buildConfigField("int", "FACE_MODEL", "106")
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            shrinkResources false
+            signingConfig signingConfigs.release
+            manifestPlaceholders = [app_name: "@string/app_name_4", app_icon: "@mipmap/ic_meishe_4"]
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////////
+
+
+    }
+
+    repositories {
+        flatDir {
+            dirs './libs'
+//            , '../../../../extrasdk', extraLibPath + 'extrasdk/sdk/android'
+        }
+    }
+
+    productFlavors {
+        _360 {}
+        tencent {}
+        baidu {}
+        oppo {}
+        vivo {}
+        huawei {}
+        xiaomi {}
+        googleplay {}
+    }
+    //对生成的apk进行一些简单的配置
+    //Perform some simple configuration on the generated apk
+    applicationVariants.all { variant ->
+        print("=== " + variant.buildType.name + " === ")
+        variant.outputs.all { output ->
+            def buildName = "com.meishe"
+            def type = variant.buildType.name
+            def releaseApkName = buildName + '_' + variant.productFlavors.get(0).name + '_' + type + "_" + versionName + '_' + releaseTime() + '.apk'
+            outputFileName = releaseApkName
+        }
+    }
+
+    buildFeatures {
+        //noinspection DataBindingWithoutKapt
+        dataBinding = true
+    }
+}
+
+static def releaseTime() {
+    return new Date().format("yyyy-MM-dd--HH-mm-ss", TimeZone.getTimeZone("GMT+8"))
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation rootProject.ext.dependencies.extAndroidXDesign
+    implementation rootProject.ext.dependencies.extAppcompat
+    implementation rootProject.ext.dependencies.extAppcompatRecycler
+    implementation rootProject.ext.dependencies.extConstraintLayout
+    implementation rootProject.ext.dependencies.extOkHttp
+    implementation rootProject.ext.dependencies.extGoogleGson
+    // glide 4.6.1~4.9.0 (exclude broken version 4.6.0, 4.7.0)
+    implementation rootProject.ext.dependencies.extBumptechGlide
+    annotationProcessor rootProject.ext.dependencies.extGlideAnnotation
+
+    // //Facebook fresco库 支持 GIF WebP. 支持 GIF 动图，需要添加 Support GIF, need to add
+    implementation rootProject.ext.dependencies.extFresco
+    //为了解决Google play 上的SoLoader SDK 版本低问题，这里单独引入soloader库
+    implementation rootProject.ext.dependencies.extSoloader
+    implementation rootProject.ext.dependencies.extFrescoGif
+    // 支持 WebP （静态图+动图），需要添加 Support WebP (static image + GIF), need to add
+    implementation rootProject.ext.dependencies.extFrescoWebp
+    // 仅支持 WebP 静态图，需要添加 Only WebP static images are supported and need to be added
+    implementation rootProject.ext.dependencies.extFrescoWebpSupport
+
+    testImplementation rootProject.ext.testDependencies.extTestJunit
+    implementation rootProject.ext.dependencies.extAndroidMultidex
+
+
+    implementation rootProject.ext.dependencies.extkotlinStdlibJdk7
+    implementation rootProject.ext.dependencies.extkotlinReflect
+
+
+    annotationProcessor rootProject.ext.dependencies.extLifecycleCompiler
+    implementation rootProject.ext.dependencies.extLifecycleKtx
+    implementation rootProject.ext.dependencies.extLifecycleExtensions
+
+    implementation rootProject.ext.dependencies.extDagger
+    kapt rootProject.ext.dependencies.extDaggerCompiler
+
+    implementation rootProject.ext.dependencies.extDaggerAndroid
+    kapt rootProject.ext.dependencies.extDaggerAndroidProcessor
+
+    implementation rootProject.ext.dependencies.extRxandroid
+    implementation rootProject.ext.dependencies.extRxjava
+
+    implementation project(path: ':libBase')
+    implementation project(path: ':libNet')
+    implementation project(path: ':MArScene')
+    implementation project(path: ':MCutSame')
+    implementation project(path: ':MMakeup')
+}

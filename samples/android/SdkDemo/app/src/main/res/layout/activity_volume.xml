@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.meishe.sdkdemo.edit.clipEdit.volume.VolumeActivity">
+
+    <com.meishe.sdkdemo.edit.view.CustomTitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.meishe.sdkdemo.edit.view.CustomTitleBar>
+
+    <RelativeLayout
+        android:id="@+id/spaceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <RelativeLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_height"
+        android:background="#ff242728">
+
+        <LinearLayout
+            android:id="@+id/ll_volume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_px_60"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dp"
+                android:text="@string/volume"
+                android:textColor="@color/ccffffff"
+                android:textSize="@dimen/sp12" />
+
+            <SeekBar
+                android:id="@+id/volumeSeekBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:maxHeight="2dp"
+                android:minHeight="2dp"
+                android:progressDrawable="@drawable/caption_size_seekbar"
+                android:thumb="@drawable/custom_voice_seekbar_ball" />
+
+            <TextView
+                android:id="@+id/volumeSeekBarValue"
+                android:layout_width="27dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="13dp"
+                android:text="@string/int0"
+                android:textColor="#ffffffff"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/control_layout"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_below="@+id/ll_volume"
+            android:layout_marginTop="@dimen/dp15">
+
+            <TextView
+                android:id="@+id/tv_key_frame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
+                android:drawableLeft="@mipmap/key_frame"
+                android:drawablePadding="@dimen/dp4.5"
+                android:gravity="center"
+                android:text="@string/key_frame_text"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp10"
+                tools:ignore="RelativeOverlap" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_zoom_in"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:padding="6dp"
+                    android:src="@mipmap/zoom_out" />
+
+                <TextView
+                    android:id="@+id/play_cur_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="@string/zeroZZZ"
+                    android:textColor="#ffffff"
+                    android:textSize="10sp" />
+
+                <ImageView
+                    android:id="@+id/iv_zoom_out"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:padding="6dp"
+                    android:src="@mipmap/zoom_in" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/timeline_edit_layout"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:layout_below="@+id/control_layout">
+
+            <com.meishe.sdkdemo.edit.timelineEditor.NvsTimelineEditor
+                android:id="@+id/volume_timeline_editor"
+                android:layout_width="wrap_content"
+                android:layout_height="49dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="48dp" />
+
+
+            <RelativeLayout
+                android:id="@+id/play_btn_layout"
+                android:layout_width="48dp"
+                android:layout_height="26dp"
+                android:layout_centerVertical="true">
+
+                <Button
+                    android:id="@+id/play_btn"
+                    android:layout_width="18dp"
+                    android:layout_height="21dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@mipmap/icon_edit_play" />
+
+            </RelativeLayout>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/ic_span" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_key_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/volumeFinish"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp10"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_last_frame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/key_frame_before_frame_selector"
+                android:drawablePadding="@dimen/dp4.5"
+                android:gravity="center"
+                android:text="@string/key_frame_before_frame_text"
+                android:textColor="@color/key_frame_text_bg_selector"
+                android:textSize="@dimen/sp8" />
+
+            <TextView
+                android:id="@+id/tv_add_or_delete_frame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp62"
+                android:drawableTop="@drawable/key_frame_add_frame_selector"
+                android:drawablePadding="@dimen/dp4.5"
+                android:text="@string/key_frame_add_frame_text"
+                android:textColor="@color/key_frame_text_bg_selector"
+                android:textSize="@dimen/sp8" />
+
+            <TextView
+                android:id="@+id/tv_next_frame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp62"
+                android:drawableTop="@drawable/key_frame_next_frame_selector"
+                android:drawablePadding="@dimen/dp4.5"
+                android:gravity="center"
+                android:text="@string/key_frame_next_frame_text"
+                android:textColor="@color/key_frame_text_bg_selector"
+                android:textSize="@dimen/sp8" />
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@id/volumeFinish"
+            android:background="#1AFFFFFF" />
+
+        <ImageView
+            android:id="@+id/volumeFinish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/dp15"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginTop="@dimen/dp15"
+            android:layout_marginEnd="@dimen/dp15"
+            android:layout_marginRight="@dimen/dp15"
+            android:layout_marginBottom="@dimen/dp15"
+            android:background="@mipmap/icon_confirm" />
+
+        <RelativeLayout
+            android:id="@+id/curve_list_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ff202020"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_curve_tip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp15"
+                android:gravity="center_vertical"
+                android:text="@string/curve_select_tip"
+                android:textColor="@color/grey_text_tip"
+                android:textSize="11sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_curve_adjust"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_below="@+id/tv_curve_tip"
+                android:layout_marginLeft="@dimen/dp30" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_above="@+id/iv_confirm_curve"
+                android:background="#1AFFFFFF" />
+
+            <ImageView
+                android:id="@+id/iv_confirm_curve"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="12dp"
+                android:src="@mipmap/confirm" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/curve_adjust_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ff202020"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_curve_adjust_tip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp15"
+                android:gravity="center_vertical"
+                android:text="@string/curve_select_tip"
+                android:textColor="@color/grey_text_tip"
+                android:textSize="11sp" />
+
+            <com.meishe.sdkdemo.edit.view.BezierAdjustView
+                android:id="@+id/bezier_adjust_view"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_below="@+id/tv_curve_adjust_tip"
+                android:layout_marginLeft="@dimen/dp25"
+                android:layout_marginRight="@dimen/dp25" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_above="@+id/iv_confirm_curve_adjust"
+                android:background="#1AFFFFFF" />
+
+            <ImageView
+                android:id="@+id/iv_confirm_curve_adjust"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="12dp"
+                android:src="@mipmap/confirm" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</LinearLayout>

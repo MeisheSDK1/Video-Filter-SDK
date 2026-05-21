@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="60dp"
+    style="@style/dialog"
+    android:layout_height="260dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="60dp"
+        android:layout_height="260dp"
+        android:background="#DD000000"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
+        <!--道具-->
+        <LinearLayout
+            android:id="@+id/ll_props"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/iv_props"
+                android:layout_width="37dp"
+                android:layout_height="37dp"
+                android:contentDescription="@null"
+                android:src="@mipmap/capture_props_white" />
+
+            <TextView
+                android:id="@+id/tv_props"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/faceU"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+        <!--贴纸-->
+        <LinearLayout
+            android:id="@+id/ll_sticker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/iv_sticker"
+                android:layout_width="37dp"
+                android:layout_height="37dp"
+                android:contentDescription="@null"
+                android:src="@mipmap/icon_capture_fx_sticker" />
+
+            <TextView
+                android:id="@+id/tv_sticker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/animatedSticker"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!--组合字幕-->
+        <LinearLayout
+            android:id="@+id/ll_com_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/iv_com_caption"
+                android:layout_width="37dp"
+                android:layout_height="37dp"
+                android:contentDescription="@null"
+                android:src="@mipmap/icon_capture_fx_caption_com" />
+
+            <TextView
+                android:id="@+id/tv_com_caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/compoundcaption"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!--背景抠像-->
+        <LinearLayout
+            android:id="@+id/ll_background_seg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/iv_background_seg"
+                android:layout_width="37dp"
+                android:layout_height="37dp"
+                android:contentDescription="@null"
+                android:src="@mipmap/icon_background_seg" />
+
+            <TextView
+                android:id="@+id/tv_background_seg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/background_seg"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

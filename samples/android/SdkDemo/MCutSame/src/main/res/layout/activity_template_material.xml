@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_marginTop="@dimen/dp_px_90"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_150">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/dp_px_70"
+            android:layout_height="@dimen/dp_px_70"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/dp_px_42"
+            android:layout_marginLeft="@dimen/dp_px_42"
+            android:contentDescription="@null"
+            android:padding="@dimen/dp_px_11"
+            android:scaleType="fitXY"
+            android:src="@mipmap/close_white" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/select_material_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_px_48" />
+    </FrameLayout>
+
+    <com.meishe.third.tablayout.SlidingTabLayout
+        android:id="@+id/tl_select_media"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_100"
+        tl:tl_indicator_height="@dimen/dp_px_4"
+        tl:tl_indicator_width="@dimen/dp_px_30"
+        tl:tl_tab_space_equal="true"
+        tl:tl_textSelectColor="@color/white"
+        tl:tl_textSize="@dimen/sp_px_36"
+        tl:tl_textUnselectedColor="@color/white_5" />
+    <!--
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tl_select_media"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_px_135"
+            app:tabIndicatorHeight="@dimen/dp_px_4"
+            app:tabSelectedTextColor="@color/white"
+            app:tabIndicatorColor="@color/white"
+            app:tabIndicatorFullWidth="false"
+            app:tabTextAppearance="@style/tab_text_12"
+            app:tabTextColor="@color/white_5" />
+    -->
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_select_media"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_px_30"
+        android:layout_marginBottom="@dimen/dp_px_30"
+        android:layout_weight="1" />
+
+    <RelativeLayout
+        android:id="@+id/rl_media_selected"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_465"
+        android:paddingStart="@dimen/dp_px_30"
+        android:paddingLeft="@dimen/dp_px_30"
+        android:paddingEnd="@dimen/dp_px_30"
+        android:paddingRight="@dimen/dp_px_30">
+
+        <ImageView
+            android:id="@+id/image_point"
+            android:layout_width="@dimen/dp_px_9"
+            android:layout_height="@dimen/dp_px_9"
+            android:layout_marginTop="@dimen/dp_px_90"
+            android:layout_marginEnd="@dimen/dp_px_15"
+            android:layout_marginRight="@dimen/dp_px_15"
+            android:contentDescription="@null"
+            android:src="@drawable/bg_rectangle_round_red365"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_selected_num"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_px_90"
+            android:layout_marginTop="@dimen/dp_px_50"
+            android:layout_toEndOf="@+id/image_point"
+            android:layout_toRightOf="@+id/image_point"
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_px_33"
+            tools:ignore="RelativeOverlap" />
+
+        <TextView
+            android:id="@+id/tv_next"
+            android:layout_width="@dimen/dp_px_168"
+            android:layout_height="@dimen/dp_px_90"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_px_50"
+            android:background="@drawable/bg_rectangle_round_gray4b4"
+            android:gravity="center"
+            android:text="@string/select_material_next"
+            android:textColor="@color/gray_a4a"
+            android:textSize="@dimen/sp_px_33" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_selected_list"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_px_270"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dp_px_30" />
+    </RelativeLayout>
+</LinearLayout>

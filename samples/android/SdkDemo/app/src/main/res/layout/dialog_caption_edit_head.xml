@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_caption"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="@dimen/dp_px_10"
+        android:background="#22000000"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_px_90" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#181818"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingTop="7.5dp">
+
+        <EditText
+            android:id="@+id/et_caption"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="12.5dp"
+            android:layout_marginRight="12.5dp"
+            android:imeOptions="actionDone"
+            android:background="#FF242424"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textColor="#ff808080"
+            android:textSize="@dimen/sp_px_52"
+            tools:ignore="LabelFor" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/tab_input"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/tv_input"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/input"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+                <View
+                    android:id="@+id/sign_input"
+                    android:layout_width="12.5dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tab_style"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/tv_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/style"
+                    android:textColor="#cfffffff"
+                    android:textSize="13sp" />
+
+                <View
+                    android:id="@+id/sign_style"
+                    android:layout_width="12.5dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/white"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/commit"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginRight="13dp"
+                android:src="@mipmap/dia_edit_commit" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="2dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/caption_style"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="#181818"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/caption_font"
+            android:layout_width="match_parent"
+            android:layout_height="70dp" />
+
+        <com.meishe.sdkdemo.edit.background.view.MultiColorView
+            android:id="@+id/caption_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp" />
+    </LinearLayout>
+    <View
+        android:id="@+id/view_break"
+        android:layout_width="match_parent"
+        android:background="@color/black"
+        android:layout_height="0dp"/>
+</LinearLayout>

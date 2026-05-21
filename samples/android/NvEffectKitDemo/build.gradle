@@ -1,0 +1,49 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: "config.gradle"
+ext {
+    libDirectoryPath = rootDir.getAbsolutePath() + File.separator
+    originFtpAssets = "/android/NvEffectKitDemo/" + rootProject.config.assetsVersion
+    destAssetsFile = libDirectoryPath + "app/src/main/assets"
+    assetsTempFile = libDirectoryPath + "app/temp"
+
+    originFtpLibs = "/android/NvEffectKitDemo/libs/" + rootProject.config.libVersion
+    destLibsFile = libDirectoryPath + "libBase/libs"
+    libTempFile = libDirectoryPath + "libBase/temp"
+}
+buildscript {
+    ext.kotlin_version = '1.7.0-RC'
+    ext.kotlin_version = '1.5.30'
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public' }//jcenter
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }//gradle-plugin
+        maven { url 'https://maven.aliyun.com/repository/central' }//central
+        maven { url 'https://maven.aliyun.com/repository/google' }//google
+        google()
+        mavenCentral()
+        mavenCentral()
+
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.2.0"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public' }//jcenter
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }//gradle-plugin
+        maven { url 'https://maven.aliyun.com/repository/central' }//central
+        maven { url 'https://maven.aliyun.com/repository/google' }//google
+        google()
+        mavenCentral()
+        jcenter()
+
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

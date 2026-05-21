@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="makeup_">妆容(新)</string>
+    <string name="no">无</string>
+    <string name="lip">口红</string>
+    <string name="eyeshadow">眼影</string>
+    <string name="eyebrow">眉毛</string>
+    <string name="eyelash">睫毛</string>
+    <string name="eyeliner">眼线</string>
+    <string name="blusher">腮红</string>
+    <string name="brighten">提亮</string>
+    <string name="shadow">阴影</string>
+    <string name="eyeball">美瞳</string>
+    <string-array name="makeup_type">
+        <item>@string/lip</item>
+        <item>@string/eyeshadow</item>
+        <item>@string/eyebrow</item>
+        <item>@string/eyelash</item>
+        <item>@string/eyeliner</item>
+        <item>@string/blusher</item>
+        <item>@string/brighten</item>
+        <item>@string/shadow</item>
+        <item>@string/eyeball</item>
+    </string-array>
+</resources>

@@ -1,0 +1,56 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.android.extCompileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.android.extMinSdkVersion
+        targetSdkVersion rootProject.android.extTargetSdkVersion
+        versionCode rootProject.config.extVersionCode
+        versionName rootProject.config.extVersionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    /* buildTypes {
+         release {
+             minifyEnabled false
+             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+         }
+     }
+ */
+    buildTypes {
+        release {
+            buildConfigField "String", "TO_TYPE", "\"2B\""
+            minifyEnabled false
+            matchingFallbacks = ['release']
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            buildConfigField "String", "TO_TYPE", "\"2B\""
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+            matchingFallbacks = ['debug']
+            debuggable true
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    implementation rootProject.ext.dependencies.extAndroidXDesign
+    implementation rootProject.ext.dependencies.extAppcompat
+    implementation rootProject.ext.dependencies.extAppcompatRecycler
+    implementation rootProject.ext.dependencies.extConstraintLayout
+
+
+    api project(path: ':libEngine')
+    implementation project(path: ':libBase')
+    implementation project(path: ':libNet')
+}

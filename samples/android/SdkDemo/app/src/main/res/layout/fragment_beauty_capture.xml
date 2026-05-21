@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="isLoading" type="boolean" />
+    </data>
+    <LinearLayout
+        android:id="@+id/bottom_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                app:tabMode="fixed"
+                app:tabIndicatorColor="@color/white"
+                app:tabSelectedTextColor="@color/color_63ABFF"
+                app:tabTextColor="#78787A"
+                app:tabIndicatorFullWidth="false"
+                app:tabTextAppearance="@style/tabLayoutTextStyleFilter"
+                />
+
+        </LinearLayout>
+
+
+        <com.meishe.sdkdemo.edit.view.CustomViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</layout>

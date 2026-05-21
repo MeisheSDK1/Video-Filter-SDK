@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/capture_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:background="@color/black">
+
+    <com.meishe.base.view.MSLiveWindow
+        android:id="@+id/lw_window"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <com.meishe.base.view.MSLiveWindowExt
+        android:id="@+id/lw_windowExt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.meishe.sdkdemo.edit.view.DrawRect
+        android:id="@+id/capture_draw_rect"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--focus-->
+    <ImageView
+        android:id="@+id/iv_focus"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/capture_focus" />
+
+    <!--exit-->
+    <ImageView
+        android:id="@+id/iv_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_px_75"
+        android:layout_marginTop="@dimen/dp_px_135"
+        android:src="@mipmap/icon_capture_exit"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--more-->
+    <ImageView
+        android:id="@+id/iv_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_px_135"
+        android:contentDescription="@null"
+        android:src="@mipmap/icon_capture_more"
+        app:layout_constraintLeft_toLeftOf="@+id/ll_right_container"
+        app:layout_constraintRight_toRightOf="@+id/ll_right_container"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--frame-->
+    <TextView
+        android:id="@+id/tv_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:shadowColor="@android:color/black"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="@+id/iv_more"
+        app:layout_constraintRight_toRightOf="@+id/iv_more"
+        app:layout_constraintTop_toBottomOf="@+id/iv_more"
+        tools:text="123"
+        tools:visibility="visible" />
+
+
+    <LinearLayout
+        android:id="@+id/cp_selectMusic"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_exit"
+        app:layout_constraintEnd_toStartOf="@+id/iv_more"
+        app:layout_constraintStart_toEndOf="@+id/iv_exit"
+        app:layout_constraintTop_toTopOf="@+id/iv_exit">
+
+        <ImageView
+            android:id="@+id/cp_musicIcon"
+            android:layout_width="17dp"
+            android:layout_height="match_parent"
+            android:background="@mipmap/douvideo_music" />
+
+        <TextView
+            android:id="@+id/cp_musicName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:ellipsize="marquee"
+            android:text="@string/select_music"
+            android:textAlignment="center"
+            android:textColor="#ffffffff"
+            android:textSize="@dimen/sp12"
+            android:singleLine="true" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_right_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_px_45"
+        android:orientation="vertical"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_frame">
+
+        <TextView
+            android:id="@+id/iv_rollover"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp12"
+            android:drawableTop="@mipmap/icon_capture_rollover"
+            android:gravity="center_horizontal"
+            android:text="@string/capture_trans"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_px_30" />
+
+        <TextView
+            android:id="@+id/iv_sticker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp12"
+            android:drawableTop="@mipmap/icon_capture_fx_sticker"
+            android:gravity="center_horizontal"
+            android:text="@string/animatedSticker"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_px_30" />
+
+        <TextView
+            android:id="@+id/iv_com_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp12"
+            android:drawableTop="@mipmap/icon_capture_fx_caption_com"
+            android:gravity="center_horizontal"
+            android:text="@string/compoundcaption"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_px_30" />
+
+        <!--背景抠像-->
+        <TextView
+            android:id="@+id/segment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp12"
+            android:drawableTop="@mipmap/icon_background_seg"
+            android:gravity="center_horizontal"
+            android:text="@string/bg_seg_color"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_px_30" />
+        <!--抠像背景-->
+        <TextView
+            android:id="@+id/background_segment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp12"
+            android:drawableTop="@mipmap/icon_segment_image"
+            android:gravity="center_horizontal"
+            android:text="@string/background_seg"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_px_30"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/audio_noise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp20"
+            android:drawableTop="@mipmap/icon_audio_noise"
+            android:gravity="center"
+            android:text="@string/audio_noise"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_px_30"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/capture_voice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:ignore="UseCompoundDrawables"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/iv_voice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:contentDescription="@null"
+                android:src="@mipmap/icon_voice_frame" />
+
+            <TextView
+                android:id="@+id/tv_voice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/change_voice"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_px_27" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fl_bottom_parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:paddingLeft="@dimen/dp_px_51"
+        android:paddingRight="@dimen/dp_px_51"
+        android:paddingBottom="@dimen/dp_px_51"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <!--美妆-->
+        <TextView
+            android:id="@+id/capture_makeup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_px_51"
+            android:drawableTop="@mipmap/capture_makeup_black"
+            android:gravity="center_horizontal"
+            android:text="@string/makeup"
+            android:textColor="@color/color_3A3A3A"
+            android:textSize="@dimen/sp_px_33"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/capture_beauty"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--美颜-->
+        <TextView
+            android:id="@+id/capture_beauty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/capture_beauty_black"
+            android:gravity="center_horizontal"
+            android:text="@string/beauty"
+            android:textColor="@color/color_3A3A3A"
+            android:textSize="@dimen/sp_px_33"
+            app:layout_constraintLeft_toRightOf="@+id/capture_makeup"
+            app:layout_constraintRight_toLeftOf="@+id/fl_take_photos"
+            app:layout_constraintTop_toTopOf="@+id/capture_makeup" />
+
+        <!--滤镜-->
+        <TextView
+            android:id="@+id/capture_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/capture_filter_black"
+            android:gravity="center_horizontal"
+            android:text="@string/filter"
+            android:textColor="@color/color_3A3A3A"
+            android:textSize="@dimen/sp_px_33"
+            app:layout_constraintLeft_toRightOf="@+id/fl_take_photos"
+            app:layout_constraintRight_toLeftOf="@+id/capture_prop"
+            app:layout_constraintTop_toTopOf="@+id/capture_makeup" />
+
+        <!--道具-->
+        <TextView
+            android:id="@+id/capture_prop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/capture_props_black"
+            android:gravity="center_horizontal"
+            android:text="@string/faceU"
+            android:textColor="@color/color_3A3A3A"
+            android:textSize="@dimen/sp_px_33"
+            app:layout_constraintLeft_toRightOf="@+id/capture_filter"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/capture_makeup" />
+
+        <!--拍照/视频按钮-->
+        <FrameLayout
+            android:id="@+id/fl_take_photos"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/dp_px_75"
+            android:layout_marginTop="@dimen/dp_px_45"
+            android:layout_marginRight="@dimen/dp_px_75"
+            app:layout_constraintLeft_toRightOf="@+id/capture_beauty"
+            app:layout_constraintRight_toLeftOf="@+id/capture_filter"
+            app:layout_constraintTop_toTopOf="@+id/capture_makeup">
+
+            <ImageView
+                android:id="@+id/iv_take_photo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:src="@mipmap/capture_take_photo" />
+
+            <TextView
+                android:id="@+id/tv_video_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/ff4a90e2"
+                android:textSize="34sp"
+                android:visibility="invisible" />
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.46" />
+        <!--切换视频/拍照-->
+        <LinearLayout
+            android:id="@+id/ll_chang_pv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_px_60"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/fl_take_photos">
+
+            <TextView
+                android:id="@+id/tv_take_photos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/photo"
+                android:textColor="@color/color_black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv_take_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="@string/video"
+                android:textColor="@color/color_888888"
+                android:textSize="14sp"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fl_middle_parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/dp_px_30"
+        app:layout_constraintBottom_toTopOf="@+id/fl_bottom_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:src="@mipmap/capture_back_delete"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_timing_num"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tv_timing_num"
+            app:layout_constraintTop_toTopOf="@+id/tv_timing_num"
+            tools:visibility="visible" />
+
+        <View
+            android:id="@+id/v_timing_dot"
+            android:layout_width="@dimen/dp_px_15"
+            android:layout_height="@dimen/dp_px_15"
+            android:layout_marginEnd="@dimen/dp_px_45"
+            android:background="@color/ff4a90e2"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_timing_num"
+            app:layout_constraintRight_toLeftOf="@+id/tv_timing_num"
+            app:layout_constraintTop_toTopOf="@+id/tv_timing_num"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_timing_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="00:00"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/iv_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:src="@mipmap/capture_confirm"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_timing_num"
+            app:layout_constraintLeft_toRightOf="@+id/tv_timing_num"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_timing_num"
+            tools:visibility="visible" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--拍照后显示的视图-->
+    <RelativeLayout
+        android:id="@+id/rl_photos_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:paddingTop="@dimen/dp_px_135"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_photos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter" />
+
+        <Button
+            android:id="@+id/bt_delete_photos"
+            android:layout_width="@dimen/dp_px_90"
+            android:layout_height="@dimen/dp_px_90"
+            android:layout_marginLeft="@dimen/dp_px_45"
+            android:background="@mipmap/icon_close" />
+
+        <Button
+            android:id="@+id/bt_save_photos"
+            android:layout_width="@dimen/dp_px_90"
+            android:layout_height="@dimen/dp_px_90"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_px_45"
+            android:background="@mipmap/finish" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <com.meishe.base.view.MagicProgress
+            android:id="@+id/mp_filter"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_px_135"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/dp30"
+            android:layout_marginRight="@dimen/dp30"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:progressDrawable="@drawable/seekbar"
+            android:thumb="@drawable/beauty_seek_thumb"
+            android:visibility="gone"
+            app:textBgStyle="bubble"
+            app:textColorMagic="@color/color_3A3A3A"
+            app:textSizeMagic="12sp" />
+
+        <com.meishe.sdkdemo.view.AdjustSpecialEffectsView
+            android:id="@+id/adjustSpecialEffectsView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#33000000"
+            android:visibility="gone" />
+
+        <FrameLayout
+            android:id="@+id/bottom_container"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/capture_bottom_menu_height_low" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/bottom_container_high"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_900"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/dp10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

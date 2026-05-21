@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".capture.fragment.filter.SearchFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp36"
+            android:layout_margin="@dimen/dp10"
+            android:layout_weight="1"
+            android:background="@drawable/capture_download_search_bg"
+            android:drawableLeft="@mipmap/filter_search"
+            android:drawablePadding="@dimen/dp10"
+            android:hint="@string/asset_more_filter_search"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:maxLength="40"
+            android:maxLines="1"
+            android:paddingLeft="14dp"
+            android:paddingRight="@dimen/dp10"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="11dp"
+            android:text="@string/cancel"
+            android:textColor="#1f1f1f"
+            android:textSize="13sp"
+            android:visibility="gone"
+            tools:ignore="Suspicious0dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/search_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="6dp" />
+
+</LinearLayout>

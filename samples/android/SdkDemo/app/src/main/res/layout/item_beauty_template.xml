@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/bt_icon"
+        android:layout_width="@dimen/dp_px_150"
+        android:layout_height="@dimen/dp_px_150"
+        android:layout_marginStart="@dimen/dp_px_24"
+        android:layout_marginLeft="@dimen/dp_px_24"
+        android:contentDescription="@null"
+        android:src="@mipmap/macenew"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.meishe.sdkdemo.capturescene.view.CircleBarView
+        android:id="@+id/bt_download"
+        android:layout_width="@dimen/dp_px_39"
+        android:layout_height="@dimen/dp_px_39"
+        android:layout_marginRight="@dimen/dp_px_6"
+        android:layout_marginBottom="@dimen/dp_px_6"
+        android:background="@mipmap/icon_download"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_icon"
+        app:layout_constraintRight_toRightOf="@id/bt_icon"
+        tools:visibility="visible" />
+
+
+    <ImageView
+        android:id="@+id/bt_selected"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="13dp"
+        android:src="@mipmap/icon_adjust"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/bt_icon"
+        app:layout_constraintLeft_toLeftOf="@id/bt_icon"
+        app:layout_constraintRight_toRightOf="@id/bt_icon"
+        app:layout_constraintTop_toTopOf="@id/bt_icon"
+        tools:background="@color/color_D9A5CFFF" />
+
+    <TextView
+        android:id="@+id/bt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_px_15"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_px_27"
+        app:layout_constraintLeft_toLeftOf="@id/bt_icon"
+        app:layout_constraintRight_toRightOf="@id/bt_icon"
+        app:layout_constraintTop_toBottomOf="@id/bt_icon"
+        tools:text="美妆" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

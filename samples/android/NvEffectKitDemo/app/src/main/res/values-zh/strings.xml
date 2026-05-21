@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">美摄Effect</string>
+    <string name="start_photo">开始拍</string>
+    <string name="start_record">开始录</string>
+    <string name="preview_failed">启动预览失败</string>
+    <string name="defaultValue">0.0</string>
+    <string name="openFilter">开启滤镜</string>
+    <string name="cartoon">卡通</string>
+    <string name="cartoon1">卡通1</string>
+    <string name="cartoon2">卡通2</string>
+    <string name="delete">删除</string>
+    <string name="photo">照片</string>
+    <string name="video">视频</string>
+    <string name="camera">摄像头</string>
+    <string name="flash">闪光灯</string>
+    <string name="zoom">变焦</string>
+    <string name="beauty_shape">美型</string>
+    <string name="beauty_filter">滤镜</string>
+    <string name="beauty_prop">道具</string>
+    <string name="beauty">美颜</string>
+    <string name="beauty_markup">美妆</string>
+    <string name="beauty_background">背景</string>
+    <string name="open_flash_after_open_rear_camera">切换后置摄像头，再打开闪关灯</string>
+    <string name="exposure_is_not_supported">不支持曝光</string>
+    <string name="zoom_is_not_supported">不支变焦</string>
+    <string name="compoundcaption">组合字幕</string>
+    <string name="traditional_caption">传统字幕</string>
+    <string name="animatedSticker">贴纸</string>
+    <string name="transition">转场</string>
+    <string name="inputSubtitle">请输入字幕：</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+
+    <string name="adjust">调节</string>
+    <string name="no_use">无</string>
+    <string name="adjust_ai">智能</string>
+    <string name="brightness">亮度</string>
+    <string name="contrast">对比度</string>
+    <string name="saturation">饱和度</string>
+    <string name="degree">暗角</string>
+    <string name="sharpen">锐化</string>
+
+    <string name="exposure">曝光</string>
+    <string name="highlight">高光</string>
+    <string name="shadow">阴影</string>
+    <string name="black_point">黑点</string>
+    <string name="vibrance">自然饱和度</string>
+    <string name="color_temp">色温</string>
+    <string name="tint">色调</string>
+    <string name="grain_killer">噪点消除</string>
+
+    <string-array name="adjust_child_menu">
+        <item>@string/adjust_ai</item>
+        <item>@string/exposure</item>
+        <item>@string/highlight</item>
+        <item>@string/shadow</item>
+        <item>@string/brightness</item>
+        <item>@string/contrast</item>
+        <item>@string/black_point</item>
+        <item>@string/saturation</item>
+        <item>@string/vibrance</item>
+        <item>@string/color_temp</item>
+        <item>@string/tint</item>
+        <item>@string/sharpen</item>
+        <item>@string/degree</item>
+        <item>@string/sharpness</item>
+        <item>@string/grain_killer</item>
+    </string-array>
+    <string name="makeup_null">无</string>
+    <string name="unauthorized">未授权</string>
+</resources>

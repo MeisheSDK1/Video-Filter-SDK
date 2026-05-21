@@ -1,0 +1,107 @@
+apply plugin: 'com.android.library'
+def extraLibPath = ''
+def ftp1 = file(rootDir.getAbsolutePath() + '../../../../ftp-download.gradle').getCanonicalPath()
+println '开始检查ftp1 ' + file(ftp1).exists() + "  " + ftp1
+if (file(ftp1).exists()) {
+    apply from: '../../../../ftp-download.gradle'
+    extraLibPath = getSdkExtraPath(rootDir.getAbsolutePath() + "/../../../meishesdk_libpath.conf")
+}
+def ftp2 = file(rootDir.getAbsolutePath() + '/ftp-util.gradle').getCanonicalPath()
+println '开始检查ftp2 ' + file(ftp2).exists() + "  " + ftp2
+if (file(ftp2).exists()) {
+    apply from: '../ftp-util.gradle'
+}
+
+android {
+    compileSdkVersion rootProject.android.extCompileSdkVersion
+    buildToolsVersion rootProject.android.extBuildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.android.extMinSdkVersion
+        targetSdkVersion rootProject.android.extTargetSdkVersion
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+    task downloadFilesWindows() {
+        if (file(ftp1).exists()) {
+            String oldAssetsVersion = readFileInfo(rootProject.ext.destAssetsFile + File.separator + "version.txt")
+            checkVersionAndDownloadFile(rootProject.ext.originFtpAssets, rootProject.ext.destAssetsFile, oldAssetsVersion, rootProject.ext.assetsTempFile)
+
+            String oldLibsVersion = readFileInfo(rootProject.ext.destLibsFile + File.separator + "version.txt")
+            checkVersionAndDownloadFile(rootProject.ext.originFtpLibs, rootProject.ext.destLibsFile, oldLibsVersion, rootProject.ext.libTempFile)
+        }
+    }
+    task downloadFiles() {
+        doFirst {
+            if (file(ftp2).exists()) {
+                println 'web-ftp:sync start'
+                downloadFtpFiles(rootProject.ext.destAssetsFile, rootProject.ext.originFtpAssets,
+                        rootProject.ext.destLibsFile, rootProject.ext.originFtpLibs)
+                println 'web-ftp:sync end'
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    api fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+//    api fileTree(include: ['*.jar'], dir: extraLibPath + 'lib/android_jar')
+    api rootProject.ext.dependencies.extGoogleGson
+    api rootProject.ext.dependencies.extOkHttp
+    api rootProject.ext.dependencies.extBumptechGlide
+    api rootProject.ext.dependencies.extGlideAnnotation
+    def kitDir = file(rootDir.getAbsolutePath() + "/../NvEffectKit/").getCanonicalPath()
+    println '开始检查dependencies ' + file(kitDir).exists() + "  " + kitDir
+    if (file(kitDir).exists()) {
+        api project(path: ':NvEffectKit:nvEffectKit')
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+task copyNvEffectKitAar(type: Copy, dependsOn: ":NvEffectKit:nvEffectKit:bundleReleaseAar") {
+    def kitDir = file(rootDir.getAbsolutePath() + "/../NvEffectKit/nvEffectKit/build/outputs/aar/nvEffectKit-release.aar").getCanonicalPath()
+    println '开始检查kitDir ' + file(kitDir).exists() + "  " + kitDir
+    if (file(kitDir).exists()) {
+        from '../../NvEffectKit/nvEffectKit/build/outputs/aar/'
+        into 'libs/'
+        include 'nvEffectKit-release.aar'
+        rename('nvEffectKit-release.aar', 'NveEffectKit.aar')
+        println("复制结束 ")
+    } else {
+        println("需要复制的文件不存在")
+    }
+}
+
+project.tasks.whenTaskAdded { Task theTask ->
+    if (theTask.name == 'assembleDebug') {
+        theTask.dependsOn(copyNvEffectKitAar)
+    }
+}
+
+task makeMeisheExtraLib(type: Copy, dependsOn: build) {
+    dependsOn copyNvEffectKitAar
+}

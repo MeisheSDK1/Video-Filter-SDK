@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+
+    <com.meishe.libmsbeauty.view.MagicProgress
+        android:id="@+id/beauty_seek"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="1"
+        android:focusable="true"
+        android:progressDrawable="@drawable/seekbar"
+        android:thumb="@drawable/beauty_seek_thumb"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/beauty_tab_layout"
+        app:textSizeMagic="12sp"
+        tools:ignore="MissingConstraints" />
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/beauty_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        app:layout_constraintBottom_toTopOf="@+id/beauty_view_pager"
+        app:tabGravity="center"
+        app:tabIndicatorColor="#0076ff"
+        app:tabIndicatorFullWidth="false"
+        app:tabIndicatorHeight="2dp"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="#0076ff"
+        app:tabTextColor="#333333"
+        app:tabUnboundedRipple="true" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/beauty_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:background="@color/white"
+        android:paddingTop="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/beauty_edit_view" />
+
+    <RelativeLayout
+        android:id="@+id/beauty_edit_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dp20"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/beauty_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/beauty_shape_reset"
+            android:text="@string/reset"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+        <Switch
+            android:id="@+id/beauty_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:gravity="right"
+            android:maxHeight="@dimen/dp15"
+            android:minHeight="@dimen/dp15"
+            android:paddingLeft="@dimen/dp10"
+            android:paddingRight="@dimen/dp10"
+            android:switchMinWidth="28dp"
+            android:text="@string/beauty_open"
+            android:textOff=""
+            android:textOn=""
+            android:thumb="@drawable/beauty_thumb"
+            android:thumbTextPadding="8dp"
+            android:track="@drawable/beauty_track" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

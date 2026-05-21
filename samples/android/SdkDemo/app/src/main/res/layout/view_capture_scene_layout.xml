@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="145dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_add_resource"
+        android:layout_width="@dimen/dp_px_156"
+        android:layout_height="@dimen/dp_px_156"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_marginRight="5dp"
+        android:background="@mipmap/icon_background_style_more"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_150"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_toRightOf="@+id/iv_add_resource" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recyclerView"
+        android:layout_marginLeft="@dimen/dp13"
+        android:layout_marginTop="40dp"
+        android:text="@string/tips_cs"
+        android:textColor="#B4B4B4"
+        android:textSize="@dimen/sp12" />
+
+    <TextView
+        android:id="@+id/tv_text_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recyclerView"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/dp40"
+        android:layout_marginRight="13dp"
+        android:layout_marginBottom="20dp"
+        android:drawableLeft="@mipmap/reset_cs"
+        android:drawablePadding="7dp"
+        android:gravity="center"
+        android:text="@string/reset"
+        android:textColor="#B4B4B4"
+        android:textSize="11sp" />
+
+</RelativeLayout>

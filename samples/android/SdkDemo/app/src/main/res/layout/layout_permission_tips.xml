@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_permission_tips"
+    android:padding="@dimen/dp_px_45">
+
+    <TextView
+        android:id="@+id/permission_tips_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_px_42"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="摄像头权限说明" />
+
+    <TextView
+        android:id="@+id/permission_tips_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_px_15"
+        android:textColor="#404040"
+        android:textSize="@dimen/sp_px_42"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/permission_tips_main"
+        tools:text="想访问您的照片" />
+
+    <TextView
+        android:id="@+id/permission_tips_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_px_15"
+        android:textColor="#404040"
+        android:textSize="@dimen/sp_px_42"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/permission_tips_title"
+        tools:text="方便为您保存图片，用于选取照片设置头像，上传发布照片视频，以及保存图片到本地" />
+</androidx.constraintlayout.widget.ConstraintLayout>

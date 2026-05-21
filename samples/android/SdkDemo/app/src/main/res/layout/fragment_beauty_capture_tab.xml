@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="isLoading" type="boolean" />
+    </data>
+    <LinearLayout
+        android:id="@+id/bottom_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_marginTop="@dimen/dp15"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+        <LinearLayout
+            android:id="@+id/sharpen_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp50"
+            android:layout_marginLeft="15dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:gravity="right"
+                android:text="@string/sharpness"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+            <Switch
+                android:id="@+id/beauty_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:maxHeight="@dimen/dp15"
+                android:minHeight="@dimen/dp15"
+                android:paddingLeft="@dimen/dp10"
+                android:paddingRight="@dimen/dp10"
+                android:switchMinWidth="28dp"
+                android:textOff=""
+                android:textOn=""
+                android:thumb="@drawable/beauty_thumb"
+                android:thumbTextPadding="8dp"
+                android:track="@drawable/beauty_track" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

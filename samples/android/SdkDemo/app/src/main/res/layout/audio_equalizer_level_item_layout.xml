@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/audio_equalizer_shape"
+    >
+    <Button
+        android:id="@+id/audio_low"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:text="@string/audio_equalizer_low"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textAllCaps="false"
+        android:background="@drawable/audio_equalizer_select_shape"
+        />
+
+    <Button
+        android:id="@+id/audio_media"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:text="@string/audio_equalizer_medium"
+        android:textColor="@color/ffDBDBDC"
+        android:textSize="12sp"
+        android:textAllCaps="false"
+        android:background="@color/ff414141"
+        />
+
+    <Button
+        android:id="@+id/audio_media_high"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:text="@string/audio_equalizer_medium_high"
+        android:textColor="@color/ffDBDBDC"
+        android:textSize="12sp"
+        android:background="@color/ff414141"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/audio_high"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:text="@string/audio_equalizer_high"
+        android:textSize="12sp"
+        android:background="@drawable/audio_equalizer_right_shape"
+        android:textColor="@color/ffDBDBDC"
+        android:textAllCaps="false"/>
+
+</LinearLayout>

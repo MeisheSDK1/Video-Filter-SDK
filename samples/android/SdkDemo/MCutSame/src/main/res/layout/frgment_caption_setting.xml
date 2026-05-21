@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_caption"
+        android:layout_width="@dimen/dp_px_198"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_cut_export_template_caption"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_px_60"
+        android:textColor="@color/white"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="@dimen/dp_px_60"
+        android:layout_toRightOf="@+id/tv_caption"
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+    <LinearLayout
+        android:id="@+id/ll_bottom_view"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_132">
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/activity_cut_export_template_cancel"
+            android:gravity="center"
+            android:textColor="@color/ffc1c1c1"
+            android:textSize="@dimen/sp_px_36"
+            />
+
+        <View
+            android:layout_width="@dimen/dp_px_3"
+            android:layout_height="@dimen/dp_px_39"
+            android:background="@color/white_707"
+            android:layout_gravity="center_vertical"
+            />
+
+        <TextView
+            android:id="@+id/tv_confirm"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/activity_cut_export_template_confirm"
+            android:textColor="@color/red_fc2b55"
+            android:textSize="@dimen/sp_px_36"
+            />
+
+    </LinearLayout>
+</RelativeLayout>

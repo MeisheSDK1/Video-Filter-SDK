@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/fragment_editor_item_container"
+        android:layout_width="@dimen/dp_px_180"
+        android:layout_height="@dimen/dp_px_180">
+
+        <ImageView
+            android:id="@+id/fragment_editor_item_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/fragment_editor_item_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/dp_px_15"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_px_30" />
+
+        <ImageView
+            android:id="@+id/editor_shadow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:id="@+id/fragment_editor_item_editor_cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/fragment_editor_item_editor_edit_icon"
+                android:layout_width="@dimen/dp_px_60"
+                android:layout_height="@dimen/dp_px_60"
+                android:background="@drawable/fragment_cut_editor_item_editor_icon"
+                android:contentDescription="@null" />
+
+            <TextView
+                android:id="@+id/fragment_editor_item_editor_edit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_px_3"
+                android:text="@string/activity_cut_editor_click_editor"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_px_30" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/fragment_editor_item_editor_clock"
+            android:layout_width="@dimen/dp_px_60"
+            android:layout_height="@dimen/dp_px_60"
+            android:layout_centerInParent="true"
+            android:background="@drawable/fragment_cut_editor_item_editor_clock_icon"
+            android:contentDescription="@null" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/fragment_editor_item_count"
+        android:layout_width="@dimen/dp_px_180"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_px_15"
+        android:ellipsize="end"
+        android:gravity="center_horizontal"
+        android:textAlignment="center"
+        android:textColor="@color/fragment_editor_item_text_color"
+        android:textSize="@dimen/sp_px_30" />
+</LinearLayout>

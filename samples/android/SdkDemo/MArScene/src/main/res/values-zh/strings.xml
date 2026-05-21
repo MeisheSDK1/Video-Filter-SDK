@@ -1,0 +1,78 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="beauty">美颜</string>
+    <string name="beauty_template">美颜模板</string>
+    <string name="skin_beauty_style">风格</string>
+    <string name="skin_beauty">美肤</string>
+    <string name="facetype">美型</string>
+    <string name="small_change">微整形</string>
+    <string name="adjust">调节</string>
+    <string name="contour">修容</string>
+    <string name="beauty_whitening_mode">美白模式</string>
+    <string name="beauty_a">A</string>
+    <string name="beauty_b">B</string>
+    <string name="beauty_strength">强度</string>
+    <string-array name="beauty_type">
+        <item>@string/skin_beauty</item>
+        <item>@string/facetype</item>
+        <item>@string/small_change</item>
+        <item>@string/adjust</item>
+        <item>@string/contour</item>
+    </string-array>
+
+    <string name="cheek_thinning">瘦脸</string>
+    <string name="eye_enlarging">大眼</string>
+    <string name="intensity_forehead">额头</string>
+    <string name="intensity_chin">下巴</string>
+    <string name="intensity_nose">瘦鼻</string>
+    <string name="intensity_mouth">嘴型</string>
+    <string name="face_small">小脸</string>
+    <string name="face_thin">窄脸</string>
+    <string name="nose_long">长鼻</string>
+    <string name="eye_corner">眼角</string>
+    <string name="mouse_corner">嘴角</string>
+    <string name="head_size">缩头</string>
+    <string name="malar_size">颧骨</string>
+    <string name="jaw_size">下颌</string>
+    <string name="temple_width">太阳穴</string>
+    <string name="beauty_facetype_first">美型1</string>
+    <string name="beauty_facetype_second">美型2</string>
+    <string name="sharpness">锐度</string>
+    <string name="definition">清晰度</string>
+    <string name="strength_1">磨皮1</string>
+    <string name="advanced_strength_1">磨皮2</string>
+    <string name="advanced_strength_2">磨皮3</string>
+    <string name="advanced_strength_3">磨皮4</string>
+    <string name="advanced_strength_4">AI磨皮</string>
+    <string name="skin">肤色</string>
+    <string name="skin_cold_white">冷白</string>
+    <string name="skin_pink_white">粉白</string>
+    <string name="skin_warm_white">暖白</string>
+    <string name="skin_tanning">美黑</string>
+    <string name="blackPoint">黑点</string>
+    <string name="strength">磨皮</string>
+    <string name="whitening">美白</string>
+    <string name="whitening_A">美白A</string>
+    <string name="whitening_B">美白B</string>
+    <string name="ruddy">红润</string>
+    <string name="quyouguang">去油光</string>
+    <string name="correctionColor">校色</string>
+    <string name="beauty_nasolabial">法令纹</string>
+    <string name="beauty_dark_circles">黑眼圈</string>
+    <string name="beauty_brighten_eye">亮眼</string>
+    <string name="beauty_tooth">美牙</string>
+    <string name="eye_angel">眼角度</string>
+    <string name="eye_distance">眼距</string>
+    <string name="eye_height">眼高度</string>
+    <string name="eye_width">眼宽度</string>
+    <string name="eye_arc">眼弧度</string>
+    <string name="eye_y_offset">眼上下</string>
+    <string name="philtrum_length">人中</string>
+    <string name="nose_bridge">宽鼻梁</string>
+    <string name="nose_head">鼻头</string>
+    <string name="eyebrow_thickness">眉粗细</string>
+    <string name="eyebrow_angle">眉角度</string>
+    <string name="eyebrow_y_offset">眉上下</string>
+    <string name="eyebrow_x_offset">眉间距</string>
+    <string name="reset_all_beauty_tips">确定将所有美颜参数恢复到默认吗？</string>
+    <string name="radius">半径</string>
+</resources>

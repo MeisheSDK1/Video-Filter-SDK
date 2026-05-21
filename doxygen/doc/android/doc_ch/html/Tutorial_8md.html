@@ -1,0 +1,632 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>美摄SDK For Android: 详细开发引导</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">美摄SDK For Android
+   &#160;<span id="projectnumber">3.16.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">详细开发引导 </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><ul>
+<li>1 <a class="el" href="Tutorial_8md.html#概述">概述</a><ul>
+<li>1.1 <a class="el" href="Tutorial_8md.html#支持格式">支持格式</a></li>
+<li>1.2 <a class="el" href="Tutorial_8md.html#注意事项">注意事项</a><ul>
+<li>1.2.1 <a class="el" href="Tutorial_8md.html#限制">限制</a></li>
+<li>1.2.2 <a class="el" href="Tutorial_8md.html#运行环境">运行环境</a></li>
+<li>1.2.3 <a class="el" href="Tutorial_8md.html#重要提示">重要提示</a> <br  />
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2 <a class="el" href="Tutorial_8md.html#快速接入">快速接入</a><ul>
+<li>2.1 <a class="el" href="Tutorial_8md.html#导入库文件">导入库文件</a></li>
+</ul>
+</li>
+<li>3 <a class="el" href="Tutorial_8md.html#使用说明">使用说明</a><ul>
+<li>3.1 <a class="el" href="Tutorial_8md.html#录制">录制</a><ul>
+<li>3.1.1 <a class="el" href="Tutorial_8md.html#从CaptureDeviceCallback接口派生">从CaptureDeviceCallback接口派生</a></li>
+<li>3.1.2 <a class="el" href="Tutorial_8md.html#NvsStreamingContext类">NvsStreamingContext类</a></li>
+<li>3.1.3 <a class="el" href="Tutorial_8md.html#用NvsLiveWindow类预览">用NvsLiveWindow类预览</a></li>
+<li>3.1.4 <a class="el" href="Tutorial_8md.html#预览前的准备">预览前的准备</a></li>
+<li>3.1.5 <a class="el" href="Tutorial_8md.html#开启预览">开启预览</a><ul>
+<li>3.1.5.1 <a class="el" href="Tutorial_8md.html#带美颜录制和不带美颜录制">带美颜录制和不带美颜录制</a></li>
+</ul>
+</li>
+<li>3.1.6 <a class="el" href="Tutorial_8md.html#录制与停止录制">录制与停止录制</a></li>
+<li>3.1.7 <a class="el" href="Tutorial_8md.html#录制参数调节">录制参数调节</a></li>
+<li>3.1.8 <a class="el" href="Tutorial_8md.html#美颜">美颜</a></li>
+<li>3.1.9 <a class="el" href="Tutorial_8md.html#采集特效（滤镜）">采集特效（滤镜）</a><ul>
+<li>3.1.9.1 <a class="el" href="Tutorial_8md.html#内建采集特效">内建采集特效</a></li>
+<li>3.1.9.2 <a class="el" href="Tutorial_8md.html#扩展采集特效">扩展采集特效</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>3.2 <a class="el" href="Tutorial_8md.html#编辑">编辑</a><ul>
+<li>3.2.1 <a class="el" href="Tutorial_8md.html#创建timeline设定视频尺寸">创建timeline设定视频尺寸</a></li>
+<li>3.2.2 <a class="el" href="Tutorial_8md.html#多段视频、图片混编">多段视频、图片混编</a></li>
+<li>3.2.3 <a class="el" href="Tutorial_8md.html#播放与定位预览">播放与定位预览</a></li>
+<li>3.2.4 <a class="el" href="Tutorial_8md.html#视频裁剪">视频裁剪</a></li>
+<li>3.2.5 <a class="el" href="Tutorial_8md.html#从轨道上移除片段">从轨道上移除片段</a></li>
+<li>3.2.6 <a class="el" href="Tutorial_8md.html#片段排序">片段排序</a></li>
+<li>3.2.7 <a class="el" href="Tutorial_8md.html#图片时长设定">图片时长设定</a></li>
+<li>3.2.8 <a class="el" href="Tutorial_8md.html#移除时间线与轨道">移除时间线与轨道</a></li>
+</ul>
+</li>
+<li>3.3 <a class="el" href="Tutorial_8md.html#音乐">音乐</a><ul>
+<li>3.3.1 <a class="el" href="Tutorial_8md.html#添加音乐">添加音乐</a><ul>
+<li>3.3.2 <a class="el" href="Tutorial_8md.html#音乐裁剪">音乐裁剪</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>3.4 <a class="el" href="Tutorial_8md.html#字幕">字幕</a><ul>
+<li>3.4.1 <a class="el" href="Tutorial_8md.html#添加与删除字幕">添加与删除字幕</a></li>
+<li>3.4.2 <a class="el" href="Tutorial_8md.html#获取timeline上的字幕">获取timeline上的字幕</a></li>
+<li>3.4.3 <a class="el" href="Tutorial_8md.html#改变字幕的属性">改变字幕的属性</a></li>
+<li>3.4.4 <a class="el" href="Tutorial_8md.html#改变字幕的入出点">改变字幕的入出点</a></li>
+</ul>
+</li>
+<li>3.5 <a class="el" href="Tutorial_8md.html#动画贴纸">动画贴纸</a><ul>
+<li>3.5.1 <a class="el" href="Tutorial_8md.html#添加与删除动画贴纸">添加与删除动画贴纸</a></li>
+<li>3.5.2 <a class="el" href="Tutorial_8md.html#获取timeline上的动画贴纸">获取timeline上的动画贴纸</a></li>
+<li>3.5.3 <a class="el" href="Tutorial_8md.html#改变动画贴纸的属性">改变动画贴纸的属性</a></li>
+<li>3.5.4 <a class="el" href="Tutorial_8md.html#改变动画贴纸的入出点">改变动画贴纸的入出点</a></li>
+</ul>
+</li>
+<li>3.6 <a class="el" href="Tutorial_8md.html#主题">主题</a><ul>
+<li>3.6.1 <a class="el" href="Tutorial_8md.html#添加与删除主题">添加与删除主题</a></li>
+<li>3.6.2 <a class="el" href="Tutorial_8md.html#获取timeline上的主题">获取timeline上的主题</a></li>
+<li>3.6.3 <a class="el" href="Tutorial_8md.html#改变主题的属性">改变主题的属性</a></li>
+</ul>
+</li>
+<li>3.7 <a class="el" href="Tutorial_8md.html#转场">转场</a></li>
+<li>3.8 <a class="el" href="Tutorial_8md.html#特效">特效</a> <br  />
+<ul>
+<li>3.8.1 <a class="el" href="Tutorial_8md.html#视频特效">视频特效</a></li>
+<li>3.8.2 <a class="el" href="Tutorial_8md.html#音频特效">音频特效</a></li>
+<li>3.8.3 <a class="el" href="Tutorial_8md.html#时间线视频特效">时间线视频特效</a><ul>
+<li>3.8.3.1 <a class="el" href="Tutorial_8md.html#添加与删除时间线特效">添加与删除时间线特效</a></li>
+<li>3.8.3.2 <a class="el" href="Tutorial_8md.html#获取时间线特效">获取时间线特效</a></li>
+<li>3.8.3.3 <a class="el" href="Tutorial_8md.html#改变时间线特效的入出点">改变时间线特效的入出点</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>3.9 <a class="el" href="Tutorial_8md.html#生成">生成</a></li>
+<li>3.10 <a class="el" href="Tutorial_8md.html#素材包管理">素材包管理</a></li>
+<li>3.11 <a class="el" href="Tutorial_8md.html#回调">回调</a></li>
+</ul>
+</li>
+<li>4 <a class="el" href="Tutorial_8md.html#附件">附件</a></li>
+</ul>
+<hr  />
+ <h1><a class="anchor" id="详细内容"></a>
+详细内容</h1>
+<h2><a class="anchor" id="概述"></a>
+1 概述</h2>
+<p>美摄SDK致力于解决移动端视频开发的技术门槛，使仅有android界面开发经验的程序员，都可以开发出性能优异、渲染效果丰富的的视频录制、编辑功能。我们的优势体现在：</p><ul>
+<li>录制、剪辑不限时长</li>
+<li>行业最高标准的美颜效果</li>
+<li>剪辑、变速实时预览，无需转码</li>
+<li>图片、视频混编</li>
+<li>生成视频最高支持1080p</li>
+<li>丰富的转场、滤镜、字幕样式</li>
+<li>独家的主题</li>
+<li>支持4K制作和生成<ul>
+<li>开放的自定义贴纸功能 </li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="支持格式"></a>
+1.1 支持格式</h2>
+<p><br  />
+</p><ul>
+<li>输入规范：<ul>
+<li>视频格式：MP4、MOV、WMV、M2V、MPG</li>
+<li>音频格式：MP3、FLAC、AAC、M4A</li>
+<li>图片格式：JPG、PNG</li>
+<li>视频编码：H264、WMV、MPEG4</li>
+<li>音频编码：MP3、AAC、PCM、FLAC</li>
+</ul>
+</li>
+<li>输出规范：<ul>
+<li>视频格式：MP4、MOV</li>
+<li>视频编码：H264</li>
+<li>音频编码：AAC</li>
+</ul>
+</li>
+<li>扩展包格式（扩展包是美摄用来承载扩展素材的内容包，包括主题、字幕、滤镜、贴纸等）：<ul>
+<li>主题：.theme</li>
+<li>字幕：.captionstyle</li>
+<li>滤镜：.videofx</li>
+<li>贴纸：.animatedsticker</li>
+<li>转场：.videotransition<ul>
+<li>道具：.arscene </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="注意事项"></a>
+1.2 注意事项</h2>
+<h2><a class="anchor" id="限制"></a>
+1.2.1 限制</h2>
+<p>美摄SDK的所有接口必须在UI线程调用，否则可能出现无法预料的错误。只有NvsVideoFrameRetriever类的getFrameAtTime()方法除外。 </p>
+<h2><a class="anchor" id="运行环境"></a>
+1.2.2 运行环境</h2>
+<p>运行环境如下：android studio(必须)，android4.4以上版本 </p>
+<h2><a class="anchor" id="重要提示"></a>
+1.2.3 重要提示</h2>
+<p>目前，美摄SDK安卓版支持armeabi-v7a和arm64指令集的包。</p>
+<p>使用时在gradle命令行加入</p>
+<blockquote class="doxtable">
+<p>defaultConfig { </p>
+</blockquote>
+<blockquote class="doxtable">
+<p>&emsp;&emsp;ndk { </p>
+</blockquote>
+<blockquote class="doxtable">
+<p>&emsp;&emsp;&emsp;&emsp;abiFilters "armeabi-v7a",”arm64-v8a” </p>
+</blockquote>
+<blockquote class="doxtable">
+<p>&emsp;&emsp;} </p>
+</blockquote>
+<blockquote class="doxtable">
+<p>} </p>
+</blockquote>
+<p>最后，如何查看程序包含有.so呢? 最简单的方法是使用解压工具将apk后缀修改为.zip,直接查看libs里是否含有.so。</p>
+<h2><a class="anchor" id="快速接入"></a>
+2 快速接入</h2>
+<h2><a class="anchor" id="导入库文件"></a>
+2.1 导入库文件</h2>
+<p>如果没有Meishe SDK库，请从美摄官网：<a href="https://www.meishesdk.com/downloads">https://www.meishesdk.com/downloads</a>下载最新SDK接入版本。导入库文件的方式有两种：</p>
+<p>方式一: 直接复制。 <br  />
+ 创建工程后，将NvStreamingSdk_Android_***_***\lib\android_jar路径下jar包，复制到工程的libs路径下。同时在工程的jniLibs文件夹下（没有就创建同名文件夹），创建两个文件夹，armeabi-v7和arm64-v8a。</p>
+<p>将NvStreamingSdk_Android_***_***\lib\android_armv7里的所有.so文件，复制到前面创建的armeabi-v7a文件夹，同理将android_arm64文件夹下的内容复制到arm64-v8a文件夹下。</p>
+<div class="image">
+<img src="f51a5a9e28941ad8ea04e40808d8b430.png" alt=""/>
+</div>
+   <p>方式二：通过配置gradle命令行方式导入库。</p>
+<p>美摄SDK的samples都是通过配置命令行的方式导入库文件。</p>
+<div class="image">
+<img src="3171c4ee2afc59adf2b292a5112ff9f3.png" alt=""/>
+</div>
+   <div class="image">
+<img src="ccad4d50c3a551240be91d17d14dd85c.png" alt=""/>
+</div>
+   <h2><a class="anchor" id="使用说明"></a>
+3 使用说明</h2>
+<h2><a class="anchor" id="录制"></a>
+3.1 录制</h2>
+<p>录制的相关接口是在NvsStreamingContext类里，包括采集预览(startCapturePreview())，录制(startRecording())，添加视频采集特效(appendBuiltinCaptureVideoFx())等。强调：美摄SDK所有的类都是以“Nvs”开头。 <br  />
+视频录制时需要注意以下两点：</p><ul>
+<li>断点录制：美摄SDK实现断点录制的方式是通过循环调用开始录制(startRecording())和结束录制(stopRecording())实现的。缺点是录制产生了多个文件，需要用户自己维护和删除视频数据， 并需要通过后续的编辑操作将断点录制的文件生成一个完整的新文件。优点是独立文件之间可以加入各种转场特技，避免了因转换场景而造成的视频画面生硬的切换。</li>
+<li>带特效录制与不带特效录制：带特效录制即所见即所得，所录制文件的效果就是预览的效果。不带特效录制是预览时使用滤镜或者想要录制1:1的视频，但是录制出的文件是原始的不带滤镜的16:9或9:16的视频， 需要将视频文件在编辑时，再加上滤镜并裁剪到1:1，编辑并生成后得到的视频才会与预览时的视频完全一致。</li>
+</ul>
+<p>如果查看录制视频的具体功能实现，建议参考samples里的SdkDemo的视频拍摄模块 </p>
+<h2><a class="anchor" id="从CaptureDeviceCallback接口派生"></a>
+3.1.1 从CaptureDeviceCallback接口派生</h2>
+<p>录制前，录制的Activity需要实现NvsStreamingContext类的CaptureDeviceCallback接口并重写接口里的所有方法。实现代码如下： </p><pre class="fragment">        //采集设备回调接口
+        public class MainActivity extends AppCompatActivity implements NvsStreamingContext.CaptureDeviceCallback {
+            ......//请自行重写所有方法
+        }
+</pre><h2><a class="anchor" id="NvsStreamingContext类"></a>
+3.1.2 NvsStreamingContext类</h2>
+<p>NvsStreamingContext是美摄SDK的流媒体上下文类，可视作整个SDK框架的入口。在开始使用美摄SDK的时候，需要先初始化NvsStreamingContext类，然后在其它Activity里使用时 获取NvsStreamingContext的对象，NvsStreamingContext是单例类。在不再使用美摄SDK或者程序退出前销毁NvsStreamingContext类的对象，请务必保证不要中途销毁NvsStreamingContext 类的对象！！！NvsStreamingContext类init()方法的第二个参数为授权文件的路径，没有授权文件时给空字符串。 <br  />
+ NvsStreamingContext初始化代码如下： </p><pre class="fragment">        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            m_streamingContext = NvsStreamingContext.init(this, null);//初始化Streaming Context
+            setContentView(R.layout.activity_main);
+        }
+</pre><p>NvsStreamingContext销毁代码如下： </p><pre class="fragment">        @Override
+        protected void onDestroy() {
+            //streamingContext销毁
+            m_streamingContext = null;
+            NvsStreamingContext.close();
+        }
+</pre><h2><a class="anchor" id="用NvsLiveWindow类预览"></a>
+3.1.3  用NvsLiveWindow类预览</h2>
+<p>录制界面的xml文件里需要使用NvsLiveWindow控件，NvsLiveWindow是用来录制预览或者编辑预览的。xml文件设置如下： </p><pre class="fragment">        &lt;com.meicam.sdk.NvsLiveWindow
+            android:layout_height="match_parent"
+            android:id="@+id/liveWindow"
+            android:layout_width="match_parent" 
+        /&gt;
+</pre><p>NvsLiveWindow的宽高比应该是1:1，4:3，16:9，9:16等，最好与采集预览startCapturePreview()的参数aspectRatio值保持一致。否则，预览的图像是录制完的视频被裁剪后的图像。 <br  />
+NvsLiveWindow的填充模式： </p><pre class="fragment">        public class NvsLiveWindow extends SurfaceView implements SurfaceHolder.Callback
+        {
+            //图像按比例均匀填充，必要时进行裁剪(默认模式)   
+            public static final int FILLMODE_PRESERVEASPECTCROP = 0;
+            //图像均匀地缩放来适合窗口，没有裁剪
+            public static final int FILLMODE_PRESERVEASPECTFIT = 1;
+            //图像被缩放来适合窗口
+            public static final int FILLMODE_STRETCH = 2;
+        }
+</pre><p>对于三种填充模式，图片展示如下：</p><ul>
+<li>FILLMODE_PRESERVEASPECTCROP模式： <br  />
+ <div class="image">
+<img src="PreserveAspectCrop.png" alt=""/>
+</div>
+   </li>
+<li>FILLMODE_PRESERVEASPECTFIT模式： <div class="image">
+<img src="PreserveAspectFit.png" alt=""/>
+</div>
+   </li>
+<li>FILLMODE_STRETCH模式： <div class="image">
+<img src="Stretch.png" alt=""/>
+</div>
+   </li>
+</ul>
+<p><br  />
+</p>
+<p>另一种预览方式是通过与SurfaceTexture连接，在SurfaceView上预览显示。对应接口如下： </p><pre class="fragment">        //连接时间线和一个SurfaceTexture对象，该时间线的渲染结果将会输出到这个SurfaceTexture对象上面
+        public boolean connectTimelineWithSurfaceTexture(NvsTimeline timeline, SurfaceTexture outputSurfaceTexture)
+
+        //连接时间线和一个SurfaceTexture对象并设置代理级别，该时间线的渲染结果将会输出到这个SurfaceTexture对象上面
+        public boolean connectTimelineWithSurfaceTexture(NvsTimeline timeline, SurfaceTexture outputSurfaceTexture, NvsRational proxyScale)
+</pre><h2><a class="anchor" id="预览前的准备"></a>
+3.1.4 预览前的准备</h2>
+<pre class="fragment">        //给Streaming Context设置采集设备回调接口（必须有）
+        m_streamingContext.setCaptureDeviceCallback(this);
+        if (m_streamingContext.getCaptureDeviceCount() == 0)
+            return;
+        // 将采集预览输出连接到NvsLiveWindow控件（必须有）
+        if (!m_streamingContext.connectCapturePreviewWithLiveWindow(m_liveWindow)) {
+            Log.e(TAG, "Failed to connect capture preview with livewindow!");
+            return;
+        }
+        //采集设备数量判定，如果采集设备是1，不能开启前置摄像头。
+        if (m_streamingContext.getCaptureDeviceCount() &gt; 1)
+            m_switchBackFacing.setEnabled(true);
+
+        if (m_streamingContext.isCaptureDeviceBackFacing(0))//判断是否为后置采集设备
+        {
+            .....
+        }
+</pre><h2><a class="anchor" id="开启预览"></a>
+3.1.5 开启预览</h2>
+<p>在启动视频录制之前，要进行视频采集预览。 </p><pre class="fragment">        //启动采集预览
+        m_streamingContext.startCapturePreview(m_currentDeviceIndex, NvsStreamingContext.VIDEO_CAPTURE_RESOLUTION_GRADE_SUPER_HIGH, 0, m_aspectRatio);
+</pre><h2><a class="anchor" id="带美颜录制和不带美颜录制"></a>
+3.1.5.1 带美颜录制和不带美颜录制</h2>
+<p>采集预览时，可以在预览画面上看到添加的美颜和滤镜。如果开启带特效录制，录制的文件则会带有美颜和滤镜。如果不开启，则录制的视频文件没有美颜和滤镜效果， 则可以在后续的编辑功能中，再添加美颜和滤镜。带特效录制，则必须将startCapturePreview()的flags参数值设为NvsStreamingContext.STREAMING_ENGINE_CAPTURE_FLAG_DONT_USE_SYSTEM_RECORDER，否则设为0。 <br  />
+更多信息请参考：<a href="https://www.meishesdk.com/android/doc_ch/html/content/videoRecorderMode_8md.html">https://www.meishesdk.com/android/doc_ch/html/content/videoRecorderMode_8md.html</a> </p>
+<h2><a class="anchor" id="录制与停止录制"></a>
+3.1.6 录制与停止录制</h2>
+<p>录制输出文件.mov 或者.mp4。startRecording()开启录制，stopRecording()停止录制。startRecording()的参数outputFilePath是录制视频文件的路径。 </p><pre class="fragment">                    m_streamingContext.startRecording(file.getAbsolutePath());
+                    m_streamingContext.stopRecording();
+</pre><h2><a class="anchor" id="录制参数调节"></a>
+3.1.7 录制参数调节</h2>
+<p>设置闪光灯是否开启： </p><pre class="fragment">                    m_streamingContext.toggleFlash(true);
+</pre><p>自动聚焦： </p><pre class="fragment">                    m_streamingContext.startAutoFocus(new RectF(50,50,100,100));
+</pre><p>设置曝光补偿： </p><pre class="fragment">                    m_streamingContext.setExposureCompensation(40);
+</pre><p>设置缩放： </p><pre class="fragment">                    m_streamingContext.setZoom(0.8);
+</pre><h2><a class="anchor" id="美颜"></a>
+3.1.8 美颜</h2>
+<p>添加美颜特效后，在预览窗口就可以看到美颜效果。录制视频时，用户需要根据手机性能任意选择带美颜录制或者不带美颜录制。 美颜特效可设置磨皮、美白，红润，基础美颜效果，基础美颜效果的程度，锐化。具体美颜效果可以参考SdkDemo的“视频拍摄”模块。 <br  />
+代码如下： </p><pre class="fragment">                    NvsCaptureVideoFx beautyFx = m_streamingContext.appendBeautyCaptureVideoFx();//添加美颜采集特效
+                    beautyFx.setFloatVal("Strength", 0.5);//设置美颜磨皮值
+                    beautyFx.setFloatVal("Whitening", 0.5);//设置美白强度值
+                    beautyFx.setFloatVal("Reddening", 0.5);//设置红润强度值
+                    beautyFx.setBooleanVal("Default Beauty Enabled", true);//设置基础美颜的开关
+                    beautyFx.setBooleanVal("Default Sharpen Enabled", true);//设置锐化的开关
+                    beautyFx.setFloatVal("Default Intensity", 0.5);//设置基础美颜的强度
+</pre><h2><a class="anchor" id="采集特效（滤镜）"></a>
+3.1.9 采集特效（滤镜）</h2>
+<p>采集特效分为两种，内建采集特效和扩展采集特效，扩展采集特效即通过资源包安装而得到的采集特效。 </p>
+<h2><a class="anchor" id="内建采集特效"></a>
+3.1.9.1 内建采集特效</h2>
+<p>获取内建采集特效名称可以参考列表：<a href="https://www.meishesdk.com/android/doc_ch/html/content/FxNameList_8md.html">https://www.meishesdk.com/android/doc_ch/html/content/FxNameList_8md.html</a>。 <br  />
+添加与移除特效： </p><pre class="fragment">        m_streamingContext.appendBuiltinCaptureVideoFx(fxName);
+        m_streamingContext.removeAllCaptureVideoFx();
+</pre><h2><a class="anchor" id="扩展采集特效"></a>
+3.1.9.2 扩展采集特效</h2>
+<p>使用扩展采集特效，首先安装资源包，获取资源包ID值，然后添加扩展采集特效。例如，此处采用同步方式安装资源包，如果资源包尺寸太大或者根据需要可使用异步安装方式。 String package1Path = "assets:/7FFCF99A-5336-4464-BACD-9D32D5D2DC5E.videofx"; m_fxPackageId = new StringBuilder(); int error = m_streamingContext.getAssetPackageManager().installAssetPackage(package1Path, null, NvsAssetPackageManager.ASSET_PACKAGE_TYPE_VIDEOFX, true, m_fxPackageId); if (error != NvsAssetPackageManager.ASSET_PACKAGE_MANAGER_ERROR_NO_ERROR &amp;&amp; error != NvsAssetPackageManager.ASSET_PACKAGE_MANAGER_ERROR_ALREADY_INSTALLED) { Log.e(TAG, "Failed to install asset package!"); }</p>
+<p>//添加扩展采集特效 m_streamingContext.appendPackagedCaptureVideoFx(m_fxPackageId.toString());</p>
+<h2><a class="anchor" id="编辑"></a>
+3.2 编辑</h2>
+<p><br  />
+ 实现视频编辑的一般步骤：</p><ul>
+<li>先初始化NvsStreamingContext。如果已经初始化过，则直接获取对象。 <pre class="fragment">  //NvsStreamingContext初始化
+  m_streamingContext = NvsStreamingContext.getInstance(); // m_streamingContext对象
+</pre><ul>
+<li>创建时间线(timeline)。通过NvsStreamingContext类对象创建时间线，时间线占用资源较小，如有需要，一个程序中可以创建多个时间线。一般创建一条时间线即可。</li>
+</ul>
+</li>
+<li>添加轨道，包括视频轨道(VideoTrack)与音频轨道(AudioTrack)。时间线上可以添加视频轨道和音频轨道，而在视频轨道上添加视频片段，音频轨道上添加音频片段。如果要实现画中画，则可添加两条视频轨道。添加音频轨道一般用来给视频加音乐或者配音功能。</li>
+<li>把素材片段添加到轨道上。视频轨道上可以添加多个片段，可以是视频文件或者图片，实现图片和视频的混编。音频轨道上也可以添加多个音乐文件。 </li>
+</ul>
+<h2><a class="anchor" id="创建timeline设定视频尺寸"></a>
+3.2.1 创建timeline设定视频尺寸</h2>
+<p>创建timeline对于编辑是非常关键的，timeline的分辨率决定了生成视频文件的最大分辨率（尺寸）。请将timeline的分辨率和NvsLiveWindow的宽高比适配一致。 </p><pre class="fragment">        NvsVideoResolution videoEditRes = new NvsVideoResolution();
+        videoEditRes.imageWidth = 1280; /*视频分辨率的宽*/
+        videoEditRes.imageHeight = 720; /*视频分辨率的高*/
+        videoEditRes.imagePAR = new NvsRational(1, 1); /*像素比，设为1:1*/
+                    NvsRational videoFps = new NvsRational(25, 1); /*帧速率，可以设25或30，也可设为30 */
+
+        NvsAudioResolution audioEditRes = new NvsAudioResolution();
+        audioEditRes.sampleRate = 44100; /*音频采样率，可以是44100，或者48000*/
+        audioEditRes.channelCount = 2; /*音频通道数,一般是2*/
+
+        /*创建时间线*/
+        m_timeline = m_streamingContext.createTimeline(videoEditRes, videoFps, audioEditRes);
+        //将timeline连接到LiveWindow控件
+        m_streamingContext.connectTimelineWithLiveWindow(m_timeline,m_liveWindow);
+        m_streamingContext.setCompileCallback(this);//设置生成回调接口
+        m_streamingContext.setPlaybackCallback(this);//设置播放回调接口
+</pre><h2><a class="anchor" id="多段视频、图片混编"></a>
+3.2.2 多段视频、图片混编</h2>
+<p>一般情况下创建一条视频轨道，然后往轨道上添加图片或者视频素材。添加到轨道上的素材，我们称它为片段（clip)。图片和视频素材都是通过文件路径添加到轨道上的。 请注意：如果图片素材尺寸过大，需要降低图片尺寸，降低尺寸后的图片和创建timeline的分辨率的尺寸大小匹配最好。</p>
+<p>添加视频轨道： m_videoTrack = m_timeline.appendVideoTrack();</p>
+<p>添加音频轨道： m_audioTrack = m_timeline.appendAudioTrack();</p>
+<p>添加片段： for(int i = 0; i &lt; pathList.size(); i++) { NvsVideoClip clip = m_videoTrack.appendClip(pathList.get(i)); }</p>
+<h2><a class="anchor" id="播放与定位预览"></a>
+3.2.3 播放与定位预览</h2>
+<p>对于播放与定位预览接口，其参数videoSizeMode建议设置为NvsStreamingContext.VIDEO_PREVIEW_SIZEMODE_LIVEWINDOW_SIZE。若无特殊需求，设为NvsStreamingContext.VIDEO_PREVIEW_SIZEMODE_FULLSIZE的模式会影响性能。 preload是预加载，设为true。注意：美摄SDK的时间单位是微秒，1/1000000秒。 <br  />
+视频播放，playbackTimeline()的参数endTime，值可以是_timeline.duration或者-1。 </p><pre class="fragment">        m_streamingContext.playbackTimeline(m_timeline, m_streamingContext.getTimelineCurrentPosition(m_timeline), -1, NvsStreamingContext.VIDEO_PREVIEW_SIZEMODE_LIVEWINDOW_SIZE, true, 0);
+</pre><p>视频定位预览： </p><pre class="fragment">        m_streamingContext.seekTimeline(m_timeline, 0, NvsStreamingContext.VIDEO_PREVIEW_SIZEMODE_LIVEWINDOW_SIZE, 0);
+</pre><h2><a class="anchor" id="视频裁剪"></a>
+3.2.4 视频裁剪</h2>
+<p>改变片段的入出点，裁剪片段。 </p><pre class="fragment">                    NvsVideoClip clip = m_videoTrack.getClipByIndex(0);
+        clip.changeTrimInPoint((long)trim_in, true);
+        clip.changeTrimOutPoint((long)trim_out, true);
+</pre><h2><a class="anchor" id="从轨道上移除片段"></a>
+3.2.5 从轨道上移除片段</h2>
+<p>移除片段： </p><pre class="fragment">        m_videoTrack.removeClip(0, false);
+</pre><h2><a class="anchor" id="片段排序"></a>
+3.2.6 片段排序</h2>
+<p>轨道上的片段可以互换位置，moveClip()的参数clipIndex和destClipIndex分别代表互换的两个素材的位置索引。 </p><pre class="fragment">        m_videoTrack.moveClip(0,3);
+</pre><h2><a class="anchor" id="图片时长设定"></a>
+3.2.7 图片时长设定</h2>
+<p>NvsVideoTrack类提供appendClip(String filePath, long trimIn, long trimOut)可以根据需要自由设定图片时长。 filePath是图片素材的路径，trimIn设置0，trimOut设置为8000000，则图片显示为8秒。 </p><pre class="fragment">        m_videoTrack.appendClip(pathList.get(i),0,8000000); 
+</pre><p>如果通过appendClip(String filePath)添加图片，则图片默认显示时长是4秒。 </p>
+<h2><a class="anchor" id="移除时间线与轨道"></a>
+3.2.8 移除时间线与轨道</h2>
+<p>创建的时间线，添加的视频轨道和音频轨道，如果当前不再需要，则要进行移除。操作如下： <br  />
+移除时间线： </p><pre class="fragment">        m_streamingContext.removeTimeline(m_timeline);
+</pre><p>移除视频轨道： </p><pre class="fragment">        m_timeline.removeVideoTrack(0);
+</pre><p>移除音频轨道： </p><pre class="fragment">        m_timeline.removeAudioTrack(0);
+</pre> <h2><a class="anchor" id="音乐"></a>
+3.3 音乐</h2>
+<p><br  />
+</p>
+<h2><a class="anchor" id="添加音乐"></a>
+3.3.1 添加音乐</h2>
+<p>给视频添加音乐是通过音频轨道添加音频片段实现的。创建时间线后，通过appendAudioTrack()添加音频轨道，然后把音乐文件以音频片段的形式添加到音频轨道上即可。可以添加多段音乐，音乐会连续播放。 </p><pre class="fragment">                    m_audioTrack = m_timeline.appendAudioTrack();
+        m_audioTrack.appendClip(pathList.get(i));
+</pre><h2><a class="anchor" id="音乐裁剪"></a>
+3.3.2 音乐裁剪</h2>
+<p>音乐裁剪与视频裁剪是一样的，也是通过设置入出点的方式进行裁剪。 </p><pre class="fragment">                    NvsAudioClip clip = m_audioTrack.getClipByIndex(0);
+        clip.changeTrimInPoint((long)trim_in, true);
+        clip.changeTrimOutPoint((long)trim_out, true);  
+</pre><h2><a class="anchor" id="字幕"></a>
+3.4 字幕</h2>
+<p>添加，删除以及获取字幕都是在时间线(timeline)上进行执行的，可以参考SdkDemo示例的字幕编辑模块。 </p>
+<h2><a class="anchor" id="添加与删除字幕"></a>
+3.4.1 添加与删除字幕</h2>
+<p>添加字幕，可设置字幕显示的时长。 </p><pre class="fragment">                     NvsTimelineCaption m_timelineCapion = m_timeline.addCaption("Meishe SDK", 0, m_timeline.getDuration(), null);
+</pre><p>移除字幕，返回下一个时间线字幕对象。如果没有下一个字幕，则返回null。 </p><pre class="fragment">                     NvsTimelineCaption nextCaption = m_timeline.removeCaption(m_timelineCapion);
+</pre><h2><a class="anchor" id="获取timeline上的字幕"></a>
+3.4.2 获取timeline上的字幕</h2>
+<p>有多种方式获取字幕： </p><pre class="fragment">                    //获得时间线上的第一个字幕
+                    NvsTimelineCaption firstCaption = m_timeline.getFirstCaption();
+
+                    //获得时间线上的最后一个字幕
+                    NvsTimelineCaption lastCaption = m_timeline.getLastCaption();
+
+                    //获得时间线上的当前字幕的前一个字幕
+                    NvsTimelineCaption prevCaption = m_timeline.getPrevCaption(currentCaption);
+
+                    //获得时间线上的当前字幕的后一个字幕
+                    NvsTimelineCaption lastCaption = m_timeline.getNextCaption(currentCaption);
+</pre><p>根据时间线上的位置获得字幕,返回保存当前位置字幕的List集合。获取的字幕列表排序规则如下： <br  />
+1.添加时字幕入点不同，按入点的先后顺序排列； <br  />
+2.添加时字幕入点相同，按添加字幕的先后顺序排列。 </p><pre class="fragment">                    List&lt;NvsTimelineCaption&gt; cpationList = m_timeline.getCaptionsByTimelinePosition(1000000);
+</pre><h2><a class="anchor" id="改变字幕的属性"></a>
+3.4.3 改变字幕的属性</h2>
+<p>修改字幕属性可通过NvsTimelineCaption类的方法实现。获取字幕后，可设置字幕文本，颜色，加粗，斜体，描边等。 <br  />
+以修改字幕文本为例： </p><pre class="fragment">                    currentCaption.setText("Meishe SDK");
+</pre><p>如果是全景图字幕，还可以设置字幕中心点的极角，字幕中心点的方位角等。以设置字幕中心点的极角为例： </p><pre class="fragment">                    currentCaption.setCenterPolarAngle(1.2);
+</pre><h2><a class="anchor" id="改变字幕的入出点"></a>
+3.4.4 改变字幕的入出点</h2>
+<p>获取字幕后，可以修改字幕在时间线上的入点，出点以及偏移值。 </p><pre class="fragment">                    //改变入点
+                    currentCaption.changeInPoint(1000000);
+
+                    //改变出点
+                    currentCaption.changeOutPoint(5000000);
+
+                    //改变显示位置(入点和出点同时偏移offset值)
+                    currentCaption.movePosition(1000000);
+</pre><h2><a class="anchor" id="动画贴纸"></a>
+3.5 动画贴纸</h2>
+<p>添加，删除以及获取动画贴纸也是在时间线(timeline)上进行执行的，可以参考SdkDemo示例的贴纸模块。 </p>
+<h2><a class="anchor" id="添加与删除动画贴纸"></a>
+3.5.1 添加与删除动画贴纸</h2>
+<p>添加动画贴纸： </p><pre class="fragment">                     m_timeline.addAnimatedSticker(0, m_timeline.getDuration(), m_stickerId.toString());
+</pre><p>移除动画贴纸，返回当前贴纸的下一个贴纸。如果没有下一下贴纸，则返回null。 </p><pre class="fragment">                     NvsTimelineAnimatedSticker nextSticker = m_timeline.removeAnimatedSticker(currentSticker);
+</pre><h2><a class="anchor" id="获取timeline上的动画贴纸"></a>
+3.5.2 获取timeline上的动画贴纸</h2>
+<p>有多种方式获取时间线上添加的动画贴纸。 </p><pre class="fragment">                    //获取时间线上第一个动画贴纸
+                    NvsTimelineAnimatedSticker firstSticker = m_timeline.getFirstAnimatedSticker();
+
+                    //获取时间线上最后一个动画贴纸
+                    NvsTimelineAnimatedSticker lastSticker = m_timeline.getLastAnimatedSticker();
+
+                    //获取时间线当前动画贴纸的前一个动画贴纸
+                    NvsTimelineAnimatedSticker prevSticker = m_timeline.getPrevAnimatedSticker(currentSticker);
+
+                    //获取时间线当前动画贴纸的后一个动画贴纸
+                    NvsTimelineAnimatedSticker nextSticker = m_timeline.getNextAnimatedSticker(currentSticker);
+</pre><p>根据时间线上的位置获得动画贴纸,返回保存当前位置动画贴纸对象的List集合。 获取的动画贴纸列表排序规则如下： 1.添加时入点不同，按入点的先后顺序排列； 2.添加时入点相同，按添加动画贴纸的先后顺序排列。 </p><pre class="fragment">                    List&lt;NvsTimelineAnimatedSticker&gt; stickerList = m_timeline.getAnimatedStickersByTimelinePosition(1000000);
+</pre><h2><a class="anchor" id="改变动画贴纸的属性"></a>
+3.5.3 改变动画贴纸的属性</h2>
+<p>修改贴纸属性可通过NvsTimelineAnimatedSticker类的方法实现。获取贴纸后，可设置缩放值，水平翻转，旋转角度，平移等。 <br  />
+以修改贴纸缩放为例： </p><pre class="fragment">                    currentSticker.setScale(1.2);
+</pre><p>如果是全景图动画贴纸，则还可以设置贴纸中心点的极角，中心点的方位角等。以设置中心点的极角为例： </p><pre class="fragment">                    currentSticker.setCenterPolarAngle(1.2);
+</pre><h2><a class="anchor" id="改变动画贴纸的入出点"></a>
+3.5.4 改变动画贴纸的入出点</h2>
+<p>获取贴纸后，可以修改动画贴纸在时间线上的入点，出点以及偏移值。 </p><pre class="fragment">                    //改变入点
+                    [currentSticker changeInPoint:1000000];
+
+                    //改变出点
+                    [currentSticker changeOutPoint:5000000];
+
+                    //改变显示位置(入点和出点同时偏移offset值)
+                    [currentSticker movePosition:1000000];
+</pre><h2><a class="anchor" id="主题"></a>
+3.6 主题</h2>
+<p>编辑视频时，如果需要运用主题，则可通过时间线(timeline)实现添加，移除。 </p>
+<h2><a class="anchor" id="添加与删除主题"></a>
+3.6.1 添加与删除主题</h2>
+<p>运用主题： m_timeline.applyTheme(m_themeId.toString());</p>
+<p>移除主题： </p><pre class="fragment">                    m_timeline.removeCurrentTheme();
+</pre><h2><a class="anchor" id="获取timeline上的主题"></a>
+3.6.2 获取timeline上的主题</h2>
+<p>获取当前主题包Id： </p><pre class="fragment">                    m_timeline.getCurrentThemeId();
+</pre><h2><a class="anchor" id="改变主题的属性"></a>
+3.6.3 改变主题的属性</h2>
+<p>运用主题后，可以设置主题片头，片尾，主题音乐音量等，以设置主题片头为例： </p><pre class="fragment">                    m_timeline.setThemeTitleCaptionText("Meishe SDK");
+</pre><h2><a class="anchor" id="转场"></a>
+3.7 转场</h2>
+<p>转场包括视频转场和音频转场。视频转场是在视频轨道上设置的，音频转场是在音频轨道上设置的。 <br  />
+视频转场包括内嵌式转场和包裹式转场。设置视频内嵌转场： </p><pre class="fragment">                    m_videoTrack.setBuiltinTransition(0,transitionName);
+</pre><p>视频包裹式转场： </p><pre class="fragment">                    m_videoTrack.setPackagedTransition(1，m_transitionId.toString());
+</pre><p>同样地，音频转场同视频转场是相同用法，用户可参照使用。 </p>
+<h2><a class="anchor" id="特效"></a>
+3.8 特效</h2>
+<p>在视频后续编辑中，经常会使用到几种特效，分别是视频特效(NvsVideoFx)，音频特效(NvsAudioFx)，时间线视频特效(NvsTimelineVideoFx)。 </p>
+<h2><a class="anchor" id="视频特效"></a>
+3.8.1 视频特效</h2>
+<p>视频特效是使用在视频片段上的，每个视频片段可以添加若干个视频特效。视频特效包括内嵌视频特效，包裹视频特效，美颜特效。 <br  />
+添加内嵌视频特效： </p><pre class="fragment">        videoClip.appendBuiltinFx(fxName);
+</pre><p>添加包裹视频特效： </p><pre class="fragment">                    videoClip.appendPackagedFx(m_fxPackageId.toString());
+</pre><p>添加美颜特效： </p><pre class="fragment">        videoClip.appendBeautyFx();
+</pre><p>移除视频特效包括移除指定索引值特效和移除所有视频特。 <br  />
+移除指定索引值的特效： </p><pre class="fragment">                    videoClip.removeFx(0);
+</pre><p>移除所有视频特效： videoClip.removeAllFx();</p>
+<h2><a class="anchor" id="音频特效"></a>
+3.8.2 音频特效</h2>
+<p>音频特效是使用在音频片段上的，每个音频片段可以添加若干个音频特效。 <br  />
+添加音频特效： </p><pre class="fragment">                    audioClip.appendFx(fxName);
+</pre><p>移除指定索引的音频特效： </p><pre class="fragment">                    audioClip.removeFx(0);
+</pre><h2><a class="anchor" id="时间线视频特效"></a>
+3.8.3 时间线视频特效</h2>
+<p>时间线视频特效是使用在时间线上的一种特效，包含内嵌特效和包裹特效。时间线上可以添加若干个时间线视频特效。 </p>
+<h2><a class="anchor" id="添加与删除时间线特效"></a>
+3.8.3.1 添加与删除时间线特效</h2>
+<p>添加时间线特效： </p><pre class="fragment">                    m_timeline.addBuiltinTimelineVideoFx(1000000,5000000,fxName);
+                    m_timeline.addPackagedTimelineVideoFx(1000000,5000000,fxPackageId);
+</pre><h2><a class="anchor" id="获取时间线特效"></a>
+3.8.3.2 获取时间线特效</h2>
+<p>有多种方法获取时间线特效。 </p><pre class="fragment">                    //获取时间线上第一个时间线视频特效
+                    NvsTimelineVideoFx firstTimelineFx = m_timeline.getFirstTimelineVideoFx();
+                    //获取时间线上最后一个时间线视频特效
+                    NvsTimelineVideoFx lastTimelineFx = m_timeline.getLastTimelineVideoFx();
+                    //获取时间线上某个时间线视频特效的前一个时间线视频特效
+                    NvsTimelineVideoFx prevTimelineFx = m_timeline.getPrevTimelineVideoFx(currentTimelineFx);
+                    //获取时间线上某个时间线视频特效的下一个时间线视频特效
+                     NvsTimelineVideoFx nextTimelineFx = m_timeline.getNextTimelineVideoFx(currentTimelineFx);
+</pre><p>根据时间线上的位置获得时间线视频特效,返回当前位置时间线视频特效对象的数组。 <br  />
+获取的时间线视频特效数组排序规则如下： <br  />
+1.添加时入点不同，按入点的先后顺序排列； <br  />
+2.添加时入点相同，按添加时间线视频特效的先后顺序排列。 </p><pre class="fragment">                    List&lt;NvsTimelineVideoFx&gt; timelineFxArray = m_timeline.getTimelineVideoFxByTimelinePosition(2000000);
+</pre><h2><a class="anchor" id="改变时间线特效的入出点"></a>
+3.8.3.3 改变时间线特效的入出点</h2>
+<p>获取时间线特效后，可以修改时间线特效在时间线上的入点，出点以及偏移值。 </p><pre class="fragment">                    //改变入点
+                    currentTimelineFx.changeInPoint(1000000);
+                    //改变出点
+                    currentTimelineFx.changeOutPoint(5000000);
+                    //改变显示位置(入点和出点同时偏移offset值)
+                    currentTimelineFx.movePosition(1000000);
+</pre><h2><a class="anchor" id="生成"></a>
+3.9 生成</h2>
+<p>美摄SDK使用compileTimeline()用于将时间线上的片段生成输出一个新的视频。 <br  />
+生成视频: </p><pre class="fragment">        m_streamingContext.compileTimeline(m_timeline, 0, m_timeline.getDuration(),
+            m_compilePath, NvsStreamingContext.COMPILE_VIDEO_RESOLUTION_GRADE_720, NvsStreamingContext.COMPILE_BITRATE_GRADE_HIGH, 0);
+</pre><h2><a class="anchor" id="素材包管理"></a>
+3.10 素材包管理</h2>
+<p>美摄SDK提供了丰富的素材库，包括动画贴纸，主题，字幕样式，转场等。素材包可以从网络上下载，或者由美摄SDK项目组提供，用户可以根据需要选择使用这些素材包。美摄SDK通过NvsAssetPackageManager类对这些素材包进行管理，可以安装，升级，卸载,获取素材包的状态，版本号等。 <br  />
+素材包安装： </p><pre class="fragment">        //此处采用同步安装方式，如果包裹过大可采用异步方式
+        int error = m_streamingContext.getAssetPackageManager().installAssetPackage(stickerPackagePath, null, NvsAssetPackageManager.ASSET_PACKAGE_TYPE_ANIMATEDSTICKER, true, m_stickerId);
+</pre><p>素材包升级： </p><pre class="fragment">        //此处采用同步升级方式，如果包裹过大可采用异步方式
+        int error = m_streamingContext.getAssetPackageManager().upgradeAssetPackage(stickerPackagePath, null, NvsAssetPackageManager.ASSET_PACKAGE_TYPE_ANIMATEDSTICKER, true, m_stickerId);
+</pre><p>素材包卸载： </p><pre class="fragment">        int error = m_streamingContext.getAssetPackageManager().uninstallAssetPackage(m_stickerId,NvsAssetPackageManager.ASSET_PACKAGE_TYPE_ANIMATEDSTICKER);
+</pre><h2><a class="anchor" id="回调"></a>
+3.11 回调</h2>
+<p>美摄SDK提供了很多回调接口，如果要查询采集设备状态，采集录制状态，视频播放状态，文件生成状态，资源包安装状态等，则必须在创建NvsStreamingContext对象后设置回调并实现对应的回调方法。 <br  />
+以视频播放回调为例： </p><pre class="fragment">        m_streamingContext.setPlaybackCallback(this);
+</pre><h2><a class="anchor" id="附件"></a>
+4 附件</h2>
+<p>美摄SDK版本包括极速版，标准功能版，全功能PRO版，对于每个版本产品的功能点，请参考：<a href="https://www.meishesdk.com/editsdk">https://www.meishesdk.com/editsdk</a>，会有详细介绍。每个用户可根据个人需要选择使用，具体请联系美摄商务。 <br  />
+ </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

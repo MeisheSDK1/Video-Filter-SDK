@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.meishe.sdkdemo.edit.VideoEditActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.meishe.sdkdemo.edit.view.CustomTitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_bar_height"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <RelativeLayout
+            android:id="@+id/video_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <RelativeLayout
+            android:id="@+id/bottomLayout"
+            android:layout_width="match_parent"
+            android:layout_height="213dp"
+            android:background="#ff242728">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/assetRecycleList"
+                android:layout_width="match_parent"
+                android:layout_height="78dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="13dp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <LinearLayout
+                android:id="@+id/volumeUpLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ff242728"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="13dp"
+                        android:text="@string/originalSound"
+                        android:textColor="@color/ccffffff"
+                        android:textSize="@dimen/sp12" />
+
+                    <SeekBar
+                        android:id="@+id/videoVoiceSeekBar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="13dp"
+                        android:layout_weight="1"
+                        android:maxHeight="2dp"
+                        android:minHeight="2dp"
+                        android:progressDrawable="@drawable/caption_size_seekbar"
+                        android:thumb="@drawable/custom_voice_seekbar_ball"></SeekBar>
+
+                    <TextView
+                        android:id="@+id/videoVoiceSeekBarValue"
+                        android:layout_width="27dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/int50"
+                        android:textColor="#ffffffff"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="13dp"
+                        android:text="@string/music"
+                        android:textColor="@color/ccffffff"
+                        android:textSize="@dimen/sp12" />
+
+                    <SeekBar
+                        android:id="@+id/musicVoiceSeekBar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="13dp"
+                        android:layout_weight="1"
+                        android:maxHeight="2dp"
+                        android:minHeight="2dp"
+                        android:progressDrawable="@drawable/caption_size_seekbar"
+                        android:thumb="@drawable/custom_voice_seekbar_ball"></SeekBar>
+
+                    <TextView
+                        android:id="@+id/musicVoiceSeekBarValue"
+                        android:layout_width="27dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/int50"
+                        android:textColor="#ffffffff"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="13dp"
+                        android:text="@string/dub"
+                        android:textColor="@color/ccffffff"
+                        android:textSize="@dimen/sp12" />
+
+                    <SeekBar
+                        android:id="@+id/dubbingSeekBar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="13dp"
+                        android:layout_weight="1"
+                        android:maxHeight="2dp"
+                        android:minHeight="2dp"
+                        android:progressDrawable="@drawable/caption_size_seekbar"
+                        android:thumb="@drawable/custom_voice_seekbar_ball"></SeekBar>
+
+                    <TextView
+                        android:id="@+id/dubbingSeekBarValue"
+                        android:layout_width="27dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/int50"
+                        android:textColor="#ffffffff"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="49dp"
+                    android:layout_marginTop="30dp">
+
+                    <ImageView
+                        android:id="@+id/finish"
+                        android:layout_width="25dp"
+                        android:layout_height="20dp"
+                        android:layout_centerInParent="true"
+                        android:background="@mipmap/finish" />
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/compilePage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"></RelativeLayout>
+</RelativeLayout>

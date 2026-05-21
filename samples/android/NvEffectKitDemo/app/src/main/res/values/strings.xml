@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">Meishe Effect</string>
+    <string name="start_photo">take photo</string>
+    <string name="start_record">record</string>
+    <string name="preview_failed">start preview failed</string>
+    <string name="defaultValue">0.0</string>
+    <string name="openFilter">open filter</string>
+    <string name="cartoon">cartoon</string>
+    <string name="cartoon1">cartoon1</string>
+    <string name="cartoon2">cartoon2</string>
+    <string name="delete">delete</string>
+    <string name="photo">photo</string>
+    <string name="video">video</string>
+    <string name="camera">camera</string>
+    <string name="flash">flash</string>
+    <string name="zoom">zoom</string>
+    <string name="beauty_shape">beauty_shape</string>
+    <string name="beauty_filter">filter</string>
+    <string name="beauty_prop">prop</string>
+    <string name="beauty">beauty</string>
+    <string name="open_flash_after_open_rear_camera">open_flash_after_open_rear_camera</string>
+    <string name="exposure_is_not_supported">exposure is not supported</string>
+    <string name="zoom_is_not_supported">zoom is not supported</string>
+    <string name="compoundcaption">CompoundCaption</string>
+    <string name="traditional_caption">Traditional caption</string>
+    <string name="beauty_markup">makeUp</string>
+    <string name="beauty_background">background</string>
+    <string name="animatedSticker">Sticker</string>
+    <string name="transition">Transition</string>
+    <string name="inputSubtitle">Please enter caption text:</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="no_use">No</string>
+    <string name="adjust_ai">AI</string>
+    <string name="brightness">Brightness</string>
+    <string name="contrast">Contrast</string>
+    <string name="saturation">Saturation</string>
+    <string name="degree">Degree</string>
+    <string name="sharpen">Sharpen</string>
+
+    <string name="adjust">Adjust</string>
+    <string name="exposure">Exposure</string>
+    <string name="highlight">Highlight</string>
+    <string name="shadow">Shadow</string>
+    <string name="black_point">Black Point</string>
+    <string name="vibrance">Vibrance</string>
+    <string name="color_temp">Color Temp</string>
+    <string name="tint">Tint</string>
+    <string name="grain_killer">Grain Killer</string>
+
+    <string-array name="adjust_child_menu">
+        <item>@string/adjust_ai</item>
+        <item>@string/exposure</item>
+        <item>@string/highlight</item>
+        <item>@string/shadow</item>
+        <item>@string/brightness</item>
+        <item>@string/contrast</item>
+        <item>@string/black_point</item>
+        <item>@string/saturation</item>
+        <item>@string/vibrance</item>
+        <item>@string/color_temp</item>
+        <item>@string/tint</item>
+        <item>@string/sharpen</item>
+        <item>@string/degree</item>
+        <item>@string/sharpness</item>
+        <item>@string/grain_killer</item>
+    </string-array>
+    <string name="makeup_null">none</string>
+    <string name="unauthorized">unauthorized</string>
+</resources>

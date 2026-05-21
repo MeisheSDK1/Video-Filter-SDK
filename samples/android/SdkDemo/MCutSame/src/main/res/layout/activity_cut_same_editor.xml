@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    tools:context=".CutSameEditorActivity">
+
+    <RelativeLayout
+        android:id="@+id/real_titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_150"
+        android:layout_marginTop="@dimen/dp_px_90"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/cut_editor_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_px_42"
+            android:layout_marginLeft="@dimen/dp_px_42"
+            android:background="@drawable/cut_edit_close"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:text="@string/cut_editor_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_px_45"
+            tools:ignore="RelativeOverlap" />
+
+        <Button
+            android:id="@+id/cut_editor_import"
+            android:layout_width="@dimen/dp_px_165"
+            android:layout_height="@dimen/dp_px_75"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dp_px_60"
+            android:layout_marginRight="@dimen/dp_px_60"
+            android:padding="0dp"
+            android:text="@string/activity_cut_editor_import"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/cut_editor_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" />
+
+    <com.meishe.base.view.PlayControlView
+        android:id="@+id/cut_editor_play_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_54"
+        android:layout_marginTop="@dimen/dp_px_42"
+        android:layout_marginBottom="@dimen/dp_px_123" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/cut_editor_tab"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_60"
+        android:layout_marginBottom="@dimen/dp_px_48"
+        app:tabIndicatorColor="@color/transparent"
+        app:tabMinWidth="@dimen/dp_px_150"
+        app:tabSelectedTextColor="@color/activity_tailor_button_background"
+        app:tabTextAppearance="@style/cut_tab_layout_style"
+        app:tabTextColor="@color/white_d1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_1"
+        android:background="@color/color_3636" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/cut_editor_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_394"
+        android:layout_marginStart="@dimen/dp_px_30"
+        android:layout_marginLeft="@dimen/dp_px_30"
+        android:layout_marginTop="@dimen/dp_px_57"
+        android:layout_marginEnd="@dimen/dp_px_30"
+        android:layout_marginRight="@dimen/dp_px_30"
+        android:layout_marginBottom="@dimen/dp_px_180" />
+</LinearLayout>

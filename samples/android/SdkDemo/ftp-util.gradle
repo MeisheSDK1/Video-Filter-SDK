@@ -1,0 +1,103 @@
+configurations {
+    ftpAntTask
+}
+
+dependencies {
+    ftpAntTask("org.apache.ant:ant-commons-net:1.9.2") {
+        module("commons-net:commons-net:3.3")
+    }
+}
+
+void downloadFtpFiles(String localeAssetsDir, String remoteAssetsVersionDir, String localLibDir, String remoteLibVersionDir) {
+    try {
+        def serverIp = "192.168.100.111"
+        def userId = "ftpuser"
+        def password = "Meishe2020"
+
+        String versionFileName = "version.txt"
+
+        def remoteAssetsDir = remoteAssetsVersionDir + "/assets/"
+        def remoteLibDir = remoteLibVersionDir + "/lib"
+
+        def needAssetsUpdate = checkVersion(localeAssetsDir, versionFileName, remoteAssetsVersionDir)
+        println("needAssetsUpdate: " + needAssetsUpdate)
+        if (needAssetsUpdate) {
+            //更新assert文件
+            ant.ftp(action: 'get', server: serverIp, userid: userId, password: password, remotedir: remoteAssetsDir) {
+                // 删除老文件,发现不用删除，同名文件会自动覆盖
+//            delete(new File(localDir))
+                //指定下载文件位置
+                fileset(dir: new File(localeAssetsDir)) {
+                    include(name: "**")
+                }
+            }
+        }
+        //更新assert文件更新lib文件
+        def needLibsUpdate = checkVersion(localLibDir, versionFileName, remoteLibVersionDir)
+        println("needLibsUpdate: " + needLibsUpdate)
+        if (needLibsUpdate) {
+            delete(new File(localLibDir))
+            ant.ftp(action: 'get', server: serverIp, userid: userId, password: password, remotedir: remoteLibDir) {
+                fileset(dir: new File(localLibDir)) {
+                    include(name: "**")
+                }
+            }
+        }
+    } catch (Exception e) {
+        println("报错:" + e.toString())
+        e.printStackTrace()
+    }
+}
+/**
+ *
+ * @param localDir
+ * @param file version.txt
+ * @return
+ */
+boolean checkVersion(String localDir, String fileName, String url) {
+    def config = file(localDir + File.separator + fileName)
+    println("localPath:" + config.getPath() + ",\n remotePath=" + url)
+    def oldVersion = "-1"
+    if (config.exists()) {
+        config.eachLine { line ->
+            oldVersion = line
+            println("oldVersion:" + oldVersion)
+        }
+    } else {
+        println("before update,file is not exist:" + config.getPath())
+    }
+    ant.taskdef(
+            name: 'ftp',
+            classname: 'org.apache.tools.ant.taskdefs.optional.net.FTP',
+            classpath: configurations.ftpAntTask.asPath
+    )
+    def serverIp = "192.168.100.111"
+    def userId = "ftpuser"
+    def password = "Meishe2020"
+
+    //指定ftp地址及账户信息
+    ant.ftp(action: 'get', server: serverIp, userid: userId, password: password, remotedir: url) {
+        //指定下载文件位置
+        fileset(dir: new File(localDir)) {
+            include(name: fileName)
+        }
+    }
+    def version = "0"
+    if (config.exists()) {
+        config.eachLine { line ->
+            version = line
+            println("newVersion:" + version)
+        }
+    } else {
+        println("after update ,file is nor exist:" + config.getPath())
+    }
+    if (version == oldVersion) {
+        return false
+    }
+    return true
+}
+
+//导出函数
+ext {
+    downloadFtpFiles = this.&downloadFtpFiles
+}

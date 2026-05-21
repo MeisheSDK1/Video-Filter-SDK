@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#242728"
+    android:orientation="vertical">
+
+    <com.meishe.sdkdemo.edit.view.CustomTitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/spaceLayout"
+        android:background="#ff242728"
+        android:layout_width="match_parent"
+        android:layout_height="460dp" />
+
+
+    <RelativeLayout
+        android:layout_gravity="bottom"
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:background="#ff242728">
+
+        <com.meishe.sdkdemo.edit.view.MSEditText
+            android:id="@+id/et_caption_input"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_px_105"
+            android:layout_marginLeft="@dimen/dp_px_39"
+            android:layout_marginTop="@dimen/dp_px_45"
+            android:layout_marginRight="@dimen/dp_px_39"
+            android:background="@drawable/editor_caption_input_corner"
+            android:hint="@null"
+            android:paddingLeft="@dimen/dp_px_15"
+            android:paddingRight="@dimen/dp_px_15"
+            android:textColor="@color/white_8"
+            android:textCursorDrawable="@drawable/editor_caption_input_cursor"
+            android:textSize="@dimen/sp_px_48"
+            android:focusableInTouchMode="true"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/captionStyleTab"
+            android:background="#1AFFFFFF" />
+
+        <com.meishe.sdkdemo.edit.view.MSTabLayout
+            android:id="@+id/captionStyleTab"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/et_caption_input"
+            android:layout_toLeftOf="@+id/captionAssetFinish"
+            app:tabMode="scrollable" />
+
+        <ImageView
+            android:id="@+id/captionAssetFinish"
+            android:layout_width="@dimen/dp25"
+            android:layout_height="@dimen/dp25"
+            android:background="@mipmap/ic_caption_style_confirm"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/captionStyleTab"
+            android:layout_marginRight="7.5dp"
+            android:layout_marginTop="7.5dp"
+            />
+
+        <com.meishe.sdkdemo.edit.view.CustomViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp15"
+            android:layout_below="@+id/captionStyleTab"
+            android:layout_marginBottom="35dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/captionAssetFinish1"
+            android:visibility="gone"
+            android:background="#1AFFFFFF" />
+
+        <ImageView
+            android:id="@+id/captionAssetFinish1"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="12dp"
+            android:visibility="gone"
+            android:background="@mipmap/finish" />
+
+
+
+    </RelativeLayout>
+
+</FrameLayout>

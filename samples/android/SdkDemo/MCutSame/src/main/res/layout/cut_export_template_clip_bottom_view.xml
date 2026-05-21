@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_px_132">
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="@string/activity_cut_export_template_cancel"
+        android:gravity="center"
+        android:textColor="@color/ffc1c1c1"
+        android:textSize="@dimen/sp_px_36"
+        />
+
+    <View
+        android:layout_width="@dimen/dp_px_3"
+        android:layout_height="@dimen/dp_px_39"
+        android:background="@color/white_707"
+        android:layout_gravity="center_vertical"
+        />
+
+    <TextView
+        android:id="@+id/tv_confirm"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/activity_cut_export_template_confirm"
+        android:textColor="@color/red_fc2b55"
+        android:textSize="@dimen/sp_px_36"
+        />
+
+
+</LinearLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_181818">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_url"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/dp_px_45"
+        android:layout_marginEnd="@dimen/dp_px_45"
+        android:layout_marginBottom="@dimen/dp_px_300"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/external_url_handle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_px_60"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tool:visibility="visible">
+
+        <TextView
+            android:id="@+id/external_url_add"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_px_90"
+            android:layout_marginBottom="@dimen/dp_px_45"
+            android:drawableStart="@mipmap/icon_url_add"
+            android:drawablePadding="@dimen/dp_px_45"
+            android:gravity="center_vertical"
+            android:text="@string/url_add"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_px_39" />
+
+        <TextView
+            android:id="@+id/external_url_delete"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_px_90"
+            android:drawableStart="@mipmap/icon_url_delete"
+            android:drawablePadding="@dimen/dp_px_45"
+            android:gravity="center_vertical"
+            android:text="@string/delete"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_px_39" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

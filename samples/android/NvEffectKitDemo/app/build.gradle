@@ -1,0 +1,83 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion rootProject.android.extCompileSdkVersion
+    buildToolsVersion rootProject.android.extBuildToolsVersion
+    defaultConfig {
+        applicationId "com.meishe.mseffectsdk"
+        minSdkVersion rootProject.android.extMinSdkVersion
+        targetSdkVersion rootProject.android.extTargetSdkVersion
+        versionCode rootProject.config.extVersionCode
+        versionName rootProject.config.extVersionName
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        ndk {
+            if (armConfig == 1) {
+                abiFilters "armeabi-v7a", "arm64-v8a"
+            } else if (armConfig == 2) {
+                abiFilters "arm64-v8a"
+            } else if (armConfig == 3) {
+                abiFilters "armeabi-v7a"
+                // 指定要ndk需要兼容的架构(这样其他依赖包里mips,x86,armeabi,arm-v8之类的so会被过滤掉)
+                //Specify the architecture that the ndk needs to be compatible with (so that other dependency packages such as mips,x86,armeabi,arm-v8, etc. are filtered out)
+            }
+        }
+        multiDexEnabled true
+    }
+    signingConfigs {
+        debug {
+        }
+    }
+    sourceSets {
+        main {
+            java {
+                //excludes = ["**/camera/CameraHelper.java"]
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def buildName = "NvEffectKitDemo"
+            def type = variant.buildType.name
+            def releaseApkName = buildName + '_' + type + "_" + versionName + '_' + releaseTime() + '.apk'
+            outputFileName = releaseApkName
+        }
+    }
+}
+
+static def releaseTime() {
+    return new Date().format("yyyy-MM-dd--HH-mm-ss", TimeZone.getTimeZone("GMT+8"))
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    implementation project(':libBase')
+    implementation project(':libBeauty')
+    implementation project(':libMakeup')
+}

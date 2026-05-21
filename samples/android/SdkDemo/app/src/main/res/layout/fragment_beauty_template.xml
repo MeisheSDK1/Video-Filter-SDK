@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_px_600"
+    android:layout_gravity="bottom"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/beauty_template_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_px_30"
+        android:layout_marginTop="@dimen/dp_px_39"
+        android:text="@string/beauty_template"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_px_36" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/dp_px_60">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_px_30">
+
+            <ImageView
+                android:id="@+id/beauty_template_custom"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:contentDescription="@null"
+                android:padding="8dp"
+                android:src="@mipmap/icon_apply_custom"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/beauty_template_select_custom"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:padding="13dp"
+                android:src="@mipmap/icon_adjust"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/beauty_template_custom"
+                app:layout_constraintLeft_toLeftOf="@id/beauty_template_custom"
+                app:layout_constraintRight_toRightOf="@id/beauty_template_custom"
+                app:layout_constraintTop_toTopOf="@id/beauty_template_custom"
+                tools:background="@color/color_D9A5CFFF" />
+
+            <TextView
+                android:id="@+id/beauty_template_custom_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_px_15"
+                android:text="@string/tv_custom"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_px_27"
+                app:layout_constraintLeft_toLeftOf="@id/beauty_template_custom"
+                app:layout_constraintRight_toRightOf="@id/beauty_template_custom"
+                app:layout_constraintTop_toBottomOf="@id/beauty_template_custom" />
+
+            <View
+                android:id="@+id/beauty_template_custom_point"
+                android:layout_width="@dimen/dp_px_15"
+                android:layout_height="@dimen/dp_px_15"
+                android:visibility="gone"
+                android:layout_marginStart="@dimen/dp_px_15"
+                app:layout_constraintBottom_toBottomOf="@+id/beauty_template_custom_text"
+                app:layout_constraintLeft_toRightOf="@+id/beauty_template_custom_text"
+                app:layout_constraintTop_toTopOf="@+id/beauty_template_custom_text" />
+
+            <View
+                android:layout_width="@dimen/dp_px_3"
+                android:layout_height="@dimen/dp_px_30"
+                android:layout_marginStart="@dimen/dp_px_30"
+                android:background="#1A000000"
+                app:layout_constraintBottom_toBottomOf="@id/beauty_template_custom"
+                app:layout_constraintLeft_toRightOf="@id/beauty_template_custom"
+                app:layout_constraintTop_toTopOf="@id/beauty_template_custom" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.scwang.smart.refresh.horizontal.SmartRefreshHorizontal
+            android:id="@+id/sr_template"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/dp_px_30"
+            android:layout_marginEnd="@dimen/dp_px_30"
+            app:srlEnableOverScrollBounce="false">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_beauty_template"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.scwang.smart.refresh.horizontal.SmartRefreshHorizontal>
+
+    </LinearLayout>
+
+
+</LinearLayout>

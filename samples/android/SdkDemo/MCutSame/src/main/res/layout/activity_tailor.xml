@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    tools:context=".TailorActivity">
+
+    <LinearLayout
+        android:id="@+id/activity_tailor_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal" />
+
+    <com.meishe.cutsame.view.TailorView
+        android:id="@+id/activity_tailor_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_px_33" />
+
+    <TextView
+        android:id="@+id/activity_tailor_text_limit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16.5dp"
+        android:gravity="center_horizontal"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
+
+    <RelativeLayout
+        android:id="@+id/activity_tailor_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_75"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="@dimen/dp_px_141"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/activity_tailor_sure"
+            android:layout_width="@dimen/dp_px_165"
+            android:layout_height="@dimen/dp_px_75"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="@dimen/dp_px_36"
+            android:layout_marginRight="@dimen/dp_px_36"
+            android:padding="0dp"
+            android:text="@string/activity_tailor_sure"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_px_33" />
+
+
+        <ImageView
+            android:id="@+id/activity_tailor_back"
+            android:layout_width="@dimen/dp_px_42"
+            android:layout_height="@dimen/dp_px_42"
+            android:layout_marginStart="@dimen/dp_px_60"
+            android:layout_marginLeft="@dimen/dp_px_60"
+            android:background="@drawable/activity_tailor_back_img"
+            android:contentDescription="@null" />
+    </RelativeLayout>
+</LinearLayout>

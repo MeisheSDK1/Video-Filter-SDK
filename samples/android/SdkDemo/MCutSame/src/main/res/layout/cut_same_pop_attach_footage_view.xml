@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/dp_px_519"
+    android:layout_height="@dimen/dp_px_348"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+
+    <RadioGroup
+        android:id="@+id/rl_footage_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_px_45"
+        android:orientation="vertical"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/dp_px_45">
+
+        <RadioButton
+            android:id="@+id/rb_footage_unlimited"
+            android:layout_width="@dimen/dp_px_36"
+            android:layout_height="@dimen/dp_px_36"
+            android:layout_marginTop="@dimen/dp_px_21"
+            android:background="@drawable/select_cusame_footage_type"
+            android:paddingLeft="@dimen/dp_px_45"
+            android:paddingRight="@dimen/dp_px_15"
+            android:paddingBottom="@dimen/dp_px_15"
+            android:paddingTop="@dimen/dp_px_15"
+            android:cropToPadding="true"
+            android:button="@null"
+            android:paddingStart="@dimen/dp_px_45"
+            android:paddingEnd="@dimen/dp_px_15" />
+
+        <RadioButton
+            android:id="@+id/rb_footage_image"
+            android:layout_width="@dimen/dp_px_36"
+            android:layout_height="@dimen/dp_px_36"
+            android:layout_marginTop="@dimen/dp_px_48"
+            android:paddingLeft="@dimen/dp_px_45"
+            android:paddingRight="@dimen/dp_px_15"
+            android:paddingBottom="@dimen/dp_px_15"
+            android:paddingTop="@dimen/dp_px_15"
+            android:cropToPadding="true"
+            android:background="@drawable/select_cusame_footage_type"
+            android:button="@null"
+            android:paddingStart="@dimen/dp_px_45"
+            android:paddingEnd="@dimen/dp_px_15" />
+
+        <RadioButton
+            android:id="@+id/rb_footage_video"
+            android:layout_width="@dimen/dp_px_36"
+            android:layout_height="@dimen/dp_px_36"
+            android:layout_marginTop="@dimen/dp_px_48"
+            android:paddingLeft="@dimen/dp_px_45"
+            android:paddingRight="@dimen/dp_px_15"
+            android:paddingBottom="@dimen/dp_px_15"
+            android:paddingTop="@dimen/dp_px_15"
+            android:cropToPadding="true"
+            android:background="@drawable/select_cusame_footage_type"
+            android:button="@null"
+            android:paddingStart="@dimen/dp_px_45"
+            android:paddingEnd="@dimen/dp_px_15" />
+
+    </RadioGroup>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_px_24"
+        android:layout_marginTop="@dimen/dp_px_21"
+        android:text="@string/activity_cut_export_template_unlimited"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_px_36"
+        android:layout_marginStart="@dimen/dp_px_24" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_px_24"
+        android:layout_marginTop="@dimen/dp_px_108"
+        android:text="@string/activity_cut_export_template_only_picture"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_px_36"
+        android:layout_marginStart="@dimen/dp_px_24" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_px_24"
+        android:layout_marginTop="@dimen/dp_px_192"
+        android:text="@string/activity_cut_export_template_only_video"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_px_36"
+        android:layout_marginStart="@dimen/dp_px_24" />
+
+
+
+    <CheckBox
+        android:id="@+id/cb_apply_all"
+        android:layout_width="@dimen/dp_px_36"
+        android:layout_height="@dimen/dp_px_36"
+        android:layout_marginLeft="@dimen/dp_px_24"
+        android:layout_marginTop="@dimen/dp_px_294"
+        android:background="@drawable/select_cusame_footage_type"
+        android:button="@null"
+        android:layout_marginStart="@dimen/dp_px_24" />
+
+
+    <TextView
+        android:layout_toRightOf="@+id/cb_apply_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_cut_export_template_apply_to_all"
+        android:layout_marginTop="@dimen/dp_px_294"
+        android:textColor="@color/black"
+        android:layout_marginLeft="@dimen/dp_px_12"
+        android:textSize="@dimen/sp_px_30"
+        android:layout_toEndOf="@+id/cb_apply_all"
+        android:layout_marginStart="@dimen/dp_px_12"
+        tools:ignore="RelativeOverlap" />
+
+
+</RelativeLayout>

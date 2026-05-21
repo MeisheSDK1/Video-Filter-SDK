@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_1010"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_operation_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/dp_px_66"
+            android:layout_height="@dimen/dp_px_66"
+            android:layout_marginLeft="@dimen/dp_px_24"
+            android:background="@mipmap/ic_draft_back"
+            android:padding="@dimen/dp_px_15" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_px_1"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_export_template"
+            android:layout_width="wrap_content"
+            android:paddingLeft="@dimen/dp_px_15"
+            android:paddingRight="@dimen/dp_px_15"
+            android:layout_height="@dimen/dp_px_66"
+            android:layout_marginRight="@dimen/dp_px_39"
+            android:background="@drawable/bg_rectangle_round_gray_4a90e2_d33"
+            android:gravity="center"
+            android:text="@string/activity_cut_export_template"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_px_33" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/rl_preview_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_606"
+        android:layout_marginTop="@dimen/dp_px_60" />
+
+
+    <com.meishe.base.view.PlayControlView
+        android:id="@+id/export_play_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_54"
+        android:layout_marginTop="@dimen/dp_px_30" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_120"
+        android:layout_marginLeft="@dimen/dp_px_38"
+        android:layout_marginTop="@dimen/dp_px_42"
+        android:orientation="horizontal">
+
+        <com.meishe.third.tablayout.SlidingTabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            tl:tl_indicator_color="@color/red_ff365"
+            tl:tl_indicator_height="@dimen/dp_px_6"
+            tl:tl_indicator_width="@dimen/dp_px_30"
+            tl:tl_tab_space_equal="true"
+            tl:tl_tab_width="@dimen/dp_px_150"
+            tl:tl_textSelectColor="@color/white"
+            tl:tl_textSize="@dimen/sp_px_39"
+            tl:tl_textUnselectedColor="@color/white_5" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_group"
+            android:layout_width="@dimen/dp_px_150"
+            android:layout_height="@dimen/dp_px_48"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/dp_px_27"
+            android:gravity="center"
+            android:text="@string/activity_cut_export_template_groups"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_px_30" />
+    </LinearLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>

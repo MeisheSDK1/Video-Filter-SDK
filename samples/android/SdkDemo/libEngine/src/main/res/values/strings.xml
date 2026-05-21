@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">engine</string>
+    <string name="general">general</string>
+    <string name="assets_type_name_theme">Theme</string>
+    <string name="assets_type_name_filter">Filter</string>
+    <string name="assets_type_name_caption">Caption</string>
+    <string name="assets_type_name_sticker">Sticker</string>
+    <string name="assets_type_name_transition">Transition</string>
+    <string name="assets_type_name_comp_caption">Compound caption</string>
+    <string name="assets_type_name_anim_in">Animation in</string>
+    <string name="assets_type_name_anim_out">Animation out</string>
+    <string name="assets_type_name_anim_com">Animation group</string>
+    <string name="assets_type_name_effect">Effect</string>
+    <string name="assets_type_name_flower">Caption flower</string>
+    <string name="assets_type_name_bubble">Caption bubble</string>
+    <string name="assets_type_name_caption_animation">Caption animation</string>
+    <string name="user_hint_assets_net_error">Network error, please check the network</string>
+</resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/cut_tv_caption"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#22000000"
+        android:gravity="center"
+        android:padding="@dimen/dp_px_10"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_px_90" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#181818"
+        android:paddingBottom="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="7.5dp">
+
+        <EditText
+            android:id="@+id/cut_et_caption"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="12.5dp"
+            android:layout_marginRight="12.5dp"
+            android:layout_weight="1"
+            android:background="#FF242424"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textColor="#ff808080"
+            android:textSize="@dimen/sp_px_52"
+            tools:ignore="LabelFor" />
+
+        <ImageView
+            android:id="@+id/cut_commit"
+            android:layout_width="22dp"
+            android:layout_gravity="center_vertical"
+            android:layout_height="22dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="13dp"
+            android:src="@mipmap/cut_dia_edit_commit" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/black" />
+    <View
+        android:id="@+id/cut_view_break"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black" />
+
+</LinearLayout>

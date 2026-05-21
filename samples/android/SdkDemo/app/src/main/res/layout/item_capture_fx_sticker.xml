@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <data class=".Custom">
+        <variable
+            name="nvAsset"
+            type="com.meishe.sdkdemo.utils.asset.NvAsset" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="match_parent"
+            android:minWidth="85dp"
+            android:layout_centerInParent="true"
+            android:layout_height="85dp" />
+
+        <com.meishe.base.view.RoundImageView
+            android:id="@+id/iv_bg"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_sticker"
+            android:padding="4dp"
+            app:x_radius="4dp"
+            app:y_radius="4dp"
+
+            />
+
+        <ImageView
+            android:id="@+id/iv_selected"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_sticker_selected"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+
+
+</layout>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_FF242728">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/beauty_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/dp_px_45"
+        android:paddingRight="@dimen/dp_px_45"
+        app:layout_constraintBottom_toTopOf="@id/beauty_tab"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/beauty_radius_root"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/beauty_progress_root"
+            app:layout_constraintLeft_toLeftOf="@id/beauty_progress_root"
+            app:layout_constraintRight_toRightOf="@id/beauty_progress_root"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/beauty_radius_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/radius"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_px_30"
+                app:layout_constraintBottom_toBottomOf="@id/beauty_radius"
+                app:layout_constraintRight_toLeftOf="@id/beauty_radius"
+                app:layout_constraintTop_toTopOf="@id/beauty_radius" />
+
+            <com.meishe.base.view.MagicProgress
+                android:id="@+id/beauty_radius"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_px_135"
+                android:focusable="true"
+                android:progressDrawable="@drawable/drawable_seekbar"
+                android:thumb="@drawable/drawable_seek_thumb"
+                app:layout_constraintLeft_toLeftOf="@+id/beauty_progress"
+                app:layout_constraintRight_toRightOf="@+id/beauty_progress"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textSizeMagic="@dimen/sp_px_33" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/beauty_contrast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_px_30"
+            android:background="@mipmap/icon_compare"
+            android:contentDescription="@null"
+            app:layout_constraintBottom_toBottomOf="@id/beauty_progress_root"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/beauty_progress_root"
+            app:layout_constraintTop_toTopOf="@id/beauty_progress_root" />
+
+        <LinearLayout
+            android:id="@+id/beauty_progress_root"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_px_45"
+            android:layout_marginRight="@dimen/dp_px_45"
+            android:orientation="horizontal"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/beauty_contrast"
+            app:layout_constraintRight_toLeftOf="@id/beauty_ab_root"
+            app:layout_constraintTop_toBottomOf="@+id/beauty_radius_root"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/beauty_progress_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/beauty_strength"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_px_30" />
+
+            <com.meishe.base.view.MagicProgress
+                android:id="@+id/beauty_progress"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_px_135"
+                android:focusable="true"
+                android:progressDrawable="@drawable/drawable_seekbar"
+                android:thumb="@drawable/drawable_seek_thumb"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:textSizeMagic="@dimen/sp_px_33" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/beauty_ab_root"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_px_30"
+            android:orientation="horizontal"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/beauty_progress_root"
+            app:layout_constraintLeft_toRightOf="@+id/beauty_progress_root"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/beauty_progress_root"
+            tools:visibility="visible">
+
+            <Button
+                android:id="@+id/beauty_a"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="@dimen/dp_px_66"
+                android:layout_height="@dimen/dp_px_66"
+                android:background="@drawable/beauty_a_selector"
+                android:gravity="center"
+                android:text="@string/beauty_a"
+                android:textColor="@color/beauty_ab_text_selector"
+                app:textSizeMagic="@dimen/sp_px_36"
+                tools:textColor="@color/color_4A90E2"
+                tools:visibility="visible" />
+
+            <Button
+                android:id="@+id/beauty_b"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="@dimen/dp_px_66"
+                android:layout_height="@dimen/dp_px_66"
+                android:background="@drawable/beauty_b_selector"
+                android:gravity="center"
+                android:text="@string/beauty_b"
+                android:textColor="@color/beauty_ab_text_selector"
+                tools:textColor="@color/white"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.meishe.third.tablayout.SlidingTabLayout
+        android:id="@+id/beauty_tab"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_px_100"
+        android:layout_marginStart="@dimen/dp_px_24"
+        android:layout_marginLeft="@dimen/dp_px_24"
+        android:layout_marginTop="@dimen/sp_px_24"
+        app:layout_constraintBottom_toTopOf="@id/beauty_pager"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/beauty_finish"
+        app:layout_constraintTop_toBottomOf="@+id/beauty_top"
+        app:tl_indicator_color="@color/color_4A90E2"
+        app:tl_indicator_corner_radius="@dimen/dp_px_6"
+        app:tl_indicator_height="@dimen/dp_px_5"
+        app:tl_indicator_width_equal_title="true"
+        app:tl_tab_padding="@dimen/dp_px_30"
+        app:tl_textSelectColor="@color/color_4A90E2"
+        app:tl_textSize="@dimen/sp_px_39"
+        app:tl_textUnselectedColor="@color/white" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_1"
+        android:background="@color/color_707070"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/beauty_tab" />
+
+    <ImageView
+        android:id="@+id/beauty_finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/sp_px_24"
+        android:layout_marginLeft="@dimen/sp_px_24"
+        android:layout_marginEnd="@dimen/dp_px_24"
+        android:layout_marginRight="@dimen/dp_px_60"
+        android:background="@mipmap/icon_beauty_finish"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="@id/beauty_tab"
+        app:layout_constraintLeft_toRightOf="@id/beauty_tab"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/beauty_tab" />
+
+    <com.meishe.base.view.CustomViewPager
+        android:id="@+id/beauty_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_px_45"
+        app:layout_constraintBottom_toTopOf="@id/beauty_bottom"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/beauty_tab" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/beauty_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_px_150"
+        android:paddingLeft="@dimen/dp_px_45"
+        android:paddingRight="@dimen/dp_px_45"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/beauty_pager">
+
+        <TextView
+            android:id="@+id/beauty_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@mipmap/icon_reset"
+            android:drawableLeft="@mipmap/icon_reset"
+            android:drawablePadding="@dimen/dp_px_12"
+            android:gravity="center_vertical"
+            android:text="@string/reset"
+            android:textColor="@color/color_DDDDDD"
+            android:textSize="@dimen/sp_px_30"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Switch
+            android:id="@+id/beauty_sub_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="@dimen/dp_px_45"
+            android:checked="false"
+            android:switchPadding="@dimen/dp_px_24"
+            android:textColor="@color/color_DDDDDD"
+            android:textSize="@dimen/sp_px_30"
+            android:thumb="@drawable/drawable_switch_thumb"
+            android:track="@drawable/drawable_switch_track"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/beauty_switch"
+            app:layout_constraintRight_toLeftOf="@+id/beauty_switch"
+            app:layout_constraintTop_toTopOf="@+id/beauty_switch"
+            tools:ignore="UseSwitchCompatOrMaterialXml"
+            tools:text="@string/correctionColor"
+            tools:visibility="visible" />
+
+        <Switch
+            android:id="@+id/beauty_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="@dimen/dp_px_45"
+            android:checked="true"
+            android:switchPadding="@dimen/dp_px_24"
+            android:text="@string/skin_beauty"
+            android:textColor="@color/color_DDDDDD"
+            android:textSize="@dimen/sp_px_30"
+            android:thumb="@drawable/drawable_switch_thumb"
+            android:track="@drawable/drawable_switch_track"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

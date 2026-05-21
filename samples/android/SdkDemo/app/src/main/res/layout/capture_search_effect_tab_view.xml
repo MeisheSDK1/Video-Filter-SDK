@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="searchEffectInfo"
+            type="com.meishe.sdkdemo.capture.bean.EffectInfo" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_px_15"
+        android:layout_marginRight="@dimen/dp_px_15"
+        android:orientation="vertical"
+        tools:background="@color/color_888888">
+
+        <RelativeLayout
+            android:layout_width="@dimen/dp_px_180"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rl_cover"
+                android:layout_width="@dimen/dp_px_180"
+                android:layout_height="@dimen/dp_px_180">
+
+                <com.meishe.base.view.RoundImageView
+                    android:id="@+id/riv_cover"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:background="#2c2c2c"
+                    app:url="@{searchEffectInfo.coverUrl}"
+                    app:x_radius="@dimen/dp_px_27"
+                    app:y_radius="@dimen/dp_px_27" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignLeft="@id/riv_cover"
+                    android:layout_alignTop="@id/riv_cover"
+                    android:layout_alignRight="@id/riv_cover"
+                    android:layout_alignBottom="@id/riv_cover"
+                    android:background="@drawable/capture_filter_select_bg"
+                    android:visibility="@{searchEffectInfo.select?View.VISIBLE:View.GONE}" />
+
+                <com.meishe.sdkdemo.capturescene.view.CircleBarView
+                    android:id="@+id/item_cs_download"
+                    android:layout_width="@dimen/dp13"
+                    android:layout_height="@dimen/dp13"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@mipmap/icon_download"
+                    android:visibility="@{searchEffectInfo.download?View.GONE:View.VISIBLE}"
+                    app:CBNoneProgressColor="@color/menu_selected"
+                    app:CBProgress="@{searchEffectInfo.progress}"
+                    app:CBProgressColor="@color/dy_text_after_music_seleeted" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_cover"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_px_24"
+                android:layout_marginBottom="@dimen/dp_px_24"
+                android:text="@{searchEffectInfo.name}"
+                android:textColor="@color/color_3A3A3A"
+                android:textSize="@dimen/sp10" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

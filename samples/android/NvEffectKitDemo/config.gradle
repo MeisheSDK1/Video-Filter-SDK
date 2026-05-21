@@ -1,0 +1,35 @@
+ext {
+    //1:表示 v7 和v8 都包含  2：表示只是v8  3:表示只是v7
+    armConfig = 1
+
+    config = [
+            extVersionCode: 1,
+            extVersionName: "3.15.4",
+            //asset和libs使用版本
+            libVersion    : "3.11.1",
+            assetsVersion : "3.15.0"
+    ]
+    android = [
+            extCompileSdkVersion: 29,
+            extBuildToolsVersion: "29.0.3",
+            extMinSdkVersion    : 19,
+            extTargetSdkVersion : 31,
+    ]
+    dependencies = [
+            //图片加载库
+            extBumptechGlide  : 'com.github.bumptech.glide:glide:4.9.0',
+            extGlideAnnotation: 'com.github.bumptech.glide:compiler:4.9.0',
+            extWebpdecoder    : 'com.zlc.glide:webpdecoder:1.4.4.9.0',
+            //gson
+            extGoogleGson     : 'com.google.code.gson:gson:2.8.2',
+            extOkHttp         : 'com.squareup.okhttp3:okhttp:3.10.0',
+
+    ]
+
+    keyConfig = [
+            extStoreFilePath: "/**.jks",
+            extStorePassword: "**",
+            extKeyAlias     : "**",
+            extKeyPassword  : "**"
+    ]
+}

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="#ff242728"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_apply_all_container"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp30"
+            android:layout_marginLeft="25dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/dp17"
+                android:layout_height="@dimen/dp17"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp10"
+                android:background="@mipmap/ic_multi_trans" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp10"
+                android:text="@string/apply_all_clip"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp10" />
+
+        </LinearLayout>
+
+        <com.meishe.sdkdemo.edit.background.view.BackgroundBlurView
+            android:id="@+id/background_blur_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp32"
+            android:layout_marginTop="42dp" />
+
+        <com.meishe.sdkdemo.edit.background.view.BackgroundStyleView
+            android:id="@+id/background_style_view"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="34dp"
+            android:visibility="gone" />
+
+        <com.meishe.sdkdemo.edit.background.view.MultiColorView
+            android:id="@+id/background_color_view"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="58dp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#19ffffff" />
+
+    <ImageView
+        android:id="@+id/iv_finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="@dimen/dp_px_45"
+        android:src="@mipmap/icon_confirm" />
+
+</LinearLayout>
